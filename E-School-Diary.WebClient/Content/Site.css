@@ -1,0 +1,27 @@
+﻿header, main, footer {
+      padding-left: 300px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
+    }
+
+.body-content {
+    padding: 0 10px;
+}
+
+.userView {
+    background-image: url("/Images/side-nav-bacground.jpg")
+}
+
+.bacground-side-nav, .background {
+    width:100%;
+    height:100%;
+}
+
+img.user-image {
+    width: 67px;
+    height: 67px;
+}
