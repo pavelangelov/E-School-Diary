@@ -26,16 +26,16 @@ namespace E_School_Diary.WebClient.Presenters.Admin.Register
         {
             var user = new ApplicationUser()
             {
-                UserName = e.Email,
-                Email = e.Email,
-                FirstName = e.FirstName,
-                LastName = e.LastName,
-                Age = e.Age,
-                Subject = (Subject)Enum.Parse(typeof(Subject), e.SubjectName),
+                UserName = e.TeacherDTO.Email,
+                Email = e.TeacherDTO.Email,
+                FirstName = e.TeacherDTO.FirstName,
+                LastName = e.TeacherDTO.LastName,
+                Age = e.TeacherDTO.Age,
+                Subject = (Subject)Enum.Parse(typeof(Subject), e.TeacherDTO.Subject),
                 ImageUrl = "/Images/default-user.png"
             };
 
-            IdentityResult result = e.Manager.Create(user, e.Password);
+            IdentityResult result = e.Manager.Create(user, e.TeacherDTO.Password);
             if (result.Succeeded)
             {
                 var currentUser = e.Manager.FindByName(user.UserName);

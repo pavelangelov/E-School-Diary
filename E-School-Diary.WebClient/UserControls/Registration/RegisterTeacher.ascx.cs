@@ -11,6 +11,7 @@ using E_School_Diary.WebClient.Models.CustomEventArgs;
 using E_School_Diary.WebClient.Models.ViewModels.Register;
 using E_School_Diary.WebClient.Presenters.Admin.Register;
 using E_School_Diary.WebClient.Views.Admin.Register;
+using E_School_Diary.Models.DTOs.RegisterDTOs;
 
 namespace E_School_Diary.WebClient.UserControls.Registration
 {
@@ -35,32 +36,32 @@ namespace E_School_Diary.WebClient.UserControls.Registration
 
         protected void RegisterClick(object sender, EventArgs e)
         {
-            var firstName = this.CommonFields.FirstName;
-            var lastName = this.CommonFields.LastName;
-            var email = this.CommonFields.Email;
-            var age = this.CommonFields.Age;
-            var password = this.CommonFields.Password;
-            var subject = this.Subjects.SelectedValue;
+            var teacherDTO = new RegisterTeacherDTO()
+            {
+                FirstName = this.CommonFields.FirstName,
+                LastName = this.CommonFields.LastName,
+                Email = this.CommonFields.Email,
+                Age = this.CommonFields.Age,
+                Password = this.CommonFields.Password,
+                Subject = this.Subjects.SelectedValue
+            };
+
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
-            this.RegisterTeacherClick?.Invoke(sender, new RegisterTeacherEventArgs(
-                firstName,
-                lastName,
-                email,
-                password,
-                age,
-                subject,
-                manager
-                ));
+            this.RegisterTeacherClick?.Invoke(sender, new RegisterTeacherEventArgs(teacherDTO, manager));
 
             if (!this.Model.IsSuccess)
             {
                 this.CommonFields.ErrorMessageContainer = this.Model.ErrorMessage;
+                this.CommonFields.SuccessMessageContainer = "";
             }
             else
             {
                 this.CommonFields.SuccessMessageContainer = "Teacher registred successfully";
+                this.CommonFields.ErrorMessageContainer = "";
             }
+
+            this.CommonFields.ShowResultContainer();
         }
 
         private void LoadSubjects()

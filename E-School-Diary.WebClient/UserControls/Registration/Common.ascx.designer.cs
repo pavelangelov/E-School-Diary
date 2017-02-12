@@ -13,6 +13,15 @@ namespace E_School_Diary.WebClient.UserControls.Registration {
     public partial class Common {
         
         /// <summary>
+        /// resultContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl resultContainer;
+        
+        /// <summary>
         /// ErrorMessage control.
         /// </summary>
         /// <remarks>

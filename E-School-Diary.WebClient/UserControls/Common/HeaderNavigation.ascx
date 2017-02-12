@@ -46,6 +46,8 @@
             <asp:RoleGroup Roles="Admin">
                 <ContentTemplate>
                     <li><a class="waves-effect" href="/Register/Teacher">Create new Teacher Account</a></li>
+                    <li><a class="waves-effect" href="/Register/Student">Create new Student Account</a></li>
+                    <li><a class="waves-effect" href="#">Create new Parent Account</a></li>
                     <li><a class="waves-effect" href="/">Create new Admin Account</a></li>
                     <li>
                         <div class="divider"></div>
@@ -70,6 +72,8 @@
             </asp:RoleGroup>
             <asp:RoleGroup Roles="Teacher">
                 <ContentTemplate>
+                    <li><a class="waves-effect" href="/Register/Student">Create new Student Account</a></li>
+                    <li><a class="waves-effect" href="#">Create new Parent Account</a></li>
                     <li>Add new lecture</li>
                     <li>Cancel lecture</li>
                     <li>Add marks to students</li>
@@ -87,7 +91,7 @@
             </asp:RoleGroup>
             <asp:RoleGroup Roles="Student">
                 <ContentTemplate>
-                    <li>Check out your marks</li>
+                    <li><a class="waves-effect" href="/Student/Marks">Check out your marks</a></li>
                     <li>Check out your calendar</li>
                     <li>Edit profile</li>
                 </ContentTemplate>

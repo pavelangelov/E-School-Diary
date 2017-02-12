@@ -4,12 +4,13 @@
     CodeBehind="Common.ascx.cs"
     Inherits="E_School_Diary.WebClient.UserControls.Registration.Common" %>
 
-<p class="red-text">
-    <asp:Literal runat="server" ID="ErrorMessage" />
-</p>
-
-<p class="card-panel">
+<p class="card-panel" runat="server" id="resultContainer" visible="false">
+    <span class="red-text text-darken-2">
+        <i class="tiny red-text material-icons">info_outline</i>
+        <asp:Literal runat="server" ID="ErrorMessage" />
+    </span>
     <span class="blue-text text-darken-2">
+        <i class="tiny blue-text material-icons">info_outline</i>
         <asp:Literal runat="server"  ID="SuccessMessage" />
     </span>
 </p>
@@ -80,10 +81,10 @@
                 runat="server" 
                 ControlToValidate="AgeInput"
                 CssClass="red-text" 
-                MinimumValue="19" 
+                MinimumValue="6" 
                 MaximumValue="100" 
                 Type="Integer"
-                ErrorMessage="The age field must be between 19 and 100."/>
+                ErrorMessage="The age field must be greater than 6."/>
         </div>
     </div>
 

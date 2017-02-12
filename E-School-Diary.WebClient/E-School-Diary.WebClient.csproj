@@ -305,9 +305,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Student\Marks\Default.aspx" />
     <Content Include="UserControls\Registration\Common.ascx" />
+    <Content Include="UserControls\Registration\RegisterStudent.ascx" />
     <Content Include="UserControls\Registration\RegisterTeacher.ascx" />
     <Content Include="UserControls\Common\HeaderNavigation.ascx" />
+    <Content Include="UserControls\Student\Marks.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -461,14 +464,21 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomEventArgs\NavigationEventArgs.cs" />
+    <Compile Include="Models\CustomEventArgs\RegisterStudentPageLoadEventArgs.cs" />
+    <Compile Include="Models\CustomEventArgs\RegisterStudentSubmitEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\RegisterTeacherEventArgs.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ViewModels\Common\NavigationViewModel.cs" />
+    <Compile Include="Models\ViewModels\Common\UserIdEventArgs.cs" />
+    <Compile Include="Models\ViewModels\Register\RegisterStudentViewModel.cs" />
     <Compile Include="Models\ViewModels\Register\RegisterTeacherViewModel.cs" />
+    <Compile Include="Models\ViewModels\Student\StudentMarksViewModel.cs" />
     <Compile Include="Modules\MvpNinjectModule.cs" />
     <Compile Include="Modules\StudentsNinjectModule.cs" />
+    <Compile Include="Presenters\Admin\Register\RegisterStudentPresenter.cs" />
     <Compile Include="Presenters\Admin\Register\RegisterTeacherPresenter.cs" />
     <Compile Include="Presenters\Common\NavigationPresenter.cs" />
+    <Compile Include="Presenters\Student\StudentMarksPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register\Admin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -506,12 +516,26 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Student\Marks\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Marks\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Registration\Common.ascx.cs">
       <DependentUpon>Common.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserControls\Registration\Common.ascx.designer.cs">
       <DependentUpon>Common.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Registration\RegisterStudent.ascx.cs">
+      <DependentUpon>RegisterStudent.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Registration\RegisterStudent.ascx.designer.cs">
+      <DependentUpon>RegisterStudent.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Registration\RegisterTeacher.ascx.cs">
       <DependentUpon>RegisterTeacher.ascx</DependentUpon>
@@ -527,6 +551,13 @@
     <Compile Include="UserControls\Common\HeaderNavigation.ascx.designer.cs">
       <DependentUpon>HeaderNavigation.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Student\Marks.ascx.cs">
+      <DependentUpon>Marks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Student\Marks.ascx.designer.cs">
+      <DependentUpon>Marks.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -534,8 +565,10 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Admin\Register\IRegisterStudentView.cs" />
     <Compile Include="Views\Admin\Register\IRegisterTeacherView.cs" />
     <Compile Include="Views\Common\INavigationView.cs" />
+    <Compile Include="Views\Student\IStudentMarksView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -543,6 +576,10 @@
     <Folder Include="UserControls\Teacher\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\E-School-Diary.Data\E-School-Diary.Data.csproj">
+      <Project>{7A2D1EC7-70F4-44F9-B116-BA3897DD2F5C}</Project>
+      <Name>E-School-Diary.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\E-School-Diary.Models\E-School-Diary.Models.csproj">
       <Project>{5130B14A-E43D-4410-A8AF-63C23043540B}</Project>
       <Name>E-School-Diary.Models</Name>
