@@ -198,6 +198,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Administration\AddNewClass\Default.aspx" />
     <Content Include="Images\admin.png" />
     <Content Include="Images\default-user.png" />
     <Content Include="Images\School-Background-Bottom.jpg" />
@@ -267,6 +268,7 @@
     <Content Include="Register\Teacher\Web.config" />
     <Content Include="Register\Student\Web.config" />
     <Content Include="Register\Admin\Web.config" />
+    <Content Include="Administration\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Register\Teacher\Default.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -307,6 +309,7 @@
     <Content Include="Site.Master" />
     <Content Include="Student\Calendar\Default.aspx" />
     <Content Include="Student\Marks\Default.aspx" />
+    <Content Include="UserControls\Admin\AddNewClass.ascx" />
     <Content Include="UserControls\Registration\Common.ascx" />
     <Content Include="UserControls\Registration\RegisterStudent.ascx" />
     <Content Include="UserControls\Registration\RegisterTeacher.ascx" />
@@ -434,6 +437,13 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administration\AddNewClass\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\AddNewClass\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -466,12 +476,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CustomEventArgs\Admin\AddNewClassEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\NavigationEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\RegisterStudentPageLoadEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\RegisterStudentSubmitEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\RegisterTeacherEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Student\CalendarEventArgs.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ViewModels\Admin\AddNewClassViewModel.cs" />
     <Compile Include="Models\ViewModels\Common\NavigationViewModel.cs" />
     <Compile Include="Models\ViewModels\Common\UserIdEventArgs.cs" />
     <Compile Include="Models\ViewModels\Register\RegisterStudentViewModel.cs" />
@@ -480,6 +492,7 @@
     <Compile Include="Models\ViewModels\Student\StudentMarksViewModel.cs" />
     <Compile Include="Modules\MvpNinjectModule.cs" />
     <Compile Include="Modules\StudentsNinjectModule.cs" />
+    <Compile Include="Presenters\Admin\AddNewClassPresenter.cs" />
     <Compile Include="Presenters\Admin\Register\RegisterStudentPresenter.cs" />
     <Compile Include="Presenters\Admin\Register\RegisterTeacherPresenter.cs" />
     <Compile Include="Presenters\Common\NavigationPresenter.cs" />
@@ -536,6 +549,13 @@
     <Compile Include="Student\Marks\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Admin\AddNewClass.ascx.cs">
+      <DependentUpon>AddNewClass.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Admin\AddNewClass.ascx.designer.cs">
+      <DependentUpon>AddNewClass.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Registration\Common.ascx.cs">
       <DependentUpon>Common.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -585,6 +605,7 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Admin\IAddNewClassView.cs" />
     <Compile Include="Views\Admin\Register\IRegisterStudentView.cs" />
     <Compile Include="Views\Admin\Register\IRegisterTeacherView.cs" />
     <Compile Include="Views\Common\INavigationView.cs" />
@@ -593,7 +614,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="UserControls\Admin\" />
     <Folder Include="UserControls\Teacher\" />
   </ItemGroup>
   <ItemGroup>
