@@ -12,7 +12,7 @@ using E_School_Diary.WebClient.Models.ViewModels.Register;
 using E_School_Diary.WebClient.Presenters.Admin.Register;
 using E_School_Diary.WebClient.Views.Admin.Register;
 
-namespace E_School_Diary.WebClient.UserControls.Admin.Registration
+namespace E_School_Diary.WebClient.UserControls.Registration
 {
     [PresenterBinding(typeof(RegisterTeacherPresenter))]
     public partial class RegisterTeacher : MvpUserControl<RegisterTeacherViewModel>, IRegisterTeacherView

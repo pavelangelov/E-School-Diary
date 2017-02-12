@@ -261,9 +261,14 @@
     <Content Include="Content\materialize\font\roboto\Roboto-Thin.ttf" />
     <Content Include="Content\materialize\font\roboto\Roboto-Thin.woff" />
     <Content Include="Content\materialize\font\roboto\Roboto-Thin.woff2" />
+    <Content Include="Register\Admin\Default.aspx" />
+    <Content Include="Register\Student\Default.aspx" />
     <Content Include="Register\Web.config" />
+    <Content Include="Register\Teacher\Web.config" />
+    <Content Include="Register\Student\Web.config" />
+    <Content Include="Register\Admin\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Register\Teacher.aspx" />
+    <Content Include="Register\Teacher\Default.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\index.js" />
@@ -300,8 +305,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
-    <Content Include="UserControls\Admin\Registration\Common.ascx" />
-    <Content Include="UserControls\Admin\Registration\RegisterTeacher.ascx" />
+    <Content Include="UserControls\Registration\Common.ascx" />
+    <Content Include="UserControls\Registration\RegisterTeacher.ascx" />
     <Content Include="UserControls\Common\HeaderNavigation.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -315,6 +320,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
@@ -464,12 +470,26 @@
     <Compile Include="Presenters\Admin\Register\RegisterTeacherPresenter.cs" />
     <Compile Include="Presenters\Common\NavigationPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Register\Teacher.aspx.cs">
-      <DependentUpon>Teacher.aspx</DependentUpon>
+    <Compile Include="Register\Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Register\Teacher.aspx.designer.cs">
-      <DependentUpon>Teacher.aspx</DependentUpon>
+    <Compile Include="Register\Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register\Student\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register\Student\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register\Teacher\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register\Teacher\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -486,18 +506,18 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="UserControls\Admin\Registration\Common.ascx.cs">
+    <Compile Include="UserControls\Registration\Common.ascx.cs">
       <DependentUpon>Common.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserControls\Admin\Registration\Common.ascx.designer.cs">
+    <Compile Include="UserControls\Registration\Common.ascx.designer.cs">
       <DependentUpon>Common.ascx</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Admin\Registration\RegisterTeacher.ascx.cs">
+    <Compile Include="UserControls\Registration\RegisterTeacher.ascx.cs">
       <DependentUpon>RegisterTeacher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserControls\Admin\Registration\RegisterTeacher.ascx.designer.cs">
+    <Compile Include="UserControls\Registration\RegisterTeacher.ascx.designer.cs">
       <DependentUpon>RegisterTeacher.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Common\HeaderNavigation.ascx.cs">
@@ -519,6 +539,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="UserControls\Admin\" />
+    <Folder Include="UserControls\Teacher\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\E-School-Diary.Models\E-School-Diary.Models.csproj">

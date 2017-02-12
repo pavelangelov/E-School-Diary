@@ -2,7 +2,7 @@
     Language="C#"
     AutoEventWireup="true"
     CodeBehind="Common.ascx.cs"
-    Inherits="E_School_Diary.WebClient.UserControls.Admin.Registration.Common" %>
+    Inherits="E_School_Diary.WebClient.UserControls.Registration.Common" %>
 
 <p class="red-text">
     <asp:Literal runat="server" ID="ErrorMessage" />

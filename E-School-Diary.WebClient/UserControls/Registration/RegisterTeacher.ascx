@@ -2,9 +2,9 @@
     Language="C#"
     AutoEventWireup="true"
     CodeBehind="RegisterTeacher.ascx.cs"
-    Inherits="E_School_Diary.WebClient.UserControls.Admin.Registration.RegisterTeacher" %>
+    Inherits="E_School_Diary.WebClient.UserControls.Registration.RegisterTeacher" %>
 
-<%@ Register Src="~/UserControls/Admin/Registration/Common.ascx" TagPrefix="uc" TagName="CommonFields" %>
+<%@ Register Src="~/UserControls/Registration/Common.ascx" TagPrefix="uc" TagName="CommonFields" %>
 
 <div class="container">
     <uc:CommonFields runat="server" ID="CommonFields"></uc:CommonFields>

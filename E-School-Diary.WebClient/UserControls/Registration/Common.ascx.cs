@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.UI;
 
-namespace E_School_Diary.WebClient.UserControls.Admin.Registration
+namespace E_School_Diary.WebClient.UserControls.Registration
 {
     public partial class Common : UserControl
     {

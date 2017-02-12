@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/" title="Startup Page" description="Startup Page">
+    <siteMapNode url="~/Register" securityTrimmingEnabled="true" title="Register"  description="Register" roles="Admin,Teacher">
+        <siteMapNode url="~/Register/Teacher" title="Register Teacher"  description="Register Teacher" roles="Admin"  />
+        <siteMapNode url="~/Register/Student" title="Register Student"  description="Register Student" roles="Admin,Teacher" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

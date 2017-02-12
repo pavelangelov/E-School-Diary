@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace E_School_Diary.WebClient.UserControls.Admin.Registration {
+namespace E_School_Diary.WebClient.UserControls.Registration {
     
     
     public partial class RegisterTeacher {
@@ -19,7 +19,7 @@ namespace E_School_Diary.WebClient.UserControls.Admin.Registration {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::E_School_Diary.WebClient.UserControls.Admin.Registration.Common CommonFields;
+        protected global::E_School_Diary.WebClient.UserControls.Registration.Common CommonFields;
         
         /// <summary>
         /// Subjects control.
