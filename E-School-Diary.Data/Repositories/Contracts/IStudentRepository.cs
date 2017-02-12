@@ -1,14 +1,14 @@
-﻿using E_School_Diary.Data.DbData;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
+
+using E_School_Diary.Models.Enums;
+using E_School_Diary.Utils.DTOs.Common;
 
 namespace E_School_Diary.Data.Repositories.Contracts
 {
     public interface IStudentRepository
     {
-        IQueryable<IGrouping<int, Mark>> GetStudentMarks(string studentId);
+        IQueryable<IGrouping<Subject, MarkDTO>> GetStudentMarks(string studentId);
+
+        IQueryable<LectureDTO> GetStudentLectures(string studentId);
     }
 }

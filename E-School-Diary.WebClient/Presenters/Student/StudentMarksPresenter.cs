@@ -25,20 +25,20 @@ namespace E_School_Diary.WebClient.Presenters.Student
         {
             var marks = this.studentRepository.GetStudentMarks(e.UserId).ToList();
 
-            var result = new List<Tuple<string, string>>();
+            //var result = new List<Tuple<string, string>>();
 
-            foreach (var mark in marks)
-            {
-                var marksValues = "";
-                foreach (var k in mark)
-                {
-                    marksValues += k.Value;
-                }
+            //foreach (var mark in marks)
+            //{
+            //    var marksValues = "";
+            //    foreach (var k in mark)
+            //    {
+            //        marksValues += k.Value;
+            //    }
 
-                result.Add(new Tuple<string, string>(mark.Key.ToString(), marksValues));
-            }
+            //    result.Add(new Tuple<string, string>(mark.Key.ToString(), marksValues));
+            //}
 
-            this.View.Model.Marks = result;
+            this.View.Model.Marks = marks;
         }
     }
 }

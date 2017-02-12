@@ -44,6 +44,9 @@
     <Compile Include="DateParser.cs" />
     <Compile Include="Contracts\IDateParser.cs" />
     <Compile Include="DTOs\Common\LectureDTO.cs" />
+    <Compile Include="DTOs\Common\MarkDTO.cs" />
+    <Compile Include="DTOs\Common\MessageDTO.cs" />
+    <Compile Include="DTOs\Common\StudentClassDTO.cs" />
     <Compile Include="DTOs\RegisterDTOs\RegisterStudentDTO.cs" />
     <Compile Include="DTOs\RegisterDTOs\RegisterTeacherDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
