@@ -43,7 +43,16 @@
     <Compile Include="Constants.cs" />
     <Compile Include="DateParser.cs" />
     <Compile Include="Contracts\IDateParser.cs" />
+    <Compile Include="DTOs\Common\LectureDTO.cs" />
+    <Compile Include="DTOs\RegisterDTOs\RegisterStudentDTO.cs" />
+    <Compile Include="DTOs\RegisterDTOs\RegisterTeacherDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\E-School-Diary.Models\E-School-Diary.Models.csproj">
+      <Project>{5130B14A-E43D-4410-A8AF-63C23043540B}</Project>
+      <Name>E-School-Diary.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

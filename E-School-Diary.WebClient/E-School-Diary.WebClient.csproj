@@ -305,11 +305,13 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Student\Calendar\Default.aspx" />
     <Content Include="Student\Marks\Default.aspx" />
     <Content Include="UserControls\Registration\Common.ascx" />
     <Content Include="UserControls\Registration\RegisterStudent.ascx" />
     <Content Include="UserControls\Registration\RegisterTeacher.ascx" />
     <Content Include="UserControls\Common\HeaderNavigation.ascx" />
+    <Content Include="UserControls\Student\Calendar.ascx" />
     <Content Include="UserControls\Student\Marks.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -467,17 +469,20 @@
     <Compile Include="Models\CustomEventArgs\RegisterStudentPageLoadEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\RegisterStudentSubmitEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\RegisterTeacherEventArgs.cs" />
+    <Compile Include="Models\CustomEventArgs\Student\CalendarEventArgs.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ViewModels\Common\NavigationViewModel.cs" />
     <Compile Include="Models\ViewModels\Common\UserIdEventArgs.cs" />
     <Compile Include="Models\ViewModels\Register\RegisterStudentViewModel.cs" />
     <Compile Include="Models\ViewModels\Register\RegisterTeacherViewModel.cs" />
+    <Compile Include="Models\ViewModels\Student\StudentCalendarViewModel.cs" />
     <Compile Include="Models\ViewModels\Student\StudentMarksViewModel.cs" />
     <Compile Include="Modules\MvpNinjectModule.cs" />
     <Compile Include="Modules\StudentsNinjectModule.cs" />
     <Compile Include="Presenters\Admin\Register\RegisterStudentPresenter.cs" />
     <Compile Include="Presenters\Admin\Register\RegisterTeacherPresenter.cs" />
     <Compile Include="Presenters\Common\NavigationPresenter.cs" />
+    <Compile Include="Presenters\Student\StudentCalendarPresenter.cs" />
     <Compile Include="Presenters\Student\StudentMarksPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register\Admin\Default.aspx.cs">
@@ -516,6 +521,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Student\Calendar\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Calendar\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Student\Marks\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -551,6 +563,13 @@
     <Compile Include="UserControls\Common\HeaderNavigation.ascx.designer.cs">
       <DependentUpon>HeaderNavigation.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Student\Calendar.ascx.cs">
+      <DependentUpon>Calendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Student\Calendar.ascx.designer.cs">
+      <DependentUpon>Calendar.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Student\Marks.ascx.cs">
       <DependentUpon>Marks.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -568,6 +587,7 @@
     <Compile Include="Views\Admin\Register\IRegisterStudentView.cs" />
     <Compile Include="Views\Admin\Register\IRegisterTeacherView.cs" />
     <Compile Include="Views\Common\INavigationView.cs" />
+    <Compile Include="Views\Student\IStudentCalendarView.cs" />
     <Compile Include="Views\Student\IStudentMarksView.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -12,11 +12,6 @@
     padding: 0 10px;
 }
 
-/*.bacground-side-nav, .background {
-    width:100%;
-    height:100%;
-}*/
-
 .userView {
     background-image: url("/Images/side-nav-bacground.jpg")
 }
@@ -82,4 +77,9 @@ p {
 
 footer.page-footer {
   margin: 0;
+}
+
+/* Calendar styles */
+input#btnHidden {
+    visibility: hidden;
 }

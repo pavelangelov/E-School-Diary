@@ -1,8 +1,6 @@
-﻿using E_School_Diary.Models.DTOs.RegisterDTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System;
+
+using E_School_Diary.Utils.DTOs.RegisterDTOs;
 
 namespace E_School_Diary.WebClient.Models.CustomEventArgs
 {

@@ -79,8 +79,6 @@
     <Compile Include="Contracts\IStudent.cs" />
     <Compile Include="Contracts\IStudentClass.cs" />
     <Compile Include="Contracts\ITeacher.cs" />
-    <Compile Include="DTOs\RegisterDTOs\RegisterStudentDTO.cs" />
-    <Compile Include="DTOs\RegisterDTOs\RegisterTeacherDTO.cs" />
     <Compile Include="Enums\LectureStatus.cs" />
     <Compile Include="Enums\Subject.cs" />
     <Compile Include="Enums\UserTypes.cs" />

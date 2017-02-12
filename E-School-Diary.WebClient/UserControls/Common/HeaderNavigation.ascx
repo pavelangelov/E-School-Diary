@@ -92,7 +92,7 @@
             <asp:RoleGroup Roles="Student">
                 <ContentTemplate>
                     <li><a class="waves-effect" href="/Student/Marks">Check out your marks</a></li>
-                    <li>Check out your calendar</li>
+                    <li><a class="waves-effect" href="/Student/Calendar">Check out your calendar</a></li>
                     <li>Edit profile</li>
                 </ContentTemplate>
             </asp:RoleGroup>

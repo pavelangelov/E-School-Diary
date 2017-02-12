@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E_School_Diary.Models.DTOs.RegisterDTOs
+namespace E_School_Diary.Utils.DTOs.RegisterDTOs
 {
     public class RegisterStudentDTO
     {
