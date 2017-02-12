@@ -19,7 +19,7 @@
             </AnonymousTemplate>
             <LoggedInTemplate>
                 <a class="waves-effect waves-light btn-small right" title="Log off" runat="server" onserverclick="Unnamed_LoggingOut" onclick="logout()"><i class="material-icons teal-text">power_settings_new</i></a>
-                <span class="right teal-text">Hello, <%: Context.User.Identity.GetUserName()  %> </span>
+                <span class="right teal-text">Hello, <%: this.Model.FirstName  %> </span>
             </LoggedInTemplate>
         </asp:LoginView>
     </div>
@@ -34,9 +34,9 @@
         <LoggedInTemplate>
             <div class="userView">
                 <a href="#!user">
-                    <img class="circle user-image" src="/Images/admin.png"></a>
-                <a href="#!name"><span class="blue-text name"><%: Context.User.Identity.GetUserName() %></span></a>
-                <a href="#!email"><span class="blue-text email">email@gmail.com</span></a>
+                    <img class="circle user-image" src="<%: this.Model.ImageUrl %>"></a>
+                <a href="#!name"><span class="white-text name"><%: this.Model.FirstName + " " + this.Model.LastName %></span></a>
+                <a href="#!email"><span class="white-text email"><%: this.Model.Email %></span></a>
             </div>
             </li>
         </LoggedInTemplate>

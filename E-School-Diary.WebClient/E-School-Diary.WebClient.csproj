@@ -454,12 +454,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CustomEventArgs\NavigationEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\RegisterTeacherEventArgs.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ViewModels\Common\NavigationViewModel.cs" />
     <Compile Include="Models\ViewModels\Register\RegisterTeacherViewModel.cs" />
     <Compile Include="Modules\MvpNinjectModule.cs" />
     <Compile Include="Modules\StudentsNinjectModule.cs" />
     <Compile Include="Presenters\Admin\Register\RegisterTeacherPresenter.cs" />
+    <Compile Include="Presenters\Common\NavigationPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register\Teacher.aspx.cs">
       <DependentUpon>Teacher.aspx</DependentUpon>
@@ -512,6 +515,7 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\Register\IRegisterTeacherView.cs" />
+    <Compile Include="Views\Common\INavigationView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
