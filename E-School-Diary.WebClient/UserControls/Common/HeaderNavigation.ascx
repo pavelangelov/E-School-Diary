@@ -4,14 +4,22 @@
     CodeBehind="HeaderNavigation.ascx.cs"
     Inherits="E_School_Diary.WebClient.UserControls.Common.HeaderNavigation" %>
 
-<nav class="light-blue lighten-1" role="navigation">
+<nav class="white" role="navigation">
     <div class="nav-wrapper">
-        <a id="logo-container" class="left brand-logo" href="/">E-School Diary</a>
+        <a id="logo-container" class="left brand-logo teal-text" href="/">E-School Diary</a>
 
         <asp:LoginView runat="server" ID="UsernameView" ViewStateMode="Enabled">
+            <AnonymousTemplate>
+                <div class="nav-wrapper">
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="#about" class="teal-text">About</a></li>
+                        <li><a href="#contact" class="teal-text">Contact</a></li>
+                    </ul>
+                </div>
+            </AnonymousTemplate>
             <LoggedInTemplate>
-                <a class="waves-effect waves-light btn-small right" title="Log off" runat="server" onserverclick="Unnamed_LoggingOut" onclick="logout()"><i class="material-icons">power_settings_new</i></a>
-                <span class="right">Hello, <%: Context.User.Identity.GetUserName()  %> !</span>
+                <a class="waves-effect waves-light btn-small right" title="Log off" runat="server" onserverclick="Unnamed_LoggingOut" onclick="logout()"><i class="material-icons teal-text">power_settings_new</i></a>
+                <span class="right teal-text">Hello, <%: Context.User.Identity.GetUserName()  %> </span>
             </LoggedInTemplate>
         </asp:LoginView>
     </div>
@@ -20,17 +28,15 @@
 <ul id="slide-out" class="side-nav">
     <asp:LoginView runat="server">
         <AnonymousTemplate>
-            <li><a runat="server" href="~/Account/Login">Login</a></li>
-            <li><a runat="server" href="~/About">About</a></li>
-            <li><a runat="server" href="~/Contact">Contact</a></li>
-            <li><a runat="server" href="~/TeachersList">Our Teachers</a></li>
+            <li><a runat="server" class="teal-text" href="~/Account/Login">Login</a></li>
+            <li><a runat="server" class="teal-text" href="~/TeachersList">Our Teachers</a></li>
         </AnonymousTemplate>
         <LoggedInTemplate>
             <div class="userView">
                 <a href="#!user">
                     <img class="circle user-image" src="/Images/admin.png"></a>
-                <a href="#!name"><span class="white-text name"><%: Context.User.Identity.GetUserName() %></span></a>
-                <a href="#!email"><span class="white-text email">email@gmail.com</span></a>
+                <a href="#!name"><span class="blue-text name"><%: Context.User.Identity.GetUserName() %></span></a>
+                <a href="#!email"><span class="blue-text email">email@gmail.com</span></a>
             </div>
             </li>
         </LoggedInTemplate>

@@ -200,6 +200,9 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Images\admin.png" />
     <Content Include="Images\default-user.png" />
+    <Content Include="Images\School-Background-Bottom.jpg" />
+    <Content Include="Images\School-Background-Top.jpg" />
+    <Content Include="Images\School-Background-Middle.jpg" />
     <Content Include="Images\side-nav-bacground.jpg" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -263,6 +266,7 @@
     <Content Include="Register\Teacher.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\materialize\materialize.js" />

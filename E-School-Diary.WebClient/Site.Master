@@ -49,21 +49,38 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
-        </div>
-    <script>
-        $(".button-collapse").sideNav();
+            
+    <footer class="page-footer teal">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Company Bio</h5>
+                    <p class="grey-text text-lighten-4">This is my course project for the <a href="https://telerikacademy.com" class="white-text">Academy Course - Web Apps with ASP.NET Web Forms.</a> </p>
 
-        $('.button-collapse').sideNav({
-            menuWidth: 350, // Default is 300
-            edge: 'left', // Choose the horizontal origin
-            closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-            draggable: true // Choose whether you can drag to open on touch screens
-        }
-  );
-    </script>
+
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Used libs and technologies</h5>
+                    <ul>
+                        <li><a class="white-text" href="https://www.asp.net/web-forms">ASP.NET Web Forms</a></li>
+                        <li><a class="white-text" href="https://www.microsoft.com/en-us/sql-server/sql-server-2016">SQL Server</a></li>
+                        <li><a class="white-text" href="http://materializecss.com/">Materialize</a></li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Connect with me</h5>
+                    <ul>
+                        <li><a class="white-text" href="https://www.linkedin.com/in/pavel-angelov-075b7a11a">LinkedIn</a></li>
+                        <li><a class="white-text" href="https://github.com/pavelangelov">Github</a></li>
+                        <li><a class="white-text" href="https://telerikacademy.com/Users/p_a_v_el">Telerik Academy</a></li>
+                        <li><a class="white-text" href="https://www.facebook.com/pavel.angelov.35">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+        </div>
+    <script src="/Scripts/index.js"></script>
     </form>
 </body>
 </html>
