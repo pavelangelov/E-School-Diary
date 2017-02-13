@@ -6,12 +6,12 @@ using Microsoft.AspNet.Identity.Owin;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
-using E_School_Diary.Models.Enums;
 using E_School_Diary.Utils.DTOs.RegisterDTOs;
 using E_School_Diary.WebClient.Models.CustomEventArgs;
 using E_School_Diary.WebClient.Models.ViewModels.Register;
 using E_School_Diary.WebClient.Presenters.Admin.Register;
 using E_School_Diary.WebClient.Views.Admin.Register;
+using E_School_Diary.Data.DbData.Enums;
 
 namespace E_School_Diary.WebClient.UserControls.Registration
 {

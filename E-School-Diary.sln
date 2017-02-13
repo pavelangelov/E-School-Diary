@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-School-Diary.ConsoleClien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-School-Diary.Utils", "E-School-Diary.Utils\E-School-Diary.Utils.csproj", "{57D375FE-3837-4749-BD5E-583B75F306F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-School-Diary.Models", "E-School-Diary.Models\E-School-Diary.Models.csproj", "{5130B14A-E43D-4410-A8AF-63C23043540B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-School-Diary.Data", "E-School-Diary.Data\E-School-Diary.Data.csproj", "{7A2D1EC7-70F4-44F9-B116-BA3897DD2F5C}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{57D375FE-3837-4749-BD5E-583B75F306F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57D375FE-3837-4749-BD5E-583B75F306F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57D375FE-3837-4749-BD5E-583B75F306F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5130B14A-E43D-4410-A8AF-63C23043540B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5130B14A-E43D-4410-A8AF-63C23043540B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5130B14A-E43D-4410-A8AF-63C23043540B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5130B14A-E43D-4410-A8AF-63C23043540B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A2D1EC7-70F4-44F9-B116-BA3897DD2F5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7A2D1EC7-70F4-44F9-B116-BA3897DD2F5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A2D1EC7-70F4-44F9-B116-BA3897DD2F5C}.Release|Any CPU.ActiveCfg = Release|Any CPU

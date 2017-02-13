@@ -51,12 +51,6 @@
     <Compile Include="DTOs\RegisterDTOs\RegisterTeacherDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\E-School-Diary.Models\E-School-Diary.Models.csproj">
-      <Project>{5130B14A-E43D-4410-A8AF-63C23043540B}</Project>
-      <Name>E-School-Diary.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

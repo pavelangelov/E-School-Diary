@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using E_School_Diary.Data.DbData;
+
+using E_School_Diary.Data.DB.Contracts;
+using E_School_Diary.Data.DB;
 
 namespace E_School_Diary.Data.Repositories.Contracts
 {
@@ -16,18 +15,18 @@ namespace E_School_Diary.Data.Repositories.Contracts
             this.dbContext = dbContext;
         }
 
-        public void Add(AppUser entity)
+        public void Add(AspNetUsers1 entity)
         {
-            this.dbContext.AppUsers.Add(entity);
+            this.dbContext.AspNetUsers1.Add(entity);
         }
 
-        public IQueryable<AppUser> GetAll()
+        public IQueryable<AspNetUsers1> GetAll()
         {
             //var teachers = this.dbContext.AppUsers
             //                                .Where(x => x.AspNetUserRoles.Any(r => r.RoleId == "2"));
             var teachers = from role in this.dbContext.AspNetRoles
                            from userRoles in role.AspNetUserRoles
-                           join user in dbContext.AppUsers on userRoles.UserId equals user.Id
+                           join user in dbContext.AspNetUsers1 on userRoles.UserId equals user.Id
                            where role.Name == "Teacher"
                            select user;
                                  

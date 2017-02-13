@@ -1,4 +1,4 @@
-namespace E_School_Diary.Data.DbData
+namespace E_School_Diary.Data.DB
 {
     using System;
     using System.Collections.Generic;

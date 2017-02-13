@@ -1,4 +1,4 @@
-namespace E_School_Diary.Data.DbData
+namespace E_School_Diary.Data.DB
 {
     using System;
     using System.Collections.Generic;
@@ -6,20 +6,23 @@ namespace E_School_Diary.Data.DbData
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class AppUser
+    public partial class AspNetUsers1
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AppUser()
+        public AspNetUsers1()
         {
-            AppUsers1 = new HashSet<AppUser>();
-            AppUsers11 = new HashSet<AppUser>();
-            AppUsers12 = new HashSet<AppUser>();
             AspNetUserClaims = new HashSet<AspNetUserClaim>();
+            AspNetUserClaims1 = new HashSet<AspNetUserClaims1>();
             AspNetUserLogins = new HashSet<AspNetUserLogin>();
+            AspNetUserLogins1 = new HashSet<AspNetUserLogins1>();
             AspNetUserRoles = new HashSet<AspNetUserRole>();
+            AspNetUsers11 = new HashSet<AspNetUsers1>();
+            AspNetUsers111 = new HashSet<AspNetUsers1>();
+            AspNetUsers112 = new HashSet<AspNetUsers1>();
             Lectures = new HashSet<Lecture>();
             Marks = new HashSet<Mark>();
             Messages = new HashSet<Message>();
+            AspNetRoles1 = new HashSet<AspNetRoles1>();
         }
 
         public string Id { get; set; }
@@ -75,35 +78,41 @@ namespace E_School_Diary.Data.DbData
         public string UserName { get; set; }
 
         [StringLength(128)]
-        public string AppUser_Id { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AppUser> AppUsers1 { get; set; }
-
-        public virtual AppUser AppUser1 { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AppUser> AppUsers11 { get; set; }
-
-        public virtual AppUser AppUser2 { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AppUser> AppUsers12 { get; set; }
-
-        public virtual AppUser AppUser3 { get; set; }
-
-        public virtual StudentClass StudentClass { get; set; }
+        public string AspNetUser_Id { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspNetUserClaims1> AspNetUserClaims1 { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserLogin> AspNetUserLogins { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspNetUserLogins1> AspNetUserLogins1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserRole> AspNetUserRoles { get; set; }
 
         public virtual AspNetUser AspNetUser { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspNetUsers1> AspNetUsers11 { get; set; }
+
+        public virtual AspNetUsers1 AspNetUsers12 { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspNetUsers1> AspNetUsers111 { get; set; }
+
+        public virtual AspNetUsers1 AspNetUsers13 { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspNetUsers1> AspNetUsers112 { get; set; }
+
+        public virtual AspNetUsers1 AspNetUsers14 { get; set; }
+
+        public virtual StudentClass StudentClass { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Lecture> Lectures { get; set; }
@@ -113,5 +122,8 @@ namespace E_School_Diary.Data.DbData
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Message> Messages { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspNetRoles1> AspNetRoles1 { get; set; }
     }
 }

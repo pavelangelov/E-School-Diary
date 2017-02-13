@@ -476,6 +476,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702130843119_InitialCreate.cs" />
+    <Compile Include="Migrations\201702130843119_InitialCreate.Designer.cs">
+      <DependentUpon>201702130843119_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702130957506_ChangedAppUser.cs" />
+    <Compile Include="Migrations\201702130957506_ChangedAppUser.Designer.cs">
+      <DependentUpon>201702130957506_ChangedAppUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CustomEventArgs\Admin\AddNewClassEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\NavigationEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\RegisterStudentPageLoadEventArgs.cs" />
@@ -621,14 +630,18 @@
       <Project>{7A2D1EC7-70F4-44F9-B116-BA3897DD2F5C}</Project>
       <Name>E-School-Diary.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\E-School-Diary.Models\E-School-Diary.Models.csproj">
-      <Project>{5130B14A-E43D-4410-A8AF-63C23043540B}</Project>
-      <Name>E-School-Diary.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\E-School-Diary.Utils\E-School-Diary.Utils.csproj">
       <Project>{57D375FE-3837-4749-BD5E-583B75F306F3}</Project>
       <Name>E-School-Diary.Utils</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702130843119_InitialCreate.resx">
+      <DependentUpon>201702130843119_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702130957506_ChangedAppUser.resx">
+      <DependentUpon>201702130957506_ChangedAppUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

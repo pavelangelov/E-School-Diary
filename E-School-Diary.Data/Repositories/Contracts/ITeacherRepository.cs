@@ -1,17 +1,13 @@
-﻿using E_School_Diary.Data.DbData;
-using System;
-using System.Collections.Generic;
+﻿using E_School_Diary.Data.DB;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E_School_Diary.Data.Repositories.Contracts
 {
     public interface ITeacherRepository
     {
-        IQueryable<AppUser> GetAll();
+        IQueryable<AspNetUsers1> GetAll();
 
-        void Add(AppUser entity);
+        void Add(AspNetUsers1 entity);
 
         int Save();
     }

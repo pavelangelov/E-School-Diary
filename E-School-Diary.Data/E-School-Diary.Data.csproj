@@ -38,6 +38,14 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -51,19 +59,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IDatabaseContext.cs" />
-    <Compile Include="DbData\AppUser.cs" />
-    <Compile Include="DbData\AspNetRole.cs" />
-    <Compile Include="DbData\AspNetUser.cs" />
-    <Compile Include="DbData\AspNetUserClaim.cs" />
-    <Compile Include="DbData\AspNetUserLogin.cs" />
-    <Compile Include="DbData\AspNetUserRole.cs" />
-    <Compile Include="DbData\C__MigrationHistory.cs" />
-    <Compile Include="DbData\DatabaseContext.cs" />
-    <Compile Include="DbData\Lecture.cs" />
-    <Compile Include="DbData\Mark.cs" />
-    <Compile Include="DbData\Message.cs" />
-    <Compile Include="DbData\StudentClass.cs" />
+    <Compile Include="AspNetRole.cs" />
+    <Compile Include="AspNetUser.cs" />
+    <Compile Include="AspNetUserClaim.cs" />
+    <Compile Include="AspNetUserLogin.cs" />
+    <Compile Include="C__MigrationHistory.cs" />
+    <Compile Include="DatabaseContext.cs" />
+    <Compile Include="DbData\Contracts\IAdmin.cs" />
+    <Compile Include="DbData\Contracts\IIdentifiable.cs" />
+    <Compile Include="DbData\Contracts\ILecture.cs" />
+    <Compile Include="DbData\Contracts\IMark.cs" />
+    <Compile Include="DbData\Contracts\IMessage.cs" />
+    <Compile Include="DbData\Contracts\IParent.cs" />
+    <Compile Include="DbData\Contracts\IPerson.cs" />
+    <Compile Include="DbData\Contracts\IStudent.cs" />
+    <Compile Include="DbData\Contracts\IStudentClass.cs" />
+    <Compile Include="DbData\Contracts\ITeacher.cs" />
+    <Compile Include="DbData\Enums\LectureStatus.cs" />
+    <Compile Include="DbData\Enums\Subject.cs" />
+    <Compile Include="DbData\Enums\UserTypes.cs" />
+    <Compile Include="DB\AspNetRole.cs" />
+    <Compile Include="DB\AspNetRoles1.cs" />
+    <Compile Include="DB\AspNetUser.cs" />
+    <Compile Include="DB\AspNetUserClaim.cs" />
+    <Compile Include="DB\AspNetUserClaims1.cs" />
+    <Compile Include="DB\AspNetUserLogin.cs" />
+    <Compile Include="DB\AspNetUserLogins1.cs" />
+    <Compile Include="DB\AspNetUserRole.cs" />
+    <Compile Include="DB\AspNetUsers1.cs" />
+    <Compile Include="DB\C__MigrationHistory.cs" />
+    <Compile Include="DB\Lecture.cs" />
+    <Compile Include="DB\Mark.cs" />
+    <Compile Include="DB\Message.cs" />
+    <Compile Include="DB\MyDbContext.cs" />
+    <Compile Include="DB\StudentClass.cs" />
+    <Compile Include="DB\Contracts\IDatabaseContext.cs" />
+    <Compile Include="DbData\Models\Lecture.cs" />
+    <Compile Include="DbData\Models\Mark.cs" />
+    <Compile Include="DbData\Models\Message.cs" />
+    <Compile Include="DbData\Models\StudentClass.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Contracts\IStudentClassRepository.cs" />
     <Compile Include="Repositories\Contracts\IStudentRepository.cs" />
@@ -77,15 +112,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\E-School-Diary.Models\E-School-Diary.Models.csproj">
-      <Project>{5130B14A-E43D-4410-A8AF-63C23043540B}</Project>
-      <Name>E-School-Diary.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\E-School-Diary.Utils\E-School-Diary.Utils.csproj">
       <Project>{57D375FE-3837-4749-BD5E-583B75F306F3}</Project>
       <Name>E-School-Diary.Utils</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,4 +1,4 @@
-namespace E_School_Diary.Data.DbData
+namespace E_School_Diary.Data.DB
 {
     using System;
     using System.Collections.Generic;
@@ -6,10 +6,12 @@ namespace E_School_Diary.Data.DbData
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class AspNetUserClaim
+    public partial class AspNetUserClaims1
     {
         public int Id { get; set; }
 
+        [Required]
+        [StringLength(128)]
         public string UserId { get; set; }
 
         public string ClaimType { get; set; }
@@ -17,8 +19,8 @@ namespace E_School_Diary.Data.DbData
         public string ClaimValue { get; set; }
 
         [StringLength(128)]
-        public string AppUser_Id { get; set; }
+        public string AspNetUser_Id { get; set; }
 
-        public virtual AppUser AppUser { get; set; }
+        public virtual AspNetUsers1 AspNetUsers1 { get; set; }
     }
 }

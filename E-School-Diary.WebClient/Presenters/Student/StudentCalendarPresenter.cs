@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 using WebFormsMvp;
 
-using E_School_Diary.Models.Enums;
 using E_School_Diary.Utils.DTOs.Common;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Student;
 using E_School_Diary.WebClient.Views.Student;
@@ -43,7 +41,7 @@ namespace E_School_Diary.WebClient.Presenters.Student
             this.View.Model.PastLectures = lectures
                         .Where(l => l.Start.Value.Year == currentDate.Year &&
                                l.Start.Value.DayOfYear == currentDate.DayOfYear)
-                        .Where(p => p.Status == LectureStatus.Past)
+                        .Where(p => p.Status == "Past")
                         .OrderBy(x => x.Start)
                         .ToList();
         }
@@ -53,7 +51,7 @@ namespace E_School_Diary.WebClient.Presenters.Student
             this.View.Model.AheadLectures = lectures
                         .Where(l => l.Start.Value.Year == currentDate.Year &&
                                l.Start.Value.DayOfYear == currentDate.DayOfYear)
-                        .Where(p => p.Status == LectureStatus.Ahead)
+                        .Where(p => p.Status == "Ahead")
                         .OrderBy(x => x.Start)
                         .ToList();
         }
@@ -63,7 +61,7 @@ namespace E_School_Diary.WebClient.Presenters.Student
             this.View.Model.CanceledLectures = lectures
                         .Where(l => l.Start.Value.Year == currentDate.Year &&
                                l.Start.Value.DayOfYear == currentDate.DayOfYear)
-                        .Where(p => p.Status == LectureStatus.Canceled)
+                        .Where(p => p.Status == "Canceled")
                         .OrderBy(x => x.Start)
                         .ToList();
         }

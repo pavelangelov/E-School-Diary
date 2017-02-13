@@ -1,4 +1,4 @@
-namespace E_School_Diary.Data.DbData
+namespace E_School_Diary.Data.DB
 {
     using System;
     using System.Collections.Generic;
@@ -21,8 +21,8 @@ namespace E_School_Diary.Data.DbData
         public string UserId { get; set; }
 
         [StringLength(128)]
-        public string AppUser_Id { get; set; }
+        public string AspNetUser_Id { get; set; }
 
-        public virtual AppUser AppUser { get; set; }
+        public virtual AspNetUsers1 AspNetUsers1 { get; set; }
     }
 }

@@ -1,13 +1,12 @@
-﻿using E_School_Diary.Models.Enums;
-using E_School_Diary.Utils.DTOs.Common;
-using System;
+﻿using System.Linq;
 using System.Collections.Generic;
-using System.Linq;
+
+using E_School_Diary.Utils.DTOs.Common;
 
 namespace E_School_Diary.WebClient.Models.ViewModels.Student
 {
     public class StudentMarksViewModel
     {
-        public IEnumerable<IGrouping<Subject, MarkDTO>> Marks { get; set; }
+        public IEnumerable<IGrouping<string, MarkDTO>> Marks { get; set; }
     }
 }

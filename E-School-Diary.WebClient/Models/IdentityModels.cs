@@ -4,12 +4,12 @@ using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using E_School_Diary.Models.Models;
+using E_School_Diary.Data;
 
 namespace E_School_Diary.WebClient.Models
 {
     // You can add User data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
-    public class ApplicationUser : AppUser
+    public class ApplicationUser : AspNetUser
     {
         public ApplicationUser()
         {

@@ -1,4 +1,5 @@
-﻿using E_School_Diary.Data.DbData;
+﻿using E_School_Diary.Data.DB;
+using E_School_Diary.Data.DbData;
 using E_School_Diary.Data.Repositories.Contracts;
 using E_School_Diary.WebClient.Views.Admin;
 using System;
