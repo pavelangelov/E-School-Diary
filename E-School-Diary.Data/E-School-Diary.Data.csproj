@@ -73,6 +73,51 @@
     <Compile Include="CustomModels\Enums\Subject.cs" />
     <Compile Include="CustomModels\Enums\UserTypes.cs" />
     <Compile Include="CustomModels\Models\User.cs" />
+    <Compile Include="EF-DataSource\AspNetRole.cs">
+      <DependentUpon>SchoolDiaryDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF-DataSource\AspNetUser.cs">
+      <DependentUpon>SchoolDiaryDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF-DataSource\AspNetUserClaim.cs">
+      <DependentUpon>SchoolDiaryDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF-DataSource\AspNetUserLogin.cs">
+      <DependentUpon>SchoolDiaryDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF-DataSource\C__MigrationHistory.cs">
+      <DependentUpon>SchoolDiaryDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF-DataSource\Lecture.cs">
+      <DependentUpon>SchoolDiaryDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF-DataSource\Mark.cs">
+      <DependentUpon>SchoolDiaryDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF-DataSource\Message.cs">
+      <DependentUpon>SchoolDiaryDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF-DataSource\SchoolDiaryDbContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchoolDiaryDbContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF-DataSource\SchoolDiaryDbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchoolDiaryDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF-DataSource\SchoolDiaryDbContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchoolDiaryDbContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF-DataSource\StudentClass.cs">
+      <DependentUpon>SchoolDiaryDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF-DataSource\User.cs">
+      <DependentUpon>SchoolDiaryDbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="IDatabaseContext.cs" />
     <Compile Include="CustomModels\Models\Lecture.cs" />
     <Compile Include="CustomModels\Models\Mark.cs" />
@@ -88,6 +133,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="EF-DataSource\SchoolDiaryDbContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SchoolDiaryDbContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF-DataSource\SchoolDiaryDbContext.edmx.diagram">
+      <DependentUpon>SchoolDiaryDbContext.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -96,7 +148,21 @@
       <Name>E-School-Diary.Utils</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="EF-DataSource\SchoolDiaryDbContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SchoolDiaryDbContext.edmx</DependentUpon>
+      <LastGenOutput>SchoolDiaryDbContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF-DataSource\SchoolDiaryDbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SchoolDiaryDbContext.edmx</DependentUpon>
+      <LastGenOutput>SchoolDiaryDbContext.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
