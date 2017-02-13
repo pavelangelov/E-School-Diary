@@ -5,7 +5,7 @@ using Microsoft.AspNet.Identity;
 
 using WebFormsMvp;
 
-using E_School_Diary.Data.DbData.Enums;
+using E_School_Diary.Data.CustomModels.Enums;
 using E_School_Diary.WebClient.Models;
 using E_School_Diary.WebClient.Views.Admin.Register;
 using E_School_Diary.WebClient.Models.CustomEventArgs;

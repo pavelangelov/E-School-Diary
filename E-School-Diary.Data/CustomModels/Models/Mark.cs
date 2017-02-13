@@ -1,0 +1,40 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+
+using E_School_Diary.Data.CustomModels.Contracts;
+using E_School_Diary.Data.CustomModels.Enums;
+using E_School_Diary.Utils;
+
+namespace E_School_Diary.Data.CustomModels.Models
+{
+    public partial class Mark : IMark, IIdentifiable
+    {
+        public Mark()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
+
+        public Mark(string studentId, Subject subject, double value)
+            : this()
+        {
+            this.StudentId = studentId;
+            this.Subject = Subject;
+            this.Value = value;
+        }
+
+        [StringLength(128)]
+        public string Id { get; set; }
+
+        [Required]
+        [StringLength(128)]
+        public string StudentId { get; set; }
+
+        public virtual User Student { get; set; }
+
+        public Subject Subject { get; set; }
+
+        [Required]
+        [Range(Constants.MarkMinValue, Constants.MarkMaxValue, ErrorMessage = Constants.MarkValueErrorMessage)]
+        public double Value { get; set; }
+    }
+}

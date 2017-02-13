@@ -1,0 +1,56 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+
+using E_School_Diary.Data.CustomModels.Enums;
+using E_School_Diary.Data.CustomModels.Contracts;
+using E_School_Diary.Utils;
+
+namespace E_School_Diary.Data.CustomModels.Models
+{
+    public partial class Lecture : ILecture, IIdentifiable
+    {
+        public Lecture()
+        {
+            this.Id = Guid.NewGuid().ToString();
+            this.Status = LectureStatus.Ahead;
+        }
+
+        public Lecture(string teacherId, string classId, string title, DateTime start, DateTime end, Subject subject)
+            : this()
+        {
+            this.TeacherId = teacherId;
+            this.StudentClassId = classId;
+            this.Title = title;
+            this.Start = start;
+            this.End = end;
+            this.Subject = subject;
+        }
+
+        [StringLength(128)]
+        public string Id { get; set; }
+
+        public DateTime? End { get; set; }
+
+        public DateTime? Start { get; set; }
+
+        public LectureStatus Status { get; set; }
+
+        [StringLength(128)]
+        public string StudentClassId { get; set; }
+
+        public virtual StudentClass StudentClass { get; set; }
+
+        public Subject Subject { get; set; }
+
+        [StringLength(128)]
+        public string TeacherId { get; set; }
+
+        public virtual User Teacher { get; set; }
+
+        [Required]
+        [MinLength(Constants.LectureTitleMinLength, ErrorMessage = Constants.LectureTitleErrorMessage)]
+        [MaxLength(Constants.LectureTitleMaxLength, ErrorMessage = Constants.LectureTitleErrorMessage)]
+        public string Title { get; set; }
+
+    }
+}

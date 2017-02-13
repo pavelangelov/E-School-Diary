@@ -38,24 +38,24 @@ namespace E_School_Diary.WebClient.Presenters.Admin.Register
 
         private void GetStudentClasses()
         {
-            var classes = this.classesRepository.GetAll()
-                                                .ToList()
-                                                .Select(x => new Tuple<string, string>(x.Name, x.Id))
-                                                .OrderBy(x => x.Item1)
-                                                .ToList();
+            //var classes = this.classesRepository.GetAll()
+            //                                    .ToList()
+            //                                    .Select(x => new Tuple<string, string>(x.Name, x.Id))
+            //                                    .OrderBy(x => x.Item1)
+            //                                    .ToList();
 
 
-            this.View.Model.Classes = classes;
+            //this.View.Model.Classes = classes;
         }
 
         private void GetTeachers()
         {
-            var teachers = this.teacherRepository.GetAll()
-                                    .ToList()
-                                    .Select(x => new Tuple<string, string>(x.FirstName + " " + x.LastName, x.Id))
-                                    .ToList();
+            //var teachers = this.teacherRepository.GetAll()
+            //                        .ToList()
+            //                        .Select(x => new Tuple<string, string>(x.FirstName + " " + x.LastName, x.Id))
+            //                        .ToList();
 
-            this.View.Model.Teachers = teachers;
+            //this.View.Model.Teachers = teachers;
         }
 
         private void View_SubmitClick(object sender, RegisterStudentSubmitEventArgs e)
