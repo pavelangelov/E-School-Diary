@@ -1,4 +1,6 @@
-﻿using E_School_Diary.Data.DB.Contracts;
+﻿using System.Linq;
+
+using E_School_Diary.Data.EF_DataSource;
 using E_School_Diary.Data.Repositories.Contracts;
 
 namespace E_School_Diary.Data.Repositories
@@ -12,17 +14,17 @@ namespace E_School_Diary.Data.Repositories
             this.dbContext = dbContext;
         }
 
-        //public IQueryable<StudentClass> GetAll()
-        //{
-        //    var classes = this.dbContext.StudentClasses;
+        public IQueryable<StudentClass> GetAll()
+        {
+            var classes = this.dbContext.StudentClasses;
 
-        //    return classes;
-        //}
+            return classes;
+        }
 
-        //public void Add(StudentClass entity)
-        //{
-        //    this.dbContext.StudentClasses.Add(entity);
-        //}
+        public void Add(StudentClass entity)
+        {
+            this.dbContext.StudentClasses.Add(entity);
+        }
 
         public int Save()
         {

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using System.Linq;
 
-using E_School_Diary.Data.DB.Contracts;
+using E_School_Diary.Data.EF_DataSource;
 
 namespace E_School_Diary.Data.Repositories.Contracts
 {
@@ -13,28 +13,28 @@ namespace E_School_Diary.Data.Repositories.Contracts
             this.dbContext = dbContext;
         }
 
-        //public void Add(AspNetUsers1 entity)
-        //{
-        //    this.dbContext.AspNetUsers1.Add(entity);
-        //}
+        public void Add(User entity)
+        {
+            this.dbContext.Users.Add(entity);
+        }
 
-        //public IQueryable<AspNetUsers1> GetAll()
-        //{
-        //    //var teachers = this.dbContext.AppUsers
-        //    //                                .Where(x => x.AspNetUserRoles.Any(r => r.RoleId == "2"));
-        //    var teachers = from role in this.dbContext.AspNetRoles
-        //                   from userRoles in role.AspNetUserRoles
-        //                   join user in dbContext.AspNetUsers1 on userRoles.UserId equals user.Id
-        //                   where role.Name == "Teacher"
-        //                   select user;
-                                 
+        public IQueryable<User> GetAll()
+        {
+            var teachers = this.dbContext.Users
+                                            .Where(x => x.AspNetRoles.Any(r => r.Name == "Teacher"));
+            //var teachers = from role in this.dbContext.AspNetRoles
+            //               from userRoles in role.AspNetUserRoles
+            //               join user in dbContext.Users on userRoles.UserId equals user.Id
+            //               where role.Name == "Teacher"
+            //               select user;
 
-        //    return teachers;
-        //}
+
+            return teachers;
+        }
 
         public int Save()
         {
-            throw new NotImplementedException();
+            return dbContext.Save();
         }
     }
 }

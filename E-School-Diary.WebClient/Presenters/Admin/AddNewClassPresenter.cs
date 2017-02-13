@@ -1,4 +1,4 @@
-﻿using E_School_Diary.Data.DB;
+﻿using E_School_Diary.Data.EF_DataSource;
 using E_School_Diary.Data.Repositories.Contracts;
 using E_School_Diary.WebClient.Views.Admin;
 using System;
@@ -23,25 +23,25 @@ namespace E_School_Diary.WebClient.Presenters.Admin
 
         private void View_CreateClassClick(object sender, Models.CustomEventArgs.Admin.AddNewClassEventArgs e)
         {
-            //var stClass = new StudentClass() { Name = e.ClassName, Id = Guid.NewGuid().ToString() };
-            //int changes = 0;
-            //try
-            //{
-            //    this.stClassRepository.Add(stClass);
-            //    changes = this.stClassRepository.Save();
-            //}
-            //catch (Exception ex)
-            //{
-            //    this.View.Model.IsSuccess = false;
-            //    this.View.Model.ErrorMessage = ex.Message;
-            //    return;
-            //}
+            var stClass = new StudentClass() { Name = e.ClassName, Id = Guid.NewGuid().ToString() };
+            int changes = 0;
+            try
+            {
+                this.stClassRepository.Add(stClass);
+                changes = this.stClassRepository.Save();
+            }
+            catch (Exception ex)
+            {
+                this.View.Model.IsSuccess = false;
+                this.View.Model.ErrorMessage = ex.Message;
+                return;
+            }
 
-            //if (changes <= 0)
-            //{
-            //    this.View.Model.IsSuccess = false;
-            //    this.View.Model.ErrorMessage = "Something is wrong!";
-            //}
+            if (changes <= 0)
+            {
+                this.View.Model.IsSuccess = false;
+                this.View.Model.ErrorMessage = "Something is wrong!";
+            }
         }
     }
 }

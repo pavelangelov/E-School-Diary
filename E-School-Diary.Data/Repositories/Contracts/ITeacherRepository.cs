@@ -1,13 +1,14 @@
-﻿
-using System.Linq;
+﻿using System.Linq;
+
+using E_School_Diary.Data.EF_DataSource;
 
 namespace E_School_Diary.Data.Repositories.Contracts
 {
     public interface ITeacherRepository
     {
-        //IQueryable<AspNetUsers1> GetAll();
+        IQueryable<User> GetAll();
 
-        //void Add(AspNetUsers1 entity);
+        void Add(User entity);
 
         int Save();
     }

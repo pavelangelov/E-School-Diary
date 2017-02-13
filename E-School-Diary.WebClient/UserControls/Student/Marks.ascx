@@ -5,7 +5,7 @@
     Inherits="E_School_Diary.WebClient.UserControls.Student.Marks" %>
 
 <%@ Import Namespace="E_School_Diary.Utils.DTOs.Common" %>
-<%@ Import Namespace="E_School_Diary.Data.DbData.Enums" %>
+<%@ Import Namespace="E_School_Diary.Data.CustomModels.Enums" %>
 
 <h3>Marks for student: <span class="teal-text"><%: Context.User.Identity.GetUserName() %></span></h3>
 <ul>
