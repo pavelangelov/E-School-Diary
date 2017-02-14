@@ -5,15 +5,15 @@ namespace E_School_Diary.WebClient.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<E_School_Diary.WebClient.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "E_School_Diary.WebClient.Models.ApplicationDbContext";
+            AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(E_School_Diary.WebClient.Models.ApplicationDbContext context)
+        protected override void Seed(Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

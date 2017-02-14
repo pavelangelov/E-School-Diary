@@ -69,5 +69,7 @@ namespace E_School_Diary.Data.CustomModels.Models
 
         public virtual ICollection<Message> Messages { get; set; }
 
+        public virtual ICollection<StudentClass> StudentClasses { get; set; }
+
     }
 }
