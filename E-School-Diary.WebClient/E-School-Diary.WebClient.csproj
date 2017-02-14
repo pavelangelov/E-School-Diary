@@ -480,6 +480,10 @@
     <Compile Include="Migrations\201702141555529_Init.Designer.cs">
       <DependentUpon>201702141555529_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702141612040_AddUbiqueStudentClassName.cs" />
+    <Compile Include="Migrations\201702141612040_AddUbiqueStudentClassName.Designer.cs">
+      <DependentUpon>201702141612040_AddUbiqueStudentClassName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CustomEventArgs\Admin\AddNewClassEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\NavigationEventArgs.cs" />
@@ -634,6 +638,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201702141555529_Init.resx">
       <DependentUpon>201702141555529_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702141612040_AddUbiqueStudentClassName.resx">
+      <DependentUpon>201702141612040_AddUbiqueStudentClassName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

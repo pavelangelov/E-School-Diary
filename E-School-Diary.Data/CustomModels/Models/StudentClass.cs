@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 using E_School_Diary.Data.CustomModels.Contracts;
 using E_School_Diary.Utils;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace E_School_Diary.Data.CustomModels.Models
 {
@@ -26,12 +27,13 @@ namespace E_School_Diary.Data.CustomModels.Models
         public string Id { get; set; }
 
         [Required]
+        [Index(IsUnique = true)]
         [MinLength(Constants.ClassNameMinLength, ErrorMessage = Constants.StudentClassNameErrorMessage)]
         [MaxLength(Constants.ClassNameMaxLength, ErrorMessage = Constants.StudentClassNameErrorMessage)]
         public string Name { get; set; }
-        
+
         public virtual ICollection<User> Students { get; set; }
-        
+
         public virtual ICollection<Lecture> Lectures { get; set; }
     }
 }
