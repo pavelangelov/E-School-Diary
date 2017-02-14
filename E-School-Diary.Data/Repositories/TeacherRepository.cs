@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 
-using E_School_Diary.Data.EF_DataSource;
+using E_School_Diary.Data.CustomModels.Models;
+using E_School_Diary.Data.CustomModels.Enums;
 
 namespace E_School_Diary.Data.Repositories.Contracts
 {
@@ -20,8 +21,7 @@ namespace E_School_Diary.Data.Repositories.Contracts
 
         public IQueryable<User> GetAll()
         {
-            var teachers = this.dbContext.Users
-                                            .Where(x => x.AspNetRoles.Any(r => r.Name == "Teacher"));
+            var teachers = this.dbContext.Users.Where(x => x.UserType == UserTypes.Teacher);
             //var teachers = from role in this.dbContext.AspNetRoles
             //               from userRoles in role.AspNetUserRoles
             //               join user in dbContext.Users on userRoles.UserId equals user.Id

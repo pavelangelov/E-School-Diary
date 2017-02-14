@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-using E_School_Diary.Data.EF_DataSource;
+using E_School_Diary.Data.CustomModels.Models;
 
 namespace E_School_Diary.Data.Repositories.Contracts
 {

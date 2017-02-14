@@ -1,4 +1,4 @@
-﻿using E_School_Diary.Data.EF_DataSource;
+﻿using E_School_Diary.Data.CustomModels.Models;
 using E_School_Diary.Data.Repositories.Contracts;
 using E_School_Diary.WebClient.Views.Admin;
 using System;

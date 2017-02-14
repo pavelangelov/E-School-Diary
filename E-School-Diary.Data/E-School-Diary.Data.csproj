@@ -118,6 +118,7 @@
     <Compile Include="EF-DataSource\User.cs">
       <DependentUpon>SchoolDiaryDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="ESchoolDiaryDbContext.cs" />
     <Compile Include="IDatabaseContext.cs" />
     <Compile Include="CustomModels\Models\Lecture.cs" />
     <Compile Include="CustomModels\Models\Mark.cs" />

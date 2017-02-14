@@ -13,7 +13,7 @@ namespace E_School_Diary.Data.EF_DataSource
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ESchoolDiaryEntities : DbContext, IDatabaseContext
+    public partial class ESchoolDiaryEntities : DbContext
     {
         public ESchoolDiaryEntities()
             : base("name=ESchoolDiaryEntities")
