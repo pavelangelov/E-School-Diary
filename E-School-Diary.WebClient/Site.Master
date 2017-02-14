@@ -4,7 +4,7 @@
     CodeBehind="Site.master.cs"
     Inherits="E_School_Diary.WebClient.SiteMaster" %>
 
-<%@ Register Src="~/UserControls/Common/HeaderNavigation.ascx" TagPrefix="uc" TagName="navigation" %>
+<%@ Register Src="~/UserControls/Common/Navigations.ascx" TagPrefix="uc" TagName="navigation" %>
 
 <!DOCTYPE html>
 

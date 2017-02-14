@@ -313,7 +313,7 @@
     <Content Include="UserControls\Registration\Common.ascx" />
     <Content Include="UserControls\Registration\RegisterStudent.ascx" />
     <Content Include="UserControls\Registration\RegisterTeacher.ascx" />
-    <Content Include="UserControls\Common\HeaderNavigation.ascx" />
+    <Content Include="UserControls\Common\Navigations.ascx" />
     <Content Include="UserControls\Student\Calendar.ascx" />
     <Content Include="UserControls\Student\Marks.ascx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -594,12 +594,12 @@
     <Compile Include="UserControls\Registration\RegisterTeacher.ascx.designer.cs">
       <DependentUpon>RegisterTeacher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Common\HeaderNavigation.ascx.cs">
-      <DependentUpon>HeaderNavigation.ascx</DependentUpon>
+    <Compile Include="UserControls\Common\Navigations.ascx.cs">
+      <DependentUpon>Navigations.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserControls\Common\HeaderNavigation.ascx.designer.cs">
-      <DependentUpon>HeaderNavigation.ascx</DependentUpon>
+    <Compile Include="UserControls\Common\Navigations.ascx.designer.cs">
+      <DependentUpon>Navigations.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Student\Calendar.ascx.cs">
       <DependentUpon>Calendar.ascx</DependentUpon>

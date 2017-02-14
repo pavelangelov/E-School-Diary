@@ -1,8 +1,8 @@
 ﻿<%@ Control
     Language="C#"
     AutoEventWireup="true"
-    CodeBehind="HeaderNavigation.ascx.cs"
-    Inherits="E_School_Diary.WebClient.UserControls.Common.HeaderNavigation" %>
+    CodeBehind="Navigations.ascx.cs"
+    Inherits="E_School_Diary.WebClient.UserControls.Common.Navigations" %>
 
 <nav class="white" role="navigation">
     <div class="nav-wrapper">
@@ -45,10 +45,9 @@
         <RoleGroups>
             <asp:RoleGroup Roles="Admin">
                 <ContentTemplate>
-                    <li><a class="waves-effect" href="/Register/Teacher">Create new Teacher Account</a></li>
-                    <li><a class="waves-effect" href="/Register/Student">Create new Student Account</a></li>
-                    <li><a class="waves-effect" href="#">Create new Parent Account</a></li>
                     <li><a class="waves-effect" href="/">Create new Admin Account</a></li>
+                    <li><a class="waves-effect" href="/Register/Teacher">Create new Teacher Account</a></li>
+                    <li><a class="waves-effect" href="/Administration/AddNewClass">Create new Class</a></li>
                     <li>
                         <div class="divider"></div>
                     </li>
@@ -59,10 +58,9 @@
                                 <div class="collapsible-body">
                                     <ul>
                                         <li><a class="waves-effect" href="/Edit/Students">Edit Students accounts</a></li>
-                                        <li>
-                                            <a class="waves-effect" href="/Edit/Teachers">Edit Teachers acounts</a></li>
-                                        <li>
-                                            <a class="waves-effect" href="/Edit/Parents">Edit Parents accounts</a></li>
+                                        <li><a class="waves-effect" href="/Edit/Teachers">Edit Teachers acounts</a></li>
+                                        <li><a class="waves-effect" href="/Edit/Parents">Edit Parents accounts</a></li>
+                                        <li><a class="waves-effect" href="/Edit/Classes">Edit Classes</a></li>
                                     </ul>
                                 </div>
                             </li>

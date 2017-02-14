@@ -10,7 +10,7 @@
 namespace E_School_Diary.WebClient.UserControls.Common {
     
     
-    public partial class HeaderNavigation {
+    public partial class Navigations {
         
         /// <summary>
         /// UsernameView control.
