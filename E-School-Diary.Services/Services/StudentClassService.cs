@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using E_School_Diary.Data;
 using E_School_Diary.Data.Models;
 using E_School_Diary.Services.Contracts;
+using System.Linq;
 
 namespace E_School_Diary.Services
 {
@@ -25,6 +27,13 @@ namespace E_School_Diary.Services
         public void Add(StudentClass entity)
         {
             this.dbContext.StudentClasses.Add(entity);
+        }
+
+        public StudentClass GetByTeacherId(string teacherId)
+        {
+            var studentClass = this.dbContext.StudentClasses.Single(x => x.FormMasterId == teacherId);
+
+            return studentClass;
         }
 
         public int Save()

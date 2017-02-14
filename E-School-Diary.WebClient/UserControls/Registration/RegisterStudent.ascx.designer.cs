@@ -28,15 +28,24 @@ namespace E_School_Diary.WebClient.UserControls.Registration {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList FormMaster;
+        protected global::System.Web.UI.WebControls.Label FormMaster;
         
         /// <summary>
-        /// StudentClasses control.
+        /// StudentClass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList StudentClasses;
+        protected global::System.Web.UI.WebControls.Label StudentClass;
+        
+        /// <summary>
+        /// BtnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnSubmit;
     }
 }

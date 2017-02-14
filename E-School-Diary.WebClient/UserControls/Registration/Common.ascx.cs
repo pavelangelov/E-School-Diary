@@ -78,14 +78,18 @@ namespace E_School_Diary.WebClient.UserControls.Registration
             }
         }
 
-        public void ShowResultContainer()
+        public void ShowSuccessContainer()
         {
+            this.successContainer.Visible = true;
+            this.errorContainer.Visible = false;
             this.resultContainer.Visible = true;
         }
 
-        public void HideResultContainer()
+        public void ShowErrorContainer()
         {
-            this.resultContainer.Visible = false;
+            this.errorContainer.Visible = true;
+            this.successContainer.Visible = false;
+            this.resultContainer.Visible = true;
         }
     }
 }

@@ -50,6 +50,7 @@
     <Compile Include="DTOs\Common\MinTeacherInfoDTO.cs" />
     <Compile Include="DTOs\RegisterDTOs\RegisterStudentDTO.cs" />
     <Compile Include="DTOs\RegisterDTOs\RegisterTeacherDTO.cs" />
+    <Compile Include="DTOs\RegisterDTOs\TeacherInforForRegisterStudentDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

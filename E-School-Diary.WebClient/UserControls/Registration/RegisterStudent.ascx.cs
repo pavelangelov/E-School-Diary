@@ -28,32 +28,39 @@ namespace E_School_Diary.WebClient.UserControls.Registration
             if (!IsPostBack)
             {
                 this.CommonFields.RegistrationTitle = this.registrationTitle;
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 var userId = Context.User.Identity.GetUserId();
-                this.PageLoad?.Invoke(sender, new RegisterStudentPageLoadEventArgs(userId, manager));
+                this.PageLoad?.Invoke(sender, new RegisterStudentPageLoadEventArgs(userId));
 
-                this.LoadClasses();
-                this.LoadTeachers();
+                if (this.Model.ErrorMessage != null)
+                {
+                    this.CommonFields.ErrorMessageContainer = this.Model.ErrorMessage;
+                    this.CommonFields.ShowErrorContainer();
+                    this.BtnSubmit.Enabled = false;
+                    return;
+                }
+
+                this.FormMaster.Text = this.Model.TeacherInfo.TeacherNames;
+                this.StudentClass.Text = "Your class.";
             }
         }
 
-        private void LoadTeachers()
-        {
-            foreach (var teacher in this.Model.Teachers)
-            {
-                var item = new ListItem(teacher.Item1, teacher.Item2);
-                this.FormMaster.Items.Add(item);
-            }
-        }
+        //private void LoadTeachers()
+        //{
+        //    foreach (var teacher in this.Model.Teachers)
+        //    {
+        //        var item = new ListItem(teacher.Item1, teacher.Item2);
+        //        this.FormMaster.Items.Add(item);
+        //    }
+        //}
 
-        private void LoadClasses()
-        {
-            foreach (var stClass in this.Model.Classes)
-            {
-                var item = new ListItem(stClass.Item1, stClass.Item2);
-                this.StudentClasses.Items.Add(item);
-            }
-        }
+        //private void LoadClasses()
+        //{
+        //    foreach (var stClass in this.Model.Classes)
+        //    {
+        //        var item = new ListItem(stClass.Item1, stClass.Item2);
+        //        this.StudentClasses.Items.Add(item);
+        //    }
+        //}
 
         protected void RegisterClick(object sender, EventArgs e)
         {
@@ -64,24 +71,24 @@ namespace E_School_Diary.WebClient.UserControls.Registration
                 Email = this.CommonFields.Email,
                 Age = this.CommonFields.Age,
                 Password = this.CommonFields.Password,
-                FormMasterId = this.FormMaster.SelectedValue,
-                StudentClassId = this.StudentClasses.SelectedValue
+                FormMasterId = Context.User.Identity.GetUserId()
             };
 
-            this.SubmitClick?.Invoke(sender, new RegisterStudentSubmitEventArgs(studentDTO));
+            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            this.SubmitClick?.Invoke(sender, new RegisterStudentSubmitEventArgs(studentDTO, manager));
 
             if (!this.Model.IsSuccess)
             {
                 this.CommonFields.ErrorMessageContainer = this.Model.ErrorMessage;
+                this.CommonFields.ShowErrorContainer();
                 this.CommonFields.SuccessMessageContainer = "";
             }
             else
             {
                 this.CommonFields.SuccessMessageContainer = "Student registred successfully";
                 this.CommonFields.ErrorMessageContainer = "";
+                this.CommonFields.ShowSuccessContainer();
             }
-
-            this.CommonFields.ShowResultContainer();
         }
     }
 }

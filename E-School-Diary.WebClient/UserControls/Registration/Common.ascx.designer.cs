@@ -22,13 +22,31 @@ namespace E_School_Diary.WebClient.UserControls.Registration {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl resultContainer;
         
         /// <summary>
+        /// errorContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorContainer;
+        
+        /// <summary>
         /// ErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ErrorMessage;
+        protected global::System.Web.UI.WebControls.Label ErrorMessage;
+        
+        /// <summary>
+        /// successContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl successContainer;
         
         /// <summary>
         /// SuccessMessage control.
@@ -37,7 +55,7 @@ namespace E_School_Diary.WebClient.UserControls.Registration {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal SuccessMessage;
+        protected global::System.Web.UI.WebControls.Label SuccessMessage;
         
         /// <summary>
         /// Title control.

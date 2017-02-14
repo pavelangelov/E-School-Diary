@@ -5,13 +5,13 @@
     Inherits="E_School_Diary.WebClient.UserControls.Registration.Common" %>
 
 <p class="card-panel" runat="server" id="resultContainer" visible="false">
-    <span class="red-text text-darken-2">
-        <i class="tiny red-text material-icons">info_outline</i>
-        <asp:Literal runat="server" ID="ErrorMessage" />
-    </span>
-    <span class="blue-text text-darken-2">
-        <i class="tiny blue-text material-icons">info_outline</i>
-        <asp:Literal runat="server"  ID="SuccessMessage" />
+        <span class="red-text text-darken-2" runat="server" id="errorContainer">
+            <i class="small red-text material-icons">info_outline</i>
+            <asp:Label runat="server" ID="ErrorMessage" />
+        </span>
+    <span class="blue-text text-darken-2" runat="server" id="successContainer">
+        <i class="small blue-text material-icons">info_outline</i>
+        <asp:Label runat="server"  ID="SuccessMessage" />
     </span>
 </p>
 

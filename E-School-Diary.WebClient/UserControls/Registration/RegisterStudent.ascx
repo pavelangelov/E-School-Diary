@@ -10,17 +10,17 @@
     <uc:CommonFields runat="server" ID="CommonFields"></uc:CommonFields>
 
     <div class="row">
-        <div class="input-field col s4">
-            <asp:DropDownList runat="server" ID="FormMaster" ClientIDMode="Static" Visible="true"></asp:DropDownList>
-            <label for="FormMaster">Select the form master</label>
+        <div class="card-panel hoverable col s4">
+            <label for="FormMaster">Form master will be: </label>
+            <asp:Label runat="server" ID="FormMaster" ClientIDMode="Static" />
         </div>
-        <div class="input-field col s4">
-            <asp:DropDownList runat="server" ID="StudentClasses" ClientIDMode="Static" Visible="true"></asp:DropDownList>
-            <label for="StudentClasses">Select the class</label>
+        <div class="card-panel hoverable col s4">
+            <label for="StudentClass">The student will be in class: </label>
+            <asp:Label runat="server" ID="StudentClass" ClientIDMode="Static" />
         </div>
     </div>
 
-    <asp:Button runat="server" CssClass="btn" Text="Submit" OnClick="RegisterClick" />
+    <asp:Button runat="server" ID="BtnSubmit" CssClass="btn" Text="Submit" OnClick="RegisterClick" />
 </div>
 
 <script>

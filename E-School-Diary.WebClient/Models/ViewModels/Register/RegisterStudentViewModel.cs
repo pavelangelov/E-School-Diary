@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_School_Diary.Utils.DTOs.RegisterDTOs;
+using System;
 using System.Collections.Generic;
 
 namespace E_School_Diary.WebClient.Models.ViewModels.Register
@@ -9,7 +10,7 @@ namespace E_School_Diary.WebClient.Models.ViewModels.Register
 
         public string ErrorMessage { get; set; }
 
-        public ApplicationUser User { get; set; }
+        public TeacherInforForRegisterStudentDTO TeacherInfo { get; set; }
 
         public ICollection<Tuple<string, string>> Classes { get; set; }
 

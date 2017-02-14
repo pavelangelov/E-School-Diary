@@ -7,14 +7,11 @@ namespace E_School_Diary.WebClient.Models.CustomEventArgs
 {
     public class RegisterStudentPageLoadEventArgs : EventArgs
     {
-        public RegisterStudentPageLoadEventArgs(string userId, ApplicationUserManager manager)
+        public RegisterStudentPageLoadEventArgs(string userId)
         {
             this.UserId = userId;
-            this.Manager = manager;
         }
 
         public string UserId { get; set; }
-
-        public ApplicationUserManager Manager { get; set; }
     }
 }
