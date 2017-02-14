@@ -6,7 +6,7 @@ using Microsoft.AspNet.Identity.Owin;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
-using E_School_Diary.Data.CustomModels.Enums;
+using E_School_Diary.Data.Enums;
 using E_School_Diary.Utils.DTOs.RegisterDTOs;
 using E_School_Diary.WebClient.Models.CustomEventArgs;
 using E_School_Diary.WebClient.Models.ViewModels.Register;

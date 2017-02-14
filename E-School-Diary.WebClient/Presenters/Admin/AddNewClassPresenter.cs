@@ -1,22 +1,20 @@
-﻿using E_School_Diary.Data.CustomModels.Models;
-using E_School_Diary.Data.Repositories.Contracts;
-using E_School_Diary.WebClient.Views.Admin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System;
 using WebFormsMvp;
+
+using E_School_Diary.Data.Models;
+using E_School_Diary.Services.Contracts;
+using E_School_Diary.WebClient.Views.Admin;
 
 namespace E_School_Diary.WebClient.Presenters.Admin
 {
     public class AddNewClassPresenter : Presenter<IAddNewClassView>
     {
-        private IStudentClassRepository stClassRepository;
+        private IStudentClassService studentClassService;
 
-        public AddNewClassPresenter(IAddNewClassView view, IStudentClassRepository stClassRepository)
+        public AddNewClassPresenter(IAddNewClassView view, IStudentClassService stClassService)
             : base(view)
         {
-            this.stClassRepository = stClassRepository;
+            this.studentClassService = stClassService;
 
             this.View.CreateClassClick += View_CreateClassClick;
         }
@@ -27,13 +25,13 @@ namespace E_School_Diary.WebClient.Presenters.Admin
             int changes = 0;
             try
             {
-                this.stClassRepository.Add(stClass);
-                changes = this.stClassRepository.Save();
+                this.studentClassService.Add(stClass);
+                changes = this.studentClassService.Save();
             }
             catch (Exception ex)
             {
                 this.View.Model.IsSuccess = false;
-                this.View.Model.ErrorMessage = ex.Message;
+                this.View.Model.ErrorMessage = "Something`s wrong. Maybe this class already exist.";
                 return;
             }
 
@@ -41,6 +39,10 @@ namespace E_School_Diary.WebClient.Presenters.Admin
             {
                 this.View.Model.IsSuccess = false;
                 this.View.Model.ErrorMessage = "Something is wrong!";
+            }
+            else
+            {
+                this.View.Model.IsSuccess = true;
             }
         }
     }

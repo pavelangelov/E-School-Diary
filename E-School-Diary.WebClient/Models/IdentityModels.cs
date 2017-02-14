@@ -6,7 +6,7 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-using E_School_Diary.Data.CustomModels.Models;
+using E_School_Diary.Data.Models;
 
 namespace E_School_Diary.WebClient.Models
 {

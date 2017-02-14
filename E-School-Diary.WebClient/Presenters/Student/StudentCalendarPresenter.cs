@@ -1,25 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using WebFormsMvp;
 
+using E_School_Diary.Services.Contracts;
 using E_School_Diary.Utils.DTOs.Common;
+using E_School_Diary.Utils.Contracts;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Student;
 using E_School_Diary.WebClient.Views.Student;
-using E_School_Diary.Utils.Contracts;
-using E_School_Diary.Data.Repositories.Contracts;
 
 namespace E_School_Diary.WebClient.Presenters.Student
 {
     public class StudentCalendarPresenter : Presenter<IStudentCalendarView>
     {
-        private IStudentRepository studentRepository;
+        private IStudentService studentService;
         private IDateParser dateParser;
 
-        public StudentCalendarPresenter(IStudentCalendarView view, IStudentRepository studentRepository, IDateParser dateParser) 
+        public StudentCalendarPresenter(IStudentCalendarView view, IStudentService studentService, IDateParser dateParser) 
             : base(view)
         {
-            this.studentRepository = studentRepository;
+            this.studentService = studentService;
             this.dateParser = dateParser;
 
             this.View.LoadLectures += View_LoadLectures;
@@ -29,14 +30,14 @@ namespace E_School_Diary.WebClient.Presenters.Student
         {
             var date = this.dateParser.ExtractDate(e.Date);
 
-            var lectures = this.studentRepository.GetStudentLectures(e.UserId);
+            var lectures = this.studentService.GetStudentLectures(e.UserId);
 
             this.GetAheadLectures(lectures, date);
             this.GetPastLectures(lectures, date);
             this.GetCalceledLectures(lectures, date);
         }
 
-        public void GetPastLectures(IQueryable<LectureDTO> lectures, DateTime currentDate)
+        public void GetPastLectures(IEnumerable<LectureDTO> lectures, DateTime currentDate)
         {
             this.View.Model.PastLectures = lectures
                         .Where(l => l.Start.Value.Year == currentDate.Year &&
@@ -46,7 +47,7 @@ namespace E_School_Diary.WebClient.Presenters.Student
                         .ToList();
         }
 
-        public void GetAheadLectures(IQueryable<LectureDTO> lectures, DateTime currentDate)
+        public void GetAheadLectures(IEnumerable<LectureDTO> lectures, DateTime currentDate)
         {
             this.View.Model.AheadLectures = lectures
                         .Where(l => l.Start.Value.Year == currentDate.Year &&
@@ -56,7 +57,7 @@ namespace E_School_Diary.WebClient.Presenters.Student
                         .ToList();
         }
 
-        public void GetCalceledLectures(IQueryable<LectureDTO> lectures, DateTime currentDate)
+        public void GetCalceledLectures(IEnumerable<LectureDTO> lectures, DateTime currentDate)
         {
             this.View.Model.CanceledLectures = lectures
                         .Where(l => l.Start.Value.Year == currentDate.Year &&

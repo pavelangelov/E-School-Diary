@@ -1,10 +1,10 @@
 ﻿using Ninject.Modules;
 
+using E_School_Diary.Data;
+using E_School_Diary.Services;
+using E_School_Diary.Services.Contracts;
 using E_School_Diary.Utils;
 using E_School_Diary.Utils.Contracts;
-using E_School_Diary.Data;
-using E_School_Diary.Data.Repositories.Contracts;
-using E_School_Diary.Data.Repositories;
 
 namespace E_School_Diary.WebClient.Modules
 {
@@ -14,9 +14,10 @@ namespace E_School_Diary.WebClient.Modules
         {
             this.Bind<IDateParser>().To<DateParser>();
             this.Bind<IDatabaseContext>().To<ESchoolDiaryDbContext>();
-            this.Bind<IStudentClassRepository>().To<StudentClassRepository>();
-            this.Bind<ITeacherRepository>().To<TeacherRepository>();
-            this.Bind<IStudentRepository>().To<StudentRepository>();
+
+            this.Bind<IStudentClassService>().To<StudentClassService>();
+            this.Bind<ITeacherService>().To<TeacherService>();
+            this.Bind<IStudentService>().To<StudentService>();
         }
     }
 }

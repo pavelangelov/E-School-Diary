@@ -1,29 +1,28 @@
-﻿using E_School_Diary.Data.Repositories.Contracts;
+﻿using System.Linq;
+
+using WebFormsMvp;
+
+using E_School_Diary.Services.Contracts;
 using E_School_Diary.WebClient.Models.ViewModels.Common;
 using E_School_Diary.WebClient.Views.Student;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using WebFormsMvp;
 
 namespace E_School_Diary.WebClient.Presenters.Student
 {
     public class StudentMarksPresenter : Presenter<IStudentMarksView>
     {
-        private IStudentRepository studentRepository;
+        private IStudentService studentService;
 
-        public StudentMarksPresenter(IStudentMarksView view, IStudentRepository studentRepository) 
+        public StudentMarksPresenter(IStudentMarksView view, IStudentService studentService) 
             : base(view)
         {
-            this.studentRepository = studentRepository;
+            this.studentService = studentService;
 
             this.View.PageLoad += View_PageLoad;
         }
 
         private void View_PageLoad(object sender, UserIdEventArgs e)
         {
-            var marks = this.studentRepository.GetStudentMarks(e.UserId).ToList();
+            var marks = this.studentService.GetStudentMarks(e.UserId).ToList();
 
             //var result = new List<Tuple<string, string>>();
 

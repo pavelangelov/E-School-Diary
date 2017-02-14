@@ -1,20 +1,21 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 
-using E_School_Diary.Data.CustomModels.Models;
-using E_School_Diary.Data.Repositories.Contracts;
+using E_School_Diary.Data;
+using E_School_Diary.Data.Models;
+using E_School_Diary.Services.Contracts;
 
-namespace E_School_Diary.Data.Repositories
+namespace E_School_Diary.Services
 {
-    public class StudentClassRepository : IStudentClassRepository
+    public class StudentClassService : IStudentClassService
     {
         private IDatabaseContext dbContext;
 
-        public StudentClassRepository(IDatabaseContext dbContext)
+        public StudentClassService(IDatabaseContext dbContext)
         {
             this.dbContext = dbContext;
         }
 
-        public IQueryable<StudentClass> GetAll()
+        public IEnumerable<StudentClass> GetAll()
         {
             var classes = this.dbContext.StudentClasses;
 

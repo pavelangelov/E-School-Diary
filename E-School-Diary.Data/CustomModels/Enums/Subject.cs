@@ -1,4 +1,4 @@
-﻿namespace E_School_Diary.Data.CustomModels.Enums
+﻿namespace E_School_Diary.Data.Enums
 {
     public enum Subject
     {

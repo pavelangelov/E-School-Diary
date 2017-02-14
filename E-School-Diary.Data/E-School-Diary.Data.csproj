@@ -125,12 +125,6 @@
     <Compile Include="CustomModels\Models\Message.cs" />
     <Compile Include="CustomModels\Models\StudentClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\Contracts\IStudentClassRepository.cs" />
-    <Compile Include="Repositories\Contracts\IStudentRepository.cs" />
-    <Compile Include="Repositories\Contracts\ITeacherRepository.cs" />
-    <Compile Include="Repositories\StudentRepository.cs" />
-    <Compile Include="Repositories\TeacherRepository.cs" />
-    <Compile Include="Repositories\StudentClassRepositorie.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

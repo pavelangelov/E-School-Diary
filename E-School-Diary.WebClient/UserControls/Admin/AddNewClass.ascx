@@ -25,4 +25,4 @@
     </div>
 </div>
 
-<asp:Button runat="server" Text="Create" OnClick="CreateClass" />
+<asp:Button runat="server" Text="Create" CssClass="btn" OnClick="CreateClass" />

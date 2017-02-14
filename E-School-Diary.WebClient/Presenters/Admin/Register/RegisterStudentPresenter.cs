@@ -1,30 +1,28 @@
-﻿using E_School_Diary.WebClient.Views.Admin.Register;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Web;
-using WebFormsMvp;
+
 using Microsoft.AspNet.Identity;
-using System.Web.Caching;
-using System.Web.Routing;
-using E_School_Diary.Data.CustomModels.Enums;
-using E_School_Diary.Data.Repositories.Contracts;
-using E_School_Diary.WebClient.Models.CustomEventArgs;
+using WebFormsMvp;
+
+using E_School_Diary.Data.Enums;
+using E_School_Diary.Services.Contracts;
 using E_School_Diary.WebClient.Models;
+using E_School_Diary.WebClient.Models.CustomEventArgs;
+using E_School_Diary.WebClient.Views.Admin.Register;
 
 namespace E_School_Diary.WebClient.Presenters.Admin.Register
 {
     public class RegisterStudentPresenter : Presenter<IRegisterStudentView>
     {
         private ApplicationUserManager manager;
-        private IStudentClassRepository classesRepository;
-        private ITeacherRepository teacherRepository;
+        private IStudentClassService studentClassService;
+        private ITeacherService teacherService;
 
-        public RegisterStudentPresenter(IRegisterStudentView view, IStudentClassRepository classesRepository, ITeacherRepository teacherRepository)
+        public RegisterStudentPresenter(IRegisterStudentView view, IStudentClassService studentClassService, ITeacherService teacherService)
             : base(view)
         {
-            this.classesRepository = classesRepository;
-            this.teacherRepository = teacherRepository;
+            this.studentClassService = studentClassService;
+            this.teacherService = teacherService;
 
             this.View.PageLoad += View_PageLoad;
             this.View.SubmitClick += View_SubmitClick;
@@ -39,8 +37,7 @@ namespace E_School_Diary.WebClient.Presenters.Admin.Register
 
         private void GetStudentClasses()
         {
-            var classes = this.classesRepository.GetAll()
-                                                .ToList()
+            var classes = this.studentClassService.GetAll()
                                                 .Select(x => new Tuple<string, string>(x.Name, x.Id))
                                                 .OrderBy(x => x.Item1)
                                                 .ToList();
@@ -51,8 +48,7 @@ namespace E_School_Diary.WebClient.Presenters.Admin.Register
 
         private void GetTeachers()
         {
-            var teachers = this.teacherRepository.GetAll()
-                                    .ToList()
+            var teachers = this.teacherService.GetAll()
                                     .Select(x => new Tuple<string, string>(x.FirstName + " " + x.LastName, x.Id))
                                     .ToList();
 

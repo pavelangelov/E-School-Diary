@@ -1,4 +1,4 @@
-﻿namespace E_School_Diary.Data.CustomModels.Contracts
+﻿namespace E_School_Diary.Data.Contracts
 {
     public interface IIdentifiable
     {

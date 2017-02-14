@@ -630,6 +630,10 @@
       <Project>{7A2D1EC7-70F4-44F9-B116-BA3897DD2F5C}</Project>
       <Name>E-School-Diary.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\E-School-Diary.Services\E-School-Diary.Services.csproj">
+      <Project>{23E532A3-5B52-4861-998C-185678C011EE}</Project>
+      <Name>E-School-Diary.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\E-School-Diary.Utils\E-School-Diary.Utils.csproj">
       <Project>{57D375FE-3837-4749-BD5E-583B75F306F3}</Project>
       <Name>E-School-Diary.Utils</Name>

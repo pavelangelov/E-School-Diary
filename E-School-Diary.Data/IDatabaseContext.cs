@@ -1,15 +1,15 @@
-﻿using E_School_Diary.Data.CustomModels.Models;
+﻿using E_School_Diary.Data.Models;
 using System.Data.Entity;
 
 namespace E_School_Diary.Data
 {
     public interface IDatabaseContext
     {
-        DbSet<Lecture> Lectures { get; set; }
-        DbSet<Mark> Marks { get; set; }
-        DbSet<Message> Messages { get; set; }
-        DbSet<StudentClass> StudentClasses { get; set; }
-        DbSet<User> Users { get; set; }
+        IDbSet<Lecture> Lectures { get; set; }
+        IDbSet<Mark> Marks { get; set; }
+        IDbSet<Message> Messages { get; set; }
+        IDbSet<StudentClass> StudentClasses { get; set; }
+        IDbSet<User> Users { get; set; }
 
         int Save();
     }

@@ -4,10 +4,10 @@ using System.ComponentModel.DataAnnotations;
 
 using Microsoft.AspNet.Identity.EntityFramework;
 
-using E_School_Diary.Data.CustomModels.Enums;
+using E_School_Diary.Data.Enums;
 using E_School_Diary.Utils;
 
-namespace E_School_Diary.Data.CustomModels.Models
+namespace E_School_Diary.Data.Models
 {
     public class User : IdentityUser
     {

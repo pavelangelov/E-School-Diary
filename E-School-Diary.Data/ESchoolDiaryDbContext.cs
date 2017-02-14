@@ -1,4 +1,4 @@
-﻿using E_School_Diary.Data.CustomModels.Models;
+﻿using E_School_Diary.Data.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -37,10 +37,10 @@ namespace E_School_Diary.Data
             return base.SaveChanges();
         }
         
-        public virtual DbSet<Lecture> Lectures { get; set; }
-        public virtual DbSet<Mark> Marks { get; set; }
-        public virtual DbSet<Message> Messages { get; set; }
-        public virtual DbSet<StudentClass> StudentClasses { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual IDbSet<Lecture> Lectures { get; set; }
+        public virtual IDbSet<Mark> Marks { get; set; }
+        public virtual IDbSet<Message> Messages { get; set; }
+        public virtual IDbSet<StudentClass> StudentClasses { get; set; }
+        public virtual IDbSet<User> Users { get; set; }
     }
 }

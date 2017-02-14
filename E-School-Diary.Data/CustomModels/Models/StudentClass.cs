@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-using E_School_Diary.Data.CustomModels.Contracts;
+using E_School_Diary.Data.Contracts;
 using E_School_Diary.Utils;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace E_School_Diary.Data.CustomModels.Models
+namespace E_School_Diary.Data.Models
 {
     public partial class StudentClass : IStudentClass, IIdentifiable
     {
