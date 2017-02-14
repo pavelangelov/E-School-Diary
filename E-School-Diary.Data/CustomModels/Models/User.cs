@@ -49,11 +49,9 @@ namespace E_School_Diary.Data.Models
 
         public string ImageUrl { get; set; }
 
+        public bool IsFreeTeacher { get; set; }
+
         public UserTypes UserType { get; set; }
-
-        public string FormMasterId { get; set; }
-
-        public virtual User FormMaster { get; set; }
         
         public string StudentClassId { get; set; }
 

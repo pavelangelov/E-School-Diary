@@ -64,7 +64,6 @@ namespace E_School_Diary.WebClient.Presenters.Admin.Register
                 Email = user.Email,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
-                FormMasterId = user.FormMasterId,
                 StudentClassId = user.StudentClassId,
                 Age = user.Age,
                 UserType = UserTypes.Student,

@@ -9,6 +9,7 @@ namespace E_School_Diary.WebClient.Views.Admin
 {
     public interface IAddNewClassView : IView<AddNewClassViewModel>
     {
+        event EventHandler PageLoad;
         event EventHandler<AddNewClassEventArgs> CreateClassClick;
     }
 }

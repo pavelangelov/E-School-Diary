@@ -23,6 +23,11 @@
             CssClass="red-text"
             ErrorMessage="Class name must be between 2 and 15 symbols." />
     </div>
+
+    <div class="col s6">
+        <asp:DropDownList runat="server" CssClass="teal-text" ID="Teachers" ClientIDMode="Static">
+        </asp:DropDownList>
+    </div>
 </div>
 
 <asp:Button runat="server" Text="Create" CssClass="btn" OnClick="CreateClass" />

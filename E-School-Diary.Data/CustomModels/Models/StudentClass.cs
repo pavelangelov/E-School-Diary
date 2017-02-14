@@ -32,6 +32,10 @@ namespace E_School_Diary.Data.Models
         [MaxLength(Constants.ClassNameMaxLength, ErrorMessage = Constants.StudentClassNameErrorMessage)]
         public string Name { get; set; }
 
+        public string FormMasterId { get; set; }
+
+        public virtual User FormMaster { get; set; }
+
         public virtual ICollection<User> Students { get; set; }
 
         public virtual ICollection<Lecture> Lectures { get; set; }

@@ -32,6 +32,7 @@ namespace E_School_Diary.WebClient.Presenters.Admin.Register
                 LastName = e.TeacherDTO.LastName,
                 Age = e.TeacherDTO.Age,
                 UserType = UserTypes.Teacher,
+                IsFreeTeacher = true,
                 Subject = (Subject)Enum.Parse(typeof(Subject), e.TeacherDTO.Subject),
                 ImageUrl = "/Images/default-user.png"
             };

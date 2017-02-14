@@ -10,18 +10,34 @@ namespace E_School_Diary.WebClient.Presenters.Admin
     public class AddNewClassPresenter : Presenter<IAddNewClassView>
     {
         private IStudentClassService studentClassService;
+        private ITeacherService teacherService;
 
-        public AddNewClassPresenter(IAddNewClassView view, IStudentClassService stClassService)
+        public AddNewClassPresenter(IAddNewClassView view, IStudentClassService stClassService, ITeacherService teacherService)
             : base(view)
         {
             this.studentClassService = stClassService;
+            this.teacherService = teacherService;
 
+            this.View.PageLoad += View_PageLoad;
             this.View.CreateClassClick += View_CreateClassClick;
+        }
+
+        private void View_PageLoad(object sender, EventArgs e)
+        {
+            var teachers = this.teacherService.GetTeachersWithoutClass();
+
+            this.View.Model.FreeTeachers = teachers;
         }
 
         private void View_CreateClassClick(object sender, Models.CustomEventArgs.Admin.AddNewClassEventArgs e)
         {
-            var stClass = new StudentClass() { Name = e.ClassName, Id = Guid.NewGuid().ToString() };
+            var stClass = new StudentClass()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = e.ClassName,
+                FormMasterId = e.TeacherId
+            };
+
             int changes = 0;
             try
             {
@@ -42,7 +58,18 @@ namespace E_School_Diary.WebClient.Presenters.Admin
             }
             else
             {
+                this.ChangeTeacherState(e.TeacherId);
                 this.View.Model.IsSuccess = true;
+            }
+        }
+
+        private void ChangeTeacherState(string teacherId)
+        {
+            if (teacherId != null)
+            {
+                var teacher = this.teacherService.FindById(teacherId);
+                teacher.IsFreeTeacher = false;
+                this.teacherService.Save();
             }
         }
     }
