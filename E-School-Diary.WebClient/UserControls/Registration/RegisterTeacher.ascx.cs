@@ -30,8 +30,11 @@ namespace E_School_Diary.WebClient.UserControls.Registration
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.LoadSubjects();
-            this.CommonFields.RegistrationTitle = this.registrationTitle;
+            if (!IsPostBack)
+            {
+                this.LoadSubjects();
+                this.CommonFields.RegistrationTitle = this.registrationTitle;
+            }
         }
 
         protected void RegisterClick(object sender, EventArgs e)

@@ -25,13 +25,16 @@ namespace E_School_Diary.WebClient.UserControls.Registration
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.CommonFields.RegistrationTitle = this.registrationTitle;
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var userId = Context.User.Identity.GetUserId();
-            this.PageLoad?.Invoke(sender, new RegisterStudentPageLoadEventArgs(userId, manager));
+            if (!IsPostBack)
+            {
+                this.CommonFields.RegistrationTitle = this.registrationTitle;
+                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var userId = Context.User.Identity.GetUserId();
+                this.PageLoad?.Invoke(sender, new RegisterStudentPageLoadEventArgs(userId, manager));
 
-            this.LoadClasses();
-            this.LoadTeachers();
+                this.LoadClasses();
+                this.LoadTeachers();
+            }
         }
 
         private void LoadTeachers()
