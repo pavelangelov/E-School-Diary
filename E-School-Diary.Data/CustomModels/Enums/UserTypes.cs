@@ -2,9 +2,10 @@
 {
     public enum UserTypes
     {
-        Admin = 0,
-        Parent = 1,
-        Student = 2,
-        Teacher = 3
+        Anonymous= 0,
+        Admin = 1,
+        Teacher = 2,
+        Student = 3,
+        Parent = 4
     }
 }

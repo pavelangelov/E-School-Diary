@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WebFormsMvp;
+using Microsoft.AspNet.Identity;
 using System.Web.Caching;
 using System.Web.Routing;
-using E_School_Diary.WebClient.Models.CustomEventArgs;
+using E_School_Diary.Data.CustomModels.Enums;
 using E_School_Diary.Data.Repositories.Contracts;
+using E_School_Diary.WebClient.Models.CustomEventArgs;
 using E_School_Diary.WebClient.Models;
-using Microsoft.AspNet.Identity;
 
 namespace E_School_Diary.WebClient.Presenters.Admin.Register
 {
@@ -70,6 +71,7 @@ namespace E_School_Diary.WebClient.Presenters.Admin.Register
                 FormMasterId = user.FormMasterId,
                 StudentClassId = user.StudentClassId,
                 Age = user.Age,
+                UserType = UserTypes.Student,
                 ImageUrl = "/Images/default-user.png"
             };
 

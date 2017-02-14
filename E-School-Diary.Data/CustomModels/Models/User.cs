@@ -48,7 +48,9 @@ namespace E_School_Diary.Data.CustomModels.Models
         public string LastName { get; set; }
 
         public string ImageUrl { get; set; }
-        
+
+        public UserTypes UserType { get; set; }
+
         public string FormMasterId { get; set; }
 
         public virtual User FormMaster { get; set; }

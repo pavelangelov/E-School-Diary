@@ -480,6 +480,10 @@
     <Compile Include="Migrations\201702132027338_Init.Designer.cs">
       <DependentUpon>201702132027338_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702140716103_AddUserType.cs" />
+    <Compile Include="Migrations\201702140716103_AddUserType.Designer.cs">
+      <DependentUpon>201702140716103_AddUserType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CustomEventArgs\Admin\AddNewClassEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\NavigationEventArgs.cs" />
@@ -634,6 +638,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201702132027338_Init.resx">
       <DependentUpon>201702132027338_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702140716103_AddUserType.resx">
+      <DependentUpon>201702140716103_AddUserType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
