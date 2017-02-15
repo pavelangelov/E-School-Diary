@@ -27,7 +27,7 @@ namespace E_School_Diary.WebClient.Presenters.Register
             this.View.RegisterTeacherClick += View_RegisterTeacherClick;
         }
 
-        private void View_RegisterTeacherClick(object sender, RegisterTeacherEventArgs e)
+        public void View_RegisterTeacherClick(object sender, RegisterTeacherEventArgs e)
         {
             var user = this.appUserFactory.CreateTeacher(e.TeacherDTO);
 

@@ -20,13 +20,23 @@ namespace E_School_Diary.WebClient.Presenters.Student
         public StudentCalendarPresenter(IStudentCalendarView view, IStudentService studentService, IDateParser dateParser) 
             : base(view)
         {
+            if (studentService == null)
+            {
+                throw new NullReferenceException("StudentService");
+            }
+
+            if (dateParser == null)
+            {
+                throw new NullReferenceException("DateParser");
+            }
+
             this.studentService = studentService;
             this.dateParser = dateParser;
 
             this.View.LoadLectures += View_LoadLectures;
         }
 
-        private void View_LoadLectures(object sender, CalendarEventArgs e)
+        public void View_LoadLectures(object sender, CalendarEventArgs e)
         {
             var date = this.dateParser.ExtractDate(e.Date);
 

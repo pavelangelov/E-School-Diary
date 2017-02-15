@@ -50,6 +50,7 @@ namespace E_School_Diary.WebClient.Presenters.Admin
 
         public void View_CreateClassClick(object sender, AddNewClassEventArgs e)
         {
+            // TODO: Check for validation error
             var stClass = this.studentClassFactory.CreateClass(e.ClassName, e.TeacherId);
 
             int changes = 0;

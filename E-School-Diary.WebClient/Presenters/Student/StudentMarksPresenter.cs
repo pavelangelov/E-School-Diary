@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 using WebFormsMvp;
 
@@ -15,12 +16,17 @@ namespace E_School_Diary.WebClient.Presenters.Student
         public StudentMarksPresenter(IStudentMarksView view, IStudentService studentService) 
             : base(view)
         {
+            if (studentService == null)
+            {
+                throw new NullReferenceException("StudentService");
+            }
+
             this.studentService = studentService;
 
             this.View.PageLoad += View_PageLoad;
         }
 
-        private void View_PageLoad(object sender, UserIdEventArgs e)
+        public void View_PageLoad(object sender, UserIdEventArgs e)
         {
             var marks = this.studentService.GetStudentMarks(e.UserId).ToList();
 

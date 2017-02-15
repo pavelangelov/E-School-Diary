@@ -1,5 +1,6 @@
 ﻿using WebFormsMvp;
 
+using E_School_Diary.WebClient.Models.CustomEventArgs;
 using E_School_Diary.WebClient.Views.Common;
 
 namespace E_School_Diary.WebClient.Presenters.Common
@@ -12,7 +13,7 @@ namespace E_School_Diary.WebClient.Presenters.Common
             this.View.NavigationLoad += View_NavigationLoad;
         }
 
-        private void View_NavigationLoad(object sender, Models.CustomEventArgs.NavigationEventArgs e)
+        public void View_NavigationLoad(object sender, NavigationEventArgs e)
         {
             var status = e.Manager.FindByIdAsync(e.UserId);
 
