@@ -3,6 +3,7 @@
     public class Constants
     {
         public const int AgeMaxValue = 100;
+        public const string DefaultUserImage = "/Images/default-user.png";
 
         #region Name
 

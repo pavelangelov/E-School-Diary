@@ -1,6 +1,8 @@
 ﻿using Ninject.Modules;
 
 using E_School_Diary.Data;
+using E_School_Diary.Factories;
+using E_School_Diary.Factories.Contracts;
 using E_School_Diary.Services;
 using E_School_Diary.Services.Contracts;
 using E_School_Diary.Utils;
@@ -18,6 +20,8 @@ namespace E_School_Diary.WebClient.Modules
             this.Bind<IStudentClassService>().To<StudentClassService>();
             this.Bind<ITeacherService>().To<TeacherService>();
             this.Bind<IStudentService>().To<StudentService>();
+
+            this.Bind<IAppicationUserFactory>().To<ApplicationUserFactory>();
         }
     }
 }

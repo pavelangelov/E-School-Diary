@@ -4,11 +4,11 @@ using Microsoft.AspNet.Identity;
 using WebFormsMvp;
 
 using E_School_Diary.Data.Enums;
+using E_School_Diary.Factories.Contracts;
 using E_School_Diary.Services.Contracts;
 using E_School_Diary.Utils.DTOs.RegisterDTOs;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Register;
 using E_School_Diary.WebClient.Views.Register;
-using E_School_Diary.Auth;
 
 namespace E_School_Diary.WebClient.Presenters.Register
 {
@@ -16,18 +16,20 @@ namespace E_School_Diary.WebClient.Presenters.Register
     {
         private IStudentClassService studentClassService;
         private ITeacherService teacherService;
+        private IAppicationUserFactory appUserFactory;
 
-        public RegisterStudentPresenter(IRegisterStudentView view, IStudentClassService studentClassService, ITeacherService teacherService)
+        public RegisterStudentPresenter(IRegisterStudentView view, IStudentClassService studentClassService, ITeacherService teacherService, IAppicationUserFactory appUserFactory)
             : base(view)
         {
             this.studentClassService = studentClassService;
             this.teacherService = teacherService;
+            this.appUserFactory = appUserFactory;
 
             this.View.PageLoad += View_PageLoad;
             this.View.SubmitClick += View_SubmitClick;
         }
 
-        private void View_PageLoad(object sender, RegisterStudentPageLoadEventArgs e)
+        public void View_PageLoad(object sender, RegisterStudentPageLoadEventArgs e)
         {
             var message = this.ValidateTeacher(e.UserId);
             if (message != null)
@@ -37,44 +39,12 @@ namespace E_School_Diary.WebClient.Presenters.Register
             }
         }
 
-        private string ValidateTeacher(string userId)
-        {
-            var teacher = this.teacherService.FindById(userId);
-            if (teacher.UserType != UserTypes.Teacher)
-            {
-                return "Only Teachers can add studnets!";
-            }
-            else if (teacher.IsFreeTeacher == true)
-            {
-                return "Only Teachers with class can add new Student!";
-            }
-
-            
-
-            this.View.Model.TeacherInfo = new TeacherInforForRegisterStudentDTO
-            {
-                TeacherId = teacher.Id,
-                TeacherNames = teacher.FirstName + " " + teacher.LastName
-            };
-
-            return null;
-        }
-
-        private void View_SubmitClick(object sender, RegisterStudentSubmitEventArgs e)
+        public void View_SubmitClick(object sender, RegisterStudentSubmitEventArgs e)
         {
             var user = e.StudentDTO;
             var studentClass = this.studentClassService.GetByTeacherId(user.FormMasterId);
-            var appUser = new ApplicationUser()
-            {
-                UserName = user.Email,
-                Email = user.Email,
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                StudentClassId = studentClass.Id,
-                Age = user.Age,
-                UserType = UserTypes.Student,
-                ImageUrl = "/Images/default-user.png"
-            };
+            user.StudentClassId = studentClass.Id;
+            var appUser = this.appUserFactory.CreateStudent(user);
 
             IdentityResult result = e.Manager.Create(appUser, user.Password);
             if (result.Succeeded)
@@ -90,6 +60,29 @@ namespace E_School_Diary.WebClient.Presenters.Register
                 this.View.Model.ErrorMessage = result.Errors.FirstOrDefault();
                 this.View.Model.IsSuccess = false;
             }
+        }
+
+        public string ValidateTeacher(string userId)
+        {
+            var teacher = this.teacherService.FindById(userId);
+            if (teacher.UserType != UserTypes.Teacher)
+            {
+                return "Only Teachers can add studnets!";
+            }
+            else if (teacher.IsFreeTeacher == true)
+            {
+                return "Only Teachers with class can add new Student!";
+            }
+
+
+
+            this.View.Model.TeacherInfo = new TeacherInforForRegisterStudentDTO
+            {
+                TeacherId = teacher.Id,
+                TeacherNames = teacher.FirstName + " " + teacher.LastName
+            };
+
+            return null;
         }
     }
 }
