@@ -1,9 +1,11 @@
 ﻿using System;
+
 using WebFormsMvp;
 
-using E_School_Diary.Data.Models;
 using E_School_Diary.Services.Contracts;
 using E_School_Diary.WebClient.Views.Admin;
+using E_School_Diary.WebClient.Models.CustomEventArgs.Admin;
+using E_School_Diary.Factories.Contracts;
 
 namespace E_School_Diary.WebClient.Presenters.Admin
 {
@@ -11,32 +13,44 @@ namespace E_School_Diary.WebClient.Presenters.Admin
     {
         private IStudentClassService studentClassService;
         private ITeacherService teacherService;
+        private IStudentClassFactory studentClassFactory;
 
-        public AddNewClassPresenter(IAddNewClassView view, IStudentClassService stClassService, ITeacherService teacherService)
+        public AddNewClassPresenter(IAddNewClassView view, IStudentClassService stClassService, ITeacherService teacherService, IStudentClassFactory studentClassFactory)
             : base(view)
         {
+            if (stClassService == null)
+            {
+                throw new NullReferenceException("StudentClassService");
+            }
+
+            if (teacherService == null)
+            {
+                throw new NullReferenceException("TeacherService");
+            }
+
+            if (studentClassFactory == null)
+            {
+                throw new NullReferenceException("StudentClassFactory");
+            }
+
             this.studentClassService = stClassService;
             this.teacherService = teacherService;
+            this.studentClassFactory = studentClassFactory;
 
             this.View.PageLoad += View_PageLoad;
             this.View.CreateClassClick += View_CreateClassClick;
         }
 
-        private void View_PageLoad(object sender, EventArgs e)
+        public void View_PageLoad(object sender, EventArgs e)
         {
             var teachers = this.teacherService.GetTeachersWithoutClass();
 
             this.View.Model.FreeTeachers = teachers;
         }
 
-        private void View_CreateClassClick(object sender, Models.CustomEventArgs.Admin.AddNewClassEventArgs e)
+        public void View_CreateClassClick(object sender, AddNewClassEventArgs e)
         {
-            var stClass = new StudentClass()
-            {
-                Id = Guid.NewGuid().ToString(),
-                Name = e.ClassName,
-                FormMasterId = e.TeacherId
-            };
+            var stClass = this.studentClassFactory.CreateClass(e.ClassName, e.TeacherId);
 
             int changes = 0;
             try
@@ -63,7 +77,7 @@ namespace E_School_Diary.WebClient.Presenters.Admin
             }
         }
 
-        private void ChangeTeacherState(string teacherId)
+        public void ChangeTeacherState(string teacherId)
         {
             if (teacherId != null)
             {
