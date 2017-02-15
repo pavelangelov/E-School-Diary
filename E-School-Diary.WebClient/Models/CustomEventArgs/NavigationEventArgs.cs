@@ -1,5 +1,7 @@
 ﻿using System;
 
+using E_School_Diary.Auth;
+
 namespace E_School_Diary.WebClient.Models.CustomEventArgs
 {
     public class NavigationEventArgs : EventArgs

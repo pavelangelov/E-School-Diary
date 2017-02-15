@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
 using E_School_Diary.WebClient.Models;
+using E_School_Diary.Auth;
 
 namespace E_School_Diary.WebClient.Account
 {

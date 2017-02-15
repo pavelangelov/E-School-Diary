@@ -1,4 +1,4 @@
-namespace E_School_Diary.WebClient.Migrations
+namespace E_School_Diary.Auth.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

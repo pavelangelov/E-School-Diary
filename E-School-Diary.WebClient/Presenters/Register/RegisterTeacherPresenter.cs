@@ -9,13 +9,12 @@ using E_School_Diary.Data.Enums;
 using E_School_Diary.WebClient.Models;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Register;
 using E_School_Diary.WebClient.Views.Register;
+using E_School_Diary.Auth;
 
 namespace E_School_Diary.WebClient.Presenters.Register
 {
     public class RegisterTeacherPresenter : Presenter<IRegisterTeacherView>
-    {
-        private ApplicationUserManager manager;
-        
+    {   
         public RegisterTeacherPresenter(IRegisterTeacherView view)
             : base(view)
         {

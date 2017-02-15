@@ -6,15 +6,14 @@ using WebFormsMvp;
 using E_School_Diary.Data.Enums;
 using E_School_Diary.Services.Contracts;
 using E_School_Diary.Utils.DTOs.RegisterDTOs;
-using E_School_Diary.WebClient.Models;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Register;
 using E_School_Diary.WebClient.Views.Register;
+using E_School_Diary.Auth;
 
 namespace E_School_Diary.WebClient.Presenters.Register
 {
     public class RegisterStudentPresenter : Presenter<IRegisterStudentView>
     {
-        private ApplicationUserManager manager;
         private IStudentClassService studentClassService;
         private ITeacherService teacherService;
 
@@ -63,7 +62,6 @@ namespace E_School_Diary.WebClient.Presenters.Register
 
         private void View_SubmitClick(object sender, RegisterStudentSubmitEventArgs e)
         {
-            this.manager = e.Manager;
             var user = e.StudentDTO;
             var studentClass = this.studentClassService.GetByTeacherId(user.FormMasterId);
             var appUser = new ApplicationUser()
@@ -78,12 +76,12 @@ namespace E_School_Diary.WebClient.Presenters.Register
                 ImageUrl = "/Images/default-user.png"
             };
 
-            IdentityResult result = this.manager.Create(appUser, user.Password);
+            IdentityResult result = e.Manager.Create(appUser, user.Password);
             if (result.Succeeded)
             {
-                var currentUser = this.manager.FindByName(appUser.UserName);
+                var currentUser = e.Manager.FindByName(appUser.UserName);
 
-                var roleresult = this.manager.AddToRole(currentUser.Id, "Student");
+                var roleresult = e.Manager.AddToRole(currentUser.Id, "Student");
 
                 this.View.Model.IsSuccess = true;
             }

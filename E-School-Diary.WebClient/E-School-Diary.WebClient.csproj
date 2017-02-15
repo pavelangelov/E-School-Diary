@@ -476,23 +476,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702141555529_Init.cs" />
-    <Compile Include="Migrations\201702141555529_Init.Designer.cs">
-      <DependentUpon>201702141555529_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702141612040_AddUbiqueStudentClassName.cs" />
-    <Compile Include="Migrations\201702141612040_AddUbiqueStudentClassName.Designer.cs">
-      <DependentUpon>201702141612040_AddUbiqueStudentClassName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702141742020_MoveFormMaster.cs" />
-    <Compile Include="Migrations\201702141742020_MoveFormMaster.Designer.cs">
-      <DependentUpon>201702141742020_MoveFormMaster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702141757436_CheckIfTeacherHasClass.cs" />
-    <Compile Include="Migrations\201702141757436_CheckIfTeacherHasClass.Designer.cs">
-      <DependentUpon>201702141757436_CheckIfTeacherHasClass.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CustomEventArgs\Admin\AddNewClassEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\NavigationEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Register\RegisterStudentPageLoadEventArgs.cs" />
@@ -634,6 +617,10 @@
     <Folder Include="UserControls\Teacher\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\E-School-Diary.Auth\E-School-Diary.Auth.csproj">
+      <Project>{48924A2C-9471-4096-B60F-867155DC651F}</Project>
+      <Name>E-School-Diary.Auth</Name>
+    </ProjectReference>
     <ProjectReference Include="..\E-School-Diary.Data\E-School-Diary.Data.csproj">
       <Project>{7A2D1EC7-70F4-44F9-B116-BA3897DD2F5C}</Project>
       <Name>E-School-Diary.Data</Name>
@@ -646,20 +633,6 @@
       <Project>{57D375FE-3837-4749-BD5E-583B75F306F3}</Project>
       <Name>E-School-Diary.Utils</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702141555529_Init.resx">
-      <DependentUpon>201702141555529_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702141612040_AddUbiqueStudentClassName.resx">
-      <DependentUpon>201702141612040_AddUbiqueStudentClassName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702141742020_MoveFormMaster.resx">
-      <DependentUpon>201702141742020_MoveFormMaster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702141757436_CheckIfTeacherHasClass.resx">
-      <DependentUpon>201702141757436_CheckIfTeacherHasClass.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using E_School_Diary.Auth;
 
 namespace E_School_Diary.WebClient.Account
 {

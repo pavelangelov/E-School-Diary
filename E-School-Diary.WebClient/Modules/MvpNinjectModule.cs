@@ -1,4 +1,5 @@
-﻿using E_School_Diary.WebClient.Factories;
+﻿using E_School_Diary.Auth;
+using E_School_Diary.WebClient.Factories;
 using E_School_Diary.WebClient.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;

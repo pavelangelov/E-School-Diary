@@ -11,6 +11,7 @@ using E_School_Diary.WebClient.Models.ViewModels.Common;
 using E_School_Diary.WebClient.Models.CustomEventArgs;
 using E_School_Diary.WebClient.Presenters.Common;
 using E_School_Diary.WebClient.Views.Common;
+using E_School_Diary.Auth;
 
 namespace E_School_Diary.WebClient.UserControls.Common
 {
@@ -26,7 +27,6 @@ namespace E_School_Diary.WebClient.UserControls.Common
                 var userId = Context.User.Identity.GetUserId();
                 var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
                 this.NavigationLoad?.Invoke(sender, new NavigationEventArgs(userId, manager));
-
             }
         }
 

@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.Owin;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
+using E_School_Diary.Auth;
 using E_School_Diary.Utils.DTOs.RegisterDTOs;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Register;
 using E_School_Diary.WebClient.Models.ViewModels.Register;

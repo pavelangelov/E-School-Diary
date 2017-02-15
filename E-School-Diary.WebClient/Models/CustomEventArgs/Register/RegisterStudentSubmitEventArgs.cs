@@ -1,6 +1,7 @@
 ﻿using System;
 
 using E_School_Diary.Utils.DTOs.RegisterDTOs;
+using E_School_Diary.Auth;
 
 namespace E_School_Diary.WebClient.Models.CustomEventArgs.Register
 {
