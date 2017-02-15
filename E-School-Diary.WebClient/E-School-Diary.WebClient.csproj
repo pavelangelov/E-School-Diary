@@ -198,6 +198,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="AddNewLecture\Default.aspx" />
     <Content Include="Administration\AddNewClass\Default.aspx" />
     <Content Include="Images\admin.png" />
     <Content Include="Images\default-user.png" />
@@ -316,6 +317,7 @@
     <Content Include="UserControls\Common\Navigations.ascx" />
     <Content Include="UserControls\Student\Calendar.ascx" />
     <Content Include="UserControls\Student\Marks.ascx" />
+    <Content Include="UserControls\Teacher\Add\Lecture.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -436,6 +438,13 @@
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewLecture\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddNewLecture\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administration\AddNewClass\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -598,6 +607,13 @@
     <Compile Include="UserControls\Student\Marks.ascx.designer.cs">
       <DependentUpon>Marks.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Teacher\Add\Lecture.ascx.cs">
+      <DependentUpon>Lecture.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Teacher\Add\Lecture.ascx.designer.cs">
+      <DependentUpon>Lecture.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -614,7 +630,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="UserControls\Teacher\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\E-School-Diary.Auth\E-School-Diary.Auth.csproj">
