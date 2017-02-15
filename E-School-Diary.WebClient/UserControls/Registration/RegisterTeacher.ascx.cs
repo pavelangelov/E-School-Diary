@@ -8,10 +8,10 @@ using WebFormsMvp.Web;
 
 using E_School_Diary.Data.Enums;
 using E_School_Diary.Utils.DTOs.RegisterDTOs;
-using E_School_Diary.WebClient.Models.CustomEventArgs;
+using E_School_Diary.WebClient.Models.CustomEventArgs.Register;
 using E_School_Diary.WebClient.Models.ViewModels.Register;
-using E_School_Diary.WebClient.Presenters.Admin.Register;
-using E_School_Diary.WebClient.Views.Admin.Register;
+using E_School_Diary.WebClient.Presenters.Register;
+using E_School_Diary.WebClient.Views.Register;
 
 namespace E_School_Diary.WebClient.UserControls.Registration
 {
@@ -21,12 +21,6 @@ namespace E_School_Diary.WebClient.UserControls.Registration
         public event EventHandler<RegisterTeacherEventArgs> RegisterTeacherClick;
 
         private string registrationTitle = "New Teacher Registration";
-        //private ApplicationUserManager manager;
-
-        public RegisterTeacher()
-        {
-            //this.manager = 
-        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -57,14 +51,14 @@ namespace E_School_Diary.WebClient.UserControls.Registration
             {
                 this.CommonFields.ErrorMessageContainer = this.Model.ErrorMessage;
                 this.CommonFields.SuccessMessageContainer = "";
+                this.CommonFields.ShowErrorContainer();
             }
             else
             {
                 this.CommonFields.SuccessMessageContainer = "Teacher registred successfully";
                 this.CommonFields.ErrorMessageContainer = "";
+                this.CommonFields.ShowSuccessContainer();
             }
-
-            this.CommonFields.ShowSuccessContainer();
         }
 
         private void LoadSubjects()

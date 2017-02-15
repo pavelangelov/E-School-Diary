@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web;
-using System.Web.UI.WebControls;
 
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -8,10 +7,10 @@ using WebFormsMvp;
 using WebFormsMvp.Web;
 
 using E_School_Diary.Utils.DTOs.RegisterDTOs;
-using E_School_Diary.WebClient.Models.CustomEventArgs;
+using E_School_Diary.WebClient.Models.CustomEventArgs.Register;
 using E_School_Diary.WebClient.Models.ViewModels.Register;
-using E_School_Diary.WebClient.Presenters.Admin.Register;
-using E_School_Diary.WebClient.Views.Admin.Register;
+using E_School_Diary.WebClient.Presenters.Register;
+using E_School_Diary.WebClient.Views.Register;
 
 namespace E_School_Diary.WebClient.UserControls.Registration
 {
@@ -43,24 +42,6 @@ namespace E_School_Diary.WebClient.UserControls.Registration
                 this.StudentClass.Text = "Your class.";
             }
         }
-
-        //private void LoadTeachers()
-        //{
-        //    foreach (var teacher in this.Model.Teachers)
-        //    {
-        //        var item = new ListItem(teacher.Item1, teacher.Item2);
-        //        this.FormMaster.Items.Add(item);
-        //    }
-        //}
-
-        //private void LoadClasses()
-        //{
-        //    foreach (var stClass in this.Model.Classes)
-        //    {
-        //        var item = new ListItem(stClass.Item1, stClass.Item2);
-        //        this.StudentClasses.Items.Add(item);
-        //    }
-        //}
 
         protected void RegisterClick(object sender, EventArgs e)
         {

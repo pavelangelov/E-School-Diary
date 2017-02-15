@@ -495,9 +495,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CustomEventArgs\Admin\AddNewClassEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\NavigationEventArgs.cs" />
-    <Compile Include="Models\CustomEventArgs\RegisterStudentPageLoadEventArgs.cs" />
-    <Compile Include="Models\CustomEventArgs\RegisterStudentSubmitEventArgs.cs" />
-    <Compile Include="Models\CustomEventArgs\RegisterTeacherEventArgs.cs" />
+    <Compile Include="Models\CustomEventArgs\Register\RegisterStudentPageLoadEventArgs.cs" />
+    <Compile Include="Models\CustomEventArgs\Register\RegisterStudentSubmitEventArgs.cs" />
+    <Compile Include="Models\CustomEventArgs\Register\RegisterTeacherEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Student\CalendarEventArgs.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ViewModels\Admin\AddNewClassViewModel.cs" />
@@ -510,8 +510,8 @@
     <Compile Include="Modules\MvpNinjectModule.cs" />
     <Compile Include="Modules\StudentsNinjectModule.cs" />
     <Compile Include="Presenters\Admin\AddNewClassPresenter.cs" />
-    <Compile Include="Presenters\Admin\Register\RegisterStudentPresenter.cs" />
-    <Compile Include="Presenters\Admin\Register\RegisterTeacherPresenter.cs" />
+    <Compile Include="Presenters\Register\RegisterStudentPresenter.cs" />
+    <Compile Include="Presenters\Register\RegisterTeacherPresenter.cs" />
     <Compile Include="Presenters\Common\NavigationPresenter.cs" />
     <Compile Include="Presenters\Student\StudentCalendarPresenter.cs" />
     <Compile Include="Presenters\Student\StudentMarksPresenter.cs" />
@@ -623,8 +623,8 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\IAddNewClassView.cs" />
-    <Compile Include="Views\Admin\Register\IRegisterStudentView.cs" />
-    <Compile Include="Views\Admin\Register\IRegisterTeacherView.cs" />
+    <Compile Include="Views\Register\IRegisterStudentView.cs" />
+    <Compile Include="Views\Register\IRegisterTeacherView.cs" />
     <Compile Include="Views\Common\INavigationView.cs" />
     <Compile Include="Views\Student\IStudentCalendarView.cs" />
     <Compile Include="Views\Student\IStudentMarksView.cs" />

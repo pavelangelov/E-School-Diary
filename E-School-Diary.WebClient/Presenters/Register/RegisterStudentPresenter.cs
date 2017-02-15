@@ -1,17 +1,16 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 using Microsoft.AspNet.Identity;
 using WebFormsMvp;
 
 using E_School_Diary.Data.Enums;
 using E_School_Diary.Services.Contracts;
-using E_School_Diary.WebClient.Models;
-using E_School_Diary.WebClient.Models.CustomEventArgs;
-using E_School_Diary.WebClient.Views.Admin.Register;
 using E_School_Diary.Utils.DTOs.RegisterDTOs;
+using E_School_Diary.WebClient.Models;
+using E_School_Diary.WebClient.Models.CustomEventArgs.Register;
+using E_School_Diary.WebClient.Views.Register;
 
-namespace E_School_Diary.WebClient.Presenters.Admin.Register
+namespace E_School_Diary.WebClient.Presenters.Register
 {
     public class RegisterStudentPresenter : Presenter<IRegisterStudentView>
     {
@@ -37,9 +36,6 @@ namespace E_School_Diary.WebClient.Presenters.Admin.Register
                 this.View.Model.ErrorMessage = message;
                 return;
             }
-
-            this.GetStudentClasses();
-            this.GetTeachers();
         }
 
         private string ValidateTeacher(string userId)
@@ -63,26 +59,6 @@ namespace E_School_Diary.WebClient.Presenters.Admin.Register
             };
 
             return null;
-        }
-
-        private void GetStudentClasses()
-        {
-            var classes = this.studentClassService.GetAll()
-                                                .Select(x => new Tuple<string, string>(x.Name, x.Id))
-                                                .OrderBy(x => x.Item1)
-                                                .ToList();
-
-
-            this.View.Model.Classes = classes;
-        }
-
-        private void GetTeachers()
-        {
-            var teachers = this.teacherService.GetAll()
-                                    .Select(x => new Tuple<string, string>(x.FirstName + " " + x.LastName, x.Id))
-                                    .ToList();
-
-            this.View.Model.Teachers = teachers;
         }
 
         private void View_SubmitClick(object sender, RegisterStudentSubmitEventArgs e)

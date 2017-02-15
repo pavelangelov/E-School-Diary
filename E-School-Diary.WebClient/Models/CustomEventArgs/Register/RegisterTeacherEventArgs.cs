@@ -2,7 +2,7 @@
 
 using E_School_Diary.Utils.DTOs.RegisterDTOs;
 
-namespace E_School_Diary.WebClient.Models.CustomEventArgs
+namespace E_School_Diary.WebClient.Models.CustomEventArgs.Register
 {
     public class RegisterTeacherEventArgs : EventArgs
     {

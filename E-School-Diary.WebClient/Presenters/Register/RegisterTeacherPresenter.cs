@@ -7,10 +7,10 @@ using WebFormsMvp;
 
 using E_School_Diary.Data.Enums;
 using E_School_Diary.WebClient.Models;
-using E_School_Diary.WebClient.Views.Admin.Register;
-using E_School_Diary.WebClient.Models.CustomEventArgs;
+using E_School_Diary.WebClient.Models.CustomEventArgs.Register;
+using E_School_Diary.WebClient.Views.Register;
 
-namespace E_School_Diary.WebClient.Presenters.Admin.Register
+namespace E_School_Diary.WebClient.Presenters.Register
 {
     public class RegisterTeacherPresenter : Presenter<IRegisterTeacherView>
     {
@@ -45,7 +45,6 @@ namespace E_School_Diary.WebClient.Presenters.Admin.Register
                 var roleresult = e.Manager.AddToRole(currentUser.Id, "Teacher");
 
                 this.View.Model.IsSuccess = true;
-                this.View.Model.User = user;
             }
             else
             {
