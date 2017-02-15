@@ -10,6 +10,8 @@ namespace E_School_Diary.Data.Models
 {
     public partial class StudentClass : IStudentClass, IIdentifiable
     {
+        private string name;
+
         public StudentClass()
         {
             this.Id = Guid.NewGuid().ToString();
@@ -30,7 +32,24 @@ namespace E_School_Diary.Data.Models
         [Index(IsUnique = true)]
         [MinLength(Constants.ClassNameMinLength, ErrorMessage = Constants.StudentClassNameErrorMessage)]
         [MaxLength(Constants.ClassNameMaxLength, ErrorMessage = Constants.StudentClassNameErrorMessage)]
-        public string Name { get; set; }
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+
+            set
+            {
+                var minLength = Constants.ClassNameMinLength;
+                var maxLength = Constants.ClassNameMaxLength;
+                var errorMsg = Constants.StudentClassNameErrorMessage;
+
+                Utils.Validator.ValidateStringLength(value, maxLength, minLength, "Name", errorMsg);
+
+                this.name = value;
+            }
+        }
 
         public string FormMasterId { get; set; }
 

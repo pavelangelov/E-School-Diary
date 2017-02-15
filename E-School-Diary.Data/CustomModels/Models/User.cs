@@ -11,6 +11,12 @@ namespace E_School_Diary.Data.Models
 {
     public class User : IdentityUser
     {
+        private int age;
+        private string firstName;
+        private string middleName;
+        private string lastName;
+        private string additionalInfo;
+
         public User()
         {
             this.Id = Guid.NewGuid().ToString();
@@ -23,7 +29,29 @@ namespace E_School_Diary.Data.Models
         }
         
         [MaxLength(Constants.AdditionalInfoMaxLength, ErrorMessage = Constants.AdditionalInfoErrorMessage)]
-        public string AdditionalInfo { get; set; }
+        public string AdditionalInfo
+        {
+            get
+            {
+                return this.additionalInfo;
+            }
+
+            set
+            {
+                if (value == null)
+                {
+                    return;
+                }
+
+                var minLength = 0;
+                var maxLength = Constants.AdditionalInfoMaxLength;
+                var errorMsg = Constants.AdditionalInfoErrorMessage;
+
+                Utils.Validator.ValidateStringLength(value, maxLength, minLength, "AdditionalInfo", errorMsg);
+
+                this.additionalInfo = value;
+            }
+        }
 
         [Required]
         [Range(Constants.StudentAgeMinValue, Constants.AgeMaxValue)]
@@ -38,14 +66,70 @@ namespace E_School_Diary.Data.Models
         [Required]
         [MinLength(Constants.NameMinLength, ErrorMessage = Constants.NameErrorMessage)]
         [MaxLength(Constants.NameMaxLength, ErrorMessage = Constants.NameErrorMessage)]
-        public string FirstName { get; set; }
+        public string FirstName
+        {
+            get
+            {
+                return this.firstName;
+            }
 
-        public string MiddleName { get; set; }
+            set
+            {
+                var minLength = Constants.NameMinLength;
+                var maxLength = Constants.NameMaxLength;
+                var errorMsg = Constants.NameErrorMessage;
+
+                Utils.Validator.ValidateStringLength(value, maxLength, minLength, "FirstName", errorMsg);
+
+                this.firstName = value;
+            }
+        }
+
+        public string MiddleName
+        {
+            get
+            {
+                return this.middleName;
+            }
+
+            set
+            {
+                if (value == null)
+                {
+                    return;
+                }
+
+                var minLength = Constants.NameMinLength;
+                var maxLength = Constants.NameMaxLength;
+                var errorMsg = Constants.NameErrorMessage;
+
+                Utils.Validator.ValidateStringLength(value, maxLength, minLength, "MiddleName", errorMsg);
+
+                this.firstName = value;
+            }
+        }
 
         [Required]
         [MinLength(Constants.NameMinLength, ErrorMessage = Constants.NameErrorMessage)]
         [MaxLength(Constants.NameMaxLength, ErrorMessage = Constants.NameErrorMessage)]
-        public string LastName { get; set; }
+        public string LastName
+        {
+            get
+            {
+                return this.lastName;
+            }
+
+            set
+            {
+                var minLength = Constants.NameMinLength;
+                var maxLength = Constants.NameMaxLength;
+                var errorMsg = Constants.NameErrorMessage;
+
+                Utils.Validator.ValidateStringLength(value, maxLength, minLength, "LastName", errorMsg);
+
+                this.firstName = value;
+            }
+        }
 
         public string ImageUrl { get; set; }
 

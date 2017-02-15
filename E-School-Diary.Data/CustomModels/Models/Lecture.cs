@@ -9,6 +9,8 @@ namespace E_School_Diary.Data.Models
 {
     public partial class Lecture : ILecture, IIdentifiable
     {
+        private string title;
+
         public Lecture()
         {
             this.Id = Guid.NewGuid().ToString();
@@ -50,7 +52,24 @@ namespace E_School_Diary.Data.Models
         [Required]
         [MinLength(Constants.LectureTitleMinLength, ErrorMessage = Constants.LectureTitleErrorMessage)]
         [MaxLength(Constants.LectureTitleMaxLength, ErrorMessage = Constants.LectureTitleErrorMessage)]
-        public string Title { get; set; }
+        public string Title
+        {
+            get
+            {
+                return this.title;
+            }
+
+            set
+            {
+                var minLength = Constants.LectureTitleMinLength;
+                var maxLength = Constants.LectureTitleMaxLength;
+                var errorMsg = Constants.LectureTitleErrorMessage;
+
+                Utils.Validator.ValidateStringLength(value, maxLength, minLength, "Title", errorMsg);
+
+                this.title = value;
+            }
+        }
 
     }
 }

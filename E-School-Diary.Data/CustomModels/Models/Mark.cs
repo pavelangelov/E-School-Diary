@@ -9,6 +9,8 @@ namespace E_School_Diary.Data.Models
 {
     public partial class Mark : IMark, IIdentifiable
     {
+        private double markValue;
+
         public Mark()
         {
             this.Id = Guid.NewGuid().ToString();
@@ -35,6 +37,23 @@ namespace E_School_Diary.Data.Models
 
         [Required]
         [Range(Constants.MarkMinValue, Constants.MarkMaxValue, ErrorMessage = Constants.MarkValueErrorMessage)]
-        public double Value { get; set; }
+        public double Value
+        {
+            get
+            {
+                return this.markValue;
+            }
+
+            set
+            {
+                var minValue = Constants.MarkMinValue;
+                var maxValue = Constants.MarkMaxValue;
+                var errorMsg = Constants.MarkValueErrorMessage;
+
+                Utils.Validator.ValidateDoubleValue(value, maxValue, minValue, "Value", errorMsg);
+
+                this.markValue = value;
+            }
+        }
     }
 }

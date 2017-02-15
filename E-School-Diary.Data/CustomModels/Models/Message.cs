@@ -8,6 +8,9 @@ namespace E_School_Diary.Data.Models
 {
     public partial class Message : IMessage, IIdentifiable
     {
+        private string content;
+        private string sendFrom;
+
         public Message()
         {
             this.Id = Guid.NewGuid().ToString();
@@ -27,12 +30,46 @@ namespace E_School_Diary.Data.Models
         [Required]
         [MinLength(Constants.ContentMinLength, ErrorMessage = Constants.ContentErrorMessage)]
         [MaxLength(Constants.ContentMaxLength, ErrorMessage = Constants.ContentErrorMessage)]
-        public string Content { get; set; }
+        public string Content
+        {
+            get
+            {
+                return this.content;
+            }
+
+            set
+            {
+                var minLength = Constants.ContentMinLength;
+                var maxLength = Constants.ContentMaxLength;
+                var errorMsg = Constants.ContentErrorMessage;
+
+                Utils.Validator.ValidateStringLength(value, maxLength, minLength, "Content", errorMsg);
+
+                this.content = value;
+            }
+        }
         
         [Required]
         [MinLength(Constants.SendFromMinLength, ErrorMessage = Constants.SendFromErrorMessage)]
         [MaxLength(Constants.SendFromMaxLength, ErrorMessage = Constants.SendFromErrorMessage)]
-        public string SendFrom { get; set; }
+        public string SendFrom
+        {
+            get
+            {
+                return this.sendFrom;
+            }
+
+            set
+            {
+                var minLength = Constants.SendFromMinLength;
+                var maxLength = Constants.SendFromMaxLength;
+                var errorMsg = Constants.SendFromErrorMessage;
+
+                Utils.Validator.ValidateStringLength(value, maxLength, minLength, "SendFrom", errorMsg);
+
+                this.sendFrom = value;
+            }
+        }
 
         public DateTime SendOn { get; set; }
     }

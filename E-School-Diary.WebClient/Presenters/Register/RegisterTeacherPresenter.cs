@@ -29,10 +29,10 @@ namespace E_School_Diary.WebClient.Presenters.Register
 
         public void View_RegisterTeacherClick(object sender, RegisterTeacherEventArgs e)
         {
-            var user = this.appUserFactory.CreateTeacher(e.TeacherDTO);
 
             try
             {
+                var user = this.appUserFactory.CreateTeacher(e.TeacherDTO);
                 IdentityResult result = e.Manager.Create(user, e.TeacherDTO.Password);
                 if (result.Succeeded)
                 {
