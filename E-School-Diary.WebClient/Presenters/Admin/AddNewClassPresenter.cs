@@ -2,10 +2,10 @@
 
 using WebFormsMvp;
 
+using E_School_Diary.Factories.Contracts;
 using E_School_Diary.Services.Contracts;
 using E_School_Diary.WebClient.Views.Admin;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Admin;
-using E_School_Diary.Factories.Contracts;
 
 namespace E_School_Diary.WebClient.Presenters.Admin
 {
@@ -50,13 +50,21 @@ namespace E_School_Diary.WebClient.Presenters.Admin
 
         public void View_CreateClassClick(object sender, AddNewClassEventArgs e)
         {
-            // TODO: Check for validation error
-            var stClass = this.studentClassFactory.CreateClass(e.ClassName, e.TeacherId);
+            try
+            {
+                var stClass = this.studentClassFactory.CreateClass(e.ClassName, e.TeacherId);
+                this.studentClassService.Add(stClass);
+            }
+            catch (ArgumentException ex)
+            {
+                this.View.Model.IsSuccess = false;
+                this.View.Model.ErrorMessage = ex.Message;
+                return;
+            }
 
             int changes = 0;
             try
             {
-                this.studentClassService.Add(stClass);
                 changes = this.studentClassService.Save();
             }
             catch (Exception ex)

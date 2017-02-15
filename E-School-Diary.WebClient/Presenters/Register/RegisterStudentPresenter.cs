@@ -47,6 +47,7 @@ namespace E_School_Diary.WebClient.Presenters.Register
 
         public void View_PageLoad(object sender, RegisterStudentPageLoadEventArgs e)
         {
+            // TODO: Replace this with event
             var message = this.ValidateTeacher(e.UserId);
             if (message != null)
             {
@@ -60,21 +61,29 @@ namespace E_School_Diary.WebClient.Presenters.Register
             var user = e.StudentDTO;
             var studentClass = this.studentClassService.GetByTeacherId(user.FormMasterId);
             user.StudentClassId = studentClass.Id;
-            var appUser = this.appUserFactory.CreateStudent(user);
-
-            IdentityResult result = e.Manager.Create(appUser, user.Password);
-            if (result.Succeeded)
+            
+            try
             {
-                var currentUser = e.Manager.FindByName(appUser.UserName);
+                var appUser = this.appUserFactory.CreateStudent(user);
+                IdentityResult result = e.Manager.Create(appUser, user.Password);
 
-                var roleresult = e.Manager.AddToRole(currentUser.Id, "Student");
+                if (result.Succeeded)
+                {
+                    var currentUser = e.Manager.FindByName(appUser.UserName);
 
-                this.View.Model.IsSuccess = true;
+                    var roleresult = e.Manager.AddToRole(currentUser.Id, "Student");
+
+                    this.View.Model.IsSuccess = true;
+                }
+                else
+                {
+                    this.View.Model.ErrorMessage = result.Errors.FirstOrDefault();
+                    this.View.Model.IsSuccess = false;
+                }
             }
-            else
+            catch (ArgumentException ex)
             {
-                this.View.Model.ErrorMessage = result.Errors.FirstOrDefault();
-                this.View.Model.IsSuccess = false;
+                this.View.Model.ErrorMessage = ex.Message;
             }
         }
 

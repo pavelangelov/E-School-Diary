@@ -38,6 +38,7 @@ namespace E_School_Diary.WebClient.Presenters.Student
 
         public void View_LoadLectures(object sender, CalendarEventArgs e)
         {
+            // TODO: Handle error and show it to user
             var date = this.dateParser.ExtractDate(e.Date);
 
             var lectures = this.studentService.GetStudentLectures(e.UserId);

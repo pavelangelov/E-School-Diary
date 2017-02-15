@@ -31,18 +31,26 @@ namespace E_School_Diary.WebClient.Presenters.Register
         {
             var user = this.appUserFactory.CreateTeacher(e.TeacherDTO);
 
-            IdentityResult result = e.Manager.Create(user, e.TeacherDTO.Password);
-            if (result.Succeeded)
+            try
             {
-                var currentUser = e.Manager.FindByName(user.UserName);
+                IdentityResult result = e.Manager.Create(user, e.TeacherDTO.Password);
+                if (result.Succeeded)
+                {
+                    var currentUser = e.Manager.FindByName(user.UserName);
 
-                var roleresult = e.Manager.AddToRole(currentUser.Id, "Teacher");
+                    var roleresult = e.Manager.AddToRole(currentUser.Id, "Teacher");
 
-                this.View.Model.IsSuccess = true;
+                    this.View.Model.IsSuccess = true;
+                }
+                else
+                {
+                    this.View.Model.ErrorMessage = result.Errors.FirstOrDefault();
+                    this.View.Model.IsSuccess = false;
+                }
             }
-            else
+            catch (ArgumentException ex)
             {
-                this.View.Model.ErrorMessage = result.Errors.FirstOrDefault();
+                this.View.Model.ErrorMessage = ex.Message;
                 this.View.Model.IsSuccess = false;
             }
         }
