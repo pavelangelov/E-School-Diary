@@ -1,4 +1,6 @@
-﻿using E_School_Diary.Auth;
+﻿using System;
+
+using E_School_Diary.Auth;
 using E_School_Diary.Data.Enums;
 using E_School_Diary.Factories.Contracts;
 using E_School_Diary.Utils;
@@ -23,6 +25,24 @@ namespace E_School_Diary.Factories
             };
 
             return appUser;
+        }
+
+        public ApplicationUser CreateTeacher(RegisterTeacherDTO teacherDTO)
+        {
+            var teacher = new ApplicationUser()
+            {
+                UserName = teacherDTO.Email,
+                Email = teacherDTO.Email,
+                FirstName = teacherDTO.FirstName,
+                LastName = teacherDTO.LastName,
+                Age = teacherDTO.Age,
+                UserType = UserTypes.Teacher,
+                IsFreeTeacher = true,
+                Subject = (Subject)Enum.Parse(typeof(Subject), teacherDTO.Subject),
+                ImageUrl = Constants.DefaultUserImage
+            };
+
+            return teacher;
         }
     }
 }

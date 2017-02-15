@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 using Microsoft.AspNet.Identity;
 using WebFormsMvp;
@@ -21,6 +22,21 @@ namespace E_School_Diary.WebClient.Presenters.Register
         public RegisterStudentPresenter(IRegisterStudentView view, IStudentClassService studentClassService, ITeacherService teacherService, IAppicationUserFactory appUserFactory)
             : base(view)
         {
+            if (studentClassService == null)
+            {
+                throw new NullReferenceException("StudentClassService");
+            }
+
+            if (teacherService == null)
+            {
+                throw new NullReferenceException("TeacherService");
+            }
+
+            if (appUserFactory == null)
+            {
+                throw new NullReferenceException("ApplicationUserFactory");
+            }
+
             this.studentClassService = studentClassService;
             this.teacherService = teacherService;
             this.appUserFactory = appUserFactory;
@@ -73,8 +89,6 @@ namespace E_School_Diary.WebClient.Presenters.Register
             {
                 return "Only Teachers with class can add new Student!";
             }
-
-
 
             this.View.Model.TeacherInfo = new TeacherInforForRegisterStudentDTO
             {

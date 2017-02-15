@@ -2,39 +2,34 @@
 using System.Linq;
 
 using Microsoft.AspNet.Identity;
-
 using WebFormsMvp;
 
-using E_School_Diary.Data.Enums;
-using E_School_Diary.WebClient.Models;
+using E_School_Diary.Factories.Contracts;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Register;
 using E_School_Diary.WebClient.Views.Register;
-using E_School_Diary.Auth;
 
 namespace E_School_Diary.WebClient.Presenters.Register
 {
     public class RegisterTeacherPresenter : Presenter<IRegisterTeacherView>
-    {   
-        public RegisterTeacherPresenter(IRegisterTeacherView view)
+    {
+        private IAppicationUserFactory appUserFactory;
+
+        public RegisterTeacherPresenter(IRegisterTeacherView view, IAppicationUserFactory appUserFactory)
             : base(view)
         {
+            if (appUserFactory == null)
+            {
+                throw new NullReferenceException("ApplicationUserFactory");
+            }
+
+            this.appUserFactory = appUserFactory;
+
             this.View.RegisterTeacherClick += View_RegisterTeacherClick;
         }
 
         private void View_RegisterTeacherClick(object sender, RegisterTeacherEventArgs e)
         {
-            var user = new ApplicationUser()
-            {
-                UserName = e.TeacherDTO.Email,
-                Email = e.TeacherDTO.Email,
-                FirstName = e.TeacherDTO.FirstName,
-                LastName = e.TeacherDTO.LastName,
-                Age = e.TeacherDTO.Age,
-                UserType = UserTypes.Teacher,
-                IsFreeTeacher = true,
-                Subject = (Subject)Enum.Parse(typeof(Subject), e.TeacherDTO.Subject),
-                ImageUrl = "/Images/default-user.png"
-            };
+            var user = this.appUserFactory.CreateTeacher(e.TeacherDTO);
 
             IdentityResult result = e.Manager.Create(user, e.TeacherDTO.Password);
             if (result.Succeeded)
