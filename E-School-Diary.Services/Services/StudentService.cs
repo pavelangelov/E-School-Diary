@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
@@ -15,6 +16,20 @@ namespace E_School_Diary.Services
         public StudentService(IDatabaseContext dbContext)
         {
             this.dbContext = dbContext;
+        }
+
+        public IEnumerable<StudentDTO> FindByStudentClassId(string studentClassId)
+        {
+            var students = this.dbContext.Users.Where(u => u.UserType == Data.Enums.UserTypes.Student &&
+                                                      u.StudentClassId == studentClassId)
+                                                      .Select(st => new StudentDTO
+                                                      {
+                                                          Id = st.Id,
+                                                          FirstName = st.FirstName,
+                                                          MiddleName = st.MiddleName,
+                                                          LastName = st.LastName
+                                                      });
+            return students;
         }
 
         public IEnumerable<LectureDTO> GetStudentLectures(string studentId)

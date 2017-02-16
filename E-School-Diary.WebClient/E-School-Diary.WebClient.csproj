@@ -198,6 +198,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="AddMarks\Default.aspx" />
     <Content Include="AddNewLecture\Default.aspx" />
     <Content Include="Administration\AddNewClass\Default.aspx" />
     <Content Include="Administration\AddTeacherToClass\Default.aspx" />
@@ -271,6 +272,7 @@
     <Content Include="Register\Student\Web.config" />
     <Content Include="Register\Admin\Web.config" />
     <Content Include="Administration\Web.config" />
+    <Content Include="AddMarks\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Register\Teacher\Default.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -321,6 +323,7 @@
     <Content Include="UserControls\Student\Calendar.ascx" />
     <Content Include="UserControls\Student\Marks.ascx" />
     <Content Include="UserControls\Teacher\Add\Lecture.ascx" />
+    <Content Include="UserControls\Teacher\Add\Marks.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -442,6 +445,13 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddMarks\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddMarks\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddNewLecture\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -502,7 +512,9 @@
     <Compile Include="Models\CustomEventArgs\Register\RegisterStudentSubmitEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Register\RegisterTeacherEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Student\CalendarEventArgs.cs" />
+    <Compile Include="Models\CustomEventArgs\Teacher\AddMarksEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Teacher\AddNewLectureEventArgs.cs" />
+    <Compile Include="Models\CustomEventArgs\Teacher\SelectClassEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\UserIdEventArgs.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ViewModels\Admin\AddNewClassViewModel.cs" />
@@ -513,6 +525,7 @@
     <Compile Include="Models\ViewModels\Register\RegisterTeacherViewModel.cs" />
     <Compile Include="Models\ViewModels\Student\StudentCalendarViewModel.cs" />
     <Compile Include="Models\ViewModels\Student\StudentMarksViewModel.cs" />
+    <Compile Include="Models\ViewModels\Teacher\AddMarksViewModel.cs" />
     <Compile Include="Models\ViewModels\Teacher\AddNewLectureViewModel.cs" />
     <Compile Include="Modules\MvpNinjectModule.cs" />
     <Compile Include="Modules\StudentsNinjectModule.cs" />
@@ -523,6 +536,7 @@
     <Compile Include="Presenters\Common\NavigationPresenter.cs" />
     <Compile Include="Presenters\Student\StudentCalendarPresenter.cs" />
     <Compile Include="Presenters\Student\StudentMarksPresenter.cs" />
+    <Compile Include="Presenters\Teacher\AddMarksPresenter.cs" />
     <Compile Include="Presenters\Teacher\AddNewLecturePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register\Admin\Default.aspx.cs">
@@ -645,6 +659,13 @@
     <Compile Include="UserControls\Teacher\Add\Lecture.ascx.designer.cs">
       <DependentUpon>Lecture.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Teacher\Add\Marks.ascx.cs">
+      <DependentUpon>Marks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Teacher\Add\Marks.ascx.designer.cs">
+      <DependentUpon>Marks.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -659,6 +680,7 @@
     <Compile Include="Views\Common\INavigationView.cs" />
     <Compile Include="Views\Student\IStudentCalendarView.cs" />
     <Compile Include="Views\Student\IStudentMarksView.cs" />
+    <Compile Include="Views\Teacher\IAddMarksView.cs" />
     <Compile Include="Views\Teacher\IAddNewLectureView.cs" />
   </ItemGroup>
   <ItemGroup>

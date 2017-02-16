@@ -48,6 +48,7 @@
                     <li><a class="waves-effect" href="/">Create new Admin Account</a></li>
                     <li><a class="waves-effect" href="/Register/Teacher">Create new Teacher Account</a></li>
                     <li><a class="waves-effect" href="/Administration/AddNewClass">Create new Class</a></li>
+                    <li><a class="waves-effect" href="/Administration/AddTeacherToClass">Add teacher to class</a></li>
                     <li>
                         <div class="divider"></div>
                     </li>
@@ -74,7 +75,7 @@
                     <li><a class="waves-effect" href="#">Create new Parent Account</a></li>
                     <li><a class="waves-effect" href="/AddNewLecture">Add new lecture</a></li>
                     <li>Cancel lecture</li>
-                    <li>Add marks to students</li>
+                    <li><a class="waves-effect" href="/AddMarks">Add marks to students</a></li>
                     <li>Send message to student parents</li>
                     <li>Edit profile</li>
                 </ContentTemplate>

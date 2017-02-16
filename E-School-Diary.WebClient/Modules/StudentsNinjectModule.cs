@@ -1,4 +1,5 @@
 ﻿using Ninject.Modules;
+using Ninject.Web.Common;
 
 using E_School_Diary.Data;
 using E_School_Diary.Factories;
@@ -7,7 +8,6 @@ using E_School_Diary.Services;
 using E_School_Diary.Services.Contracts;
 using E_School_Diary.Utils;
 using E_School_Diary.Utils.Contracts;
-using Ninject.Web.Common;
 
 namespace E_School_Diary.WebClient.Modules
 {
@@ -22,10 +22,12 @@ namespace E_School_Diary.WebClient.Modules
             this.Bind<ITeacherService>().To<TeacherService>();
             this.Bind<IStudentService>().To<StudentService>();
             this.Bind<ILectureService>().To<LectureService>();
+            this.Bind<IMarkService>().To<MarkService>();
 
             this.Bind<IAppicationUserFactory>().To<ApplicationUserFactory>();
             this.Bind<IStudentClassFactory>().To<StudentClassFactory>();
             this.Bind<ILectureFactory>().To<LectureFactory>();
+            this.Bind<IMarkFactory>().To<MarkFactory>();
         }
     }
 }

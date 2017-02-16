@@ -10,5 +10,7 @@ namespace E_School_Diary.Services.Contracts
         IEnumerable<IGrouping<string, MarkDTO>> GetStudentMarks(string studentId);
 
         IEnumerable<LectureDTO> GetStudentLectures(string studentId);
+
+        IEnumerable<StudentDTO> FindByStudentClassId(string studentClassId);
     }
 }
