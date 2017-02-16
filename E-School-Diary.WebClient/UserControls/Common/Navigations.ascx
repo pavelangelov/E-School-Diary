@@ -72,7 +72,7 @@
                 <ContentTemplate>
                     <li><a class="waves-effect" href="/Register/Student">Create new Student Account</a></li>
                     <li><a class="waves-effect" href="#">Create new Parent Account</a></li>
-                    <li>Add new lecture</li>
+                    <li><a class="waves-effect" href="/AddNewLecture">Add new lecture</a></li>
                     <li>Cancel lecture</li>
                     <li>Add marks to students</li>
                     <li>Send message to student parents</li>
