@@ -1,16 +1,14 @@
-﻿using E_School_Diary.WebClient.Models.ViewModels.Admin;
-using E_School_Diary.WebClient.Views.Admin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
+﻿using System;
 using System.Web.UI.WebControls;
+
+using WebFormsMvp;
 using WebFormsMvp.Web;
+
 using E_School_Diary.WebClient.Models.CustomEventArgs;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Admin;
-using WebFormsMvp;
+using E_School_Diary.WebClient.Models.ViewModels.Admin;
 using E_School_Diary.WebClient.Presenters.Admin;
+using E_School_Diary.WebClient.Views.Admin;
 
 namespace E_School_Diary.WebClient.UserControls.Admin
 {
