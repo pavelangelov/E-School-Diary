@@ -46,8 +46,8 @@ namespace E_School_Diary.Services
         {
             var studentClass = this.dbContext.StudentClasses
                                                 .Include(st => st.Lectures)
-                                                .Include(st=> st.Students)
-                                                .First(st => st.Id == studentClassId);
+                                                .Include(st => st.Students)
+                                                .FirstOrDefault(st => st.Id == studentClassId);
             return studentClass;
         }
     }

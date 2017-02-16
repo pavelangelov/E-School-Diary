@@ -88,3 +88,8 @@ input#btnHidden {
 select#Teachers {
     display: inline-block;
 }
+
+/* Add teacher to class styles */
+select#Classes {
+    display: inline-block;
+}

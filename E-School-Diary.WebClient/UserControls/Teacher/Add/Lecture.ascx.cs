@@ -24,6 +24,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
         {
             if (!IsPostBack)
             {
+                this.Title.InnerText = "Add new lecture";
                 var userId = Context.User.Identity.GetUserId();
                 this.PageLoad?.Invoke(sender, new UserIdEventArgs(userId));
                 if (this.Model.ErrorMessage != null)

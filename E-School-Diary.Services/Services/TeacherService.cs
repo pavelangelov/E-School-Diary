@@ -46,7 +46,7 @@ namespace E_School_Diary.Services
             var teacher = this.dbContext.Users.Include(t => t.StudentClasses)
                                                 .Single(t => t.Id == teacherId);
 
-            var ownClass = this.dbContext.StudentClasses.First(st => st.FormMasterId == teacherId);
+            var ownClass = this.dbContext.StudentClasses.FirstOrDefault(st => st.FormMasterId == teacherId);
             var classes = new List<StudentClassDTO>();
             if (ownClass != null)
             {

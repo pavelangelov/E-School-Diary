@@ -7,6 +7,7 @@ using E_School_Diary.Services;
 using E_School_Diary.Services.Contracts;
 using E_School_Diary.Utils;
 using E_School_Diary.Utils.Contracts;
+using Ninject.Web.Common;
 
 namespace E_School_Diary.WebClient.Modules
 {
@@ -15,7 +16,7 @@ namespace E_School_Diary.WebClient.Modules
         public override void Load()
         {
             this.Bind<IDateParser>().To<DateParser>();
-            this.Bind<IDatabaseContext>().To<ESchoolDiaryDbContext>();
+            this.Bind<IDatabaseContext>().To<ESchoolDiaryDbContext>().InRequestScope();
 
             this.Bind<IStudentClassService>().To<StudentClassService>();
             this.Bind<ITeacherService>().To<TeacherService>();
