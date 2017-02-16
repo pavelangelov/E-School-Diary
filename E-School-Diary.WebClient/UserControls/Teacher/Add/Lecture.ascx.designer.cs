@@ -22,6 +22,42 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Title;
         
         /// <summary>
+        /// errorContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorContainer;
+        
+        /// <summary>
+        /// Error control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Error;
+        
+        /// <summary>
+        /// successContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl successContainer;
+        
+        /// <summary>
+        /// Success control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Success;
+        
+        /// <summary>
         /// LectureTitle control.
         /// </summary>
         /// <remarks>
@@ -55,7 +91,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox StartTime;
+        protected global::System.Web.UI.WebControls.DropDownList StartTime;
         
         /// <summary>
         /// EndTime control.
@@ -64,7 +100,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EndTime;
+        protected global::System.Web.UI.WebControls.DropDownList EndTime;
         
         /// <summary>
         /// Subjects2 control.
@@ -74,5 +110,14 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList Subjects2;
+        
+        /// <summary>
+        /// AddBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddBtn;
     }
 }

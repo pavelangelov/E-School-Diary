@@ -127,7 +127,7 @@ namespace E_School_Diary.Data.Models
 
                 Utils.Validator.ValidateStringLength(value, maxLength, minLength, "LastName", errorMsg);
 
-                this.firstName = value;
+                this.lastName = value;
             }
         }
 

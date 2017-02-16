@@ -13,6 +13,8 @@ namespace E_School_Diary.Services.Contracts
 
         IEnumerable<MinTeacherInfoDTO> GetTeachersWithoutClass();
 
+        IEnumerable<StudentClassDTO> GetTeacherClasses(string teacherId);
+
         void Add(User entity);
 
         int Save();

@@ -6,6 +6,8 @@ namespace E_School_Diary.Utils.Contracts
     {
         DateTime ExtractDate(string dateStr);
 
+        DateTime GetDate(string date, string hour);
+
         int ConvertMonthToNumber(string monthName);
     }
 }

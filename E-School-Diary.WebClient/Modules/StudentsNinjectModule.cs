@@ -20,9 +20,11 @@ namespace E_School_Diary.WebClient.Modules
             this.Bind<IStudentClassService>().To<StudentClassService>();
             this.Bind<ITeacherService>().To<TeacherService>();
             this.Bind<IStudentService>().To<StudentService>();
+            this.Bind<ILectureService>().To<LectureService>();
 
             this.Bind<IAppicationUserFactory>().To<ApplicationUserFactory>();
             this.Bind<IStudentClassFactory>().To<StudentClassFactory>();
+            this.Bind<ILectureFactory>().To<LectureFactory>();
         }
     }
 }

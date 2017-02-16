@@ -9,6 +9,13 @@
         <h4 runat="server" id="Title" class="center-align blue-text"></h4>
         <hr />
 
+        <div class="row card-panel" visible="false" id="errorContainer" runat="server">
+            <asp:Label runat="server" CssClass="red-text" ID="Error" />
+        </div>
+        <div class="row card-panel" visible="false" id="successContainer" runat="server">
+            <asp:Label runat="server" CssClass="blue-text" ID="Success" />
+        </div>
+
         <div class="row">
             <div class="input-field col s6">
                 <asp:TextBox
@@ -38,20 +45,19 @@
 
     <div class="row">
         <div class="input-field col s4">
-            <span class="badge">Start time </span>
-            <asp:TextBox runat="server" ID="StartTime" ClientIDMode="Static" TextMode="Time" />
+            <asp:DropDownList runat="server" ID="StartTime" ClientIDMode="Static" Visible="true"></asp:DropDownList>
+                <label for="StartTime">Select start time</label>
         </div>
         <div class="input-field col s4">
-            <span class="badge">End time </span>
-            <asp:TextBox runat="server" ID="EndTime" ClientIDMode="Static" TextMode="Time" />
+            <asp:DropDownList runat="server" ID="EndTime" ClientIDMode="Static" Visible="true"></asp:DropDownList>
+                <label for="EndTime">Select end time</label>
         </div>
         <div class="input-field col s4">
             <asp:DropDownList runat="server" ID="Subjects2" ClientIDMode="Static" Visible="true"></asp:DropDownList>
             <label for="Subjects">Subjects</label>
         </div>
     </div>
-
-    <%--<asp:Button runat="server" CssClass="btn" Text="Submit" OnClick="RegisterClick" />--%>
+    <asp:Button runat="server" CssClass="btn" ID="AddBtn" Text="Add" OnClick="AddClick" />
 </div>
 
 <script>

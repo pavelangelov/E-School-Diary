@@ -6,6 +6,35 @@ namespace E_School_Diary.Utils
 {
     public class DateParser : IDateParser
     {
+        
+
+        public DateTime ExtractDate(string dateStr)
+        {
+            // Expected date format -> 11 February, 2017
+            var dateArr = dateStr.Split(new[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+            var day = int.Parse(dateArr[0]);
+            var month = this.ConvertMonthToNumber(dateArr[1]);
+            var year = int.Parse(dateArr[2]);
+
+            return new DateTime(year, month, day);
+        }
+
+        public DateTime GetDate(string date, string hour)
+        {
+            var dateArr = date.Split(new[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+            var time = hour.Split(' ');
+
+            var day = int.Parse(dateArr[0]);
+            var month = this.ConvertMonthToNumber(dateArr[1]);
+            var year = int.Parse(dateArr[2]);
+
+            var hourValue = int.Parse(time[0]);
+            var minutesValue = int.Parse(time[1]);
+
+            return new DateTime(year, month, day, hourValue, minutesValue, 0);
+        }
+
         public int ConvertMonthToNumber(string monthName)
         {
             var symbol = monthName[0];
@@ -37,18 +66,6 @@ namespace E_School_Diary.Utils
                 default:
                     throw new ArgumentException("monthName");
             }
-        }
-
-        public DateTime ExtractDate(string dateStr)
-        {
-            // Expected date format -> 11 February, 2017
-            var dateArr = dateStr.Split(new[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
-
-            var day = int.Parse(dateArr[0]);
-            var month = this.ConvertMonthToNumber(dateArr[1]);
-            var year = int.Parse(dateArr[2]);
-
-            return new DateTime(year, month, day);
         }
     }
 }

@@ -5,6 +5,7 @@ using E_School_Diary.Data;
 using E_School_Diary.Data.Models;
 using E_School_Diary.Services.Contracts;
 using System.Linq;
+using System.Data.Entity;
 
 namespace E_School_Diary.Services
 {
@@ -39,6 +40,15 @@ namespace E_School_Diary.Services
         public int Save()
         {
             return this.dbContext.Save();
+        }
+
+        public StudentClass GetById(string studentClassId)
+        {
+            var studentClass = this.dbContext.StudentClasses
+                                                .Include(st => st.Lectures)
+                                                .Include(st=> st.Students)
+                                                .First(st => st.Id == studentClassId);
+            return studentClass;
         }
     }
 }

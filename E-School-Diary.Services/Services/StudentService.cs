@@ -19,17 +19,17 @@ namespace E_School_Diary.Services
 
         public IEnumerable<LectureDTO> GetStudentLectures(string studentId)
         {
-            var student = this.dbContext.Users.Include(u => u.Lectures)
-                                                    .FirstOrDefault(u => u.Id == studentId);
+            var student = this.dbContext.Users.FirstOrDefault(u => u.Id == studentId);
 
-            var lectures = student.Lectures.Select(l => new LectureDTO()
-                                                {
-                                                    Title = l.Title,
-                                                    Start = l.Start,
-                                                    End = l.End,
-                                                    Status = l.Status.ToString(),
-                                                    Subject = l.Subject.ToString()
-                                                });
+            var lectures = this.dbContext.Lectures.Where(l => l.StudentClassId == student.StudentClassId) 
+                                                     .Select(l => new LectureDTO()
+                                                        {
+                                                            Title = l.Title,
+                                                            Start = l.Start,
+                                                            End = l.End,
+                                                            Status = l.Status.ToString(),
+                                                            Subject = l.Subject.ToString()
+                                                        });
 
             return lectures;
         }

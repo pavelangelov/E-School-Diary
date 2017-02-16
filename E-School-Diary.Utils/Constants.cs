@@ -1,4 +1,6 @@
-﻿namespace E_School_Diary.Utils
+﻿using System;
+
+namespace E_School_Diary.Utils
 {
     public class Constants
     {
@@ -52,6 +54,7 @@
         public const int LectureTitleMaxLength = 35;
 
         public const string LectureTitleErrorMessage = "Lecture title mus be between 2 and 35 symbols.";
+
         #endregion
 
         #region Mark

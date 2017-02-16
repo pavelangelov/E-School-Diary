@@ -21,7 +21,10 @@
             <ItemTemplate>
                 <li class="collection-item avatar">
                     <i class="material-icons circle green" title="ahead">insert_chart</i>
-                    <span class="title">Lecture: <%#: Item.Title %></span><p>
+                    <span class="title">Lecture: <%#: Item.Title %></span>
+                    <p>
+                        Subject: <%# Item.Subject%>
+                        <br />
                         Start: <%# Item.Start.Value.ToShortTimeString()%>
                         <br />
                         End: <%# Item.End.Value.ToShortTimeString()%>
@@ -43,7 +46,10 @@
             <ItemTemplate>
                 <li class="collection-item avatar">
                     <i class="material-icons circle red" title="canceled">insert_chart</i>
-                    <span class="title">Lecture: <%#: Item.Title %></span><p>
+                    <span class="title">Lecture: <%#: Item.Title %></span>
+                    <p>
+                        Subject: <%# Item.Subject%>
+                        <br />
                         Start: <%# Item.Start.Value.ToShortTimeString()%>
                         <br />
                         End: <%# Item.End.Value.ToShortTimeString()%>
@@ -65,7 +71,10 @@
             <ItemTemplate>
                 <li class="collection-item avatar">
                     <i class="material-icons circle gray" title="past">insert_chart</i>
-                    <span class="title">Lecture: <%#: Item.Title %></span><p>
+                    <span class="title">Lecture: <%#: Item.Title %></span>
+                    <p>
+                        Subject: <%# Item.Subject%>
+                        <br />
                         Start: <%# Item.Start.Value.ToShortTimeString()%>
                         <br />
                         End: <%# Item.End.Value.ToShortTimeString()%>

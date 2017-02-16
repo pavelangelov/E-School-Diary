@@ -58,8 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IAppicationUserFactory.cs" />
+    <Compile Include="Contracts\ILectureFactory.cs" />
     <Compile Include="Contracts\IStudentClassFactory.cs" />
     <Compile Include="Factories\ApplicationUserFactory.cs" />
+    <Compile Include="Factories\LectureFactory.cs" />
     <Compile Include="Factories\StudentClassFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
