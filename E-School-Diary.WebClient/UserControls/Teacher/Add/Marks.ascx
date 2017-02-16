@@ -16,37 +16,20 @@
     AutoPostBack="true">
 </asp:DropDownList>
 
-<asp:Repeater
+<asp:GridView
     runat="server"
     ID="Students"
+    AutoGenerateColumns="false"
+    OnRowUpdating="Students_RowUpdating"
+    OnRowEditing="Students_RowEditing"
+    ShowFooter="true"
     ItemType="E_School_Diary.Utils.DTOs.Common.StudentDTO">
-    <HeaderTemplate>
-        <table>
-            <thead>
-                <tr>
-                    <th>Student ID</th>
-                    <th>Fitst Name</th>
-                    <th>Middle Name</th>
-                    <th>Last Name</th>
-                    <th>Add marks</th>
-                </tr>
-            </thead>
-    </HeaderTemplate>
-    <ItemTemplate>
-        <tr>
-            <td><%# Item.Id %></td>
-            <td><%# Item.FirstName %></td>
-            <td><%# Item.MiddleName %></td>
-            <td><%# Item.LastName %></td>
-            <td>
-                <asp:TextBox runat="server" TextMode="Number" /></td>
-        </tr>
-    </ItemTemplate>
-    <FooterTemplate>
-        <tr>
-            <td>
-                <asp:Button runat="server" OnClick="Unnamed_Click" CssClass="btn" Text="Update" /></td>
-        </tr>
-        </table>
-    </FooterTemplate>
-</asp:Repeater>
+    <Columns>
+        <asp:BoundField DataField="Id" ApplyFormatInEditMode="false" HeaderText="ID" />
+        <asp:BoundField DataField="FirstName" ApplyFormatInEditMode="false" HeaderText="First name" />
+        <asp:BoundField DataField="MiddleName" ApplyFormatInEditMode="false" HeaderText="Middle name" />
+        <asp:BoundField DataField="LastName" ApplyFormatInEditMode="false" HeaderText="Last name" />
+        <asp:BoundField DataField="MarkValue" ApplyFormatInEditMode="true" HeaderText="Add mark" />
+        <asp:CommandField ShowEditButton="true" />
+    </Columns>
+</asp:GridView>

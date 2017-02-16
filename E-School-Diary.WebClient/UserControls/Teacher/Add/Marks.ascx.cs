@@ -12,6 +12,7 @@ using E_School_Diary.WebClient.Models.ViewModels.Teacher;
 using E_School_Diary.WebClient.Presenters.Teacher;
 using E_School_Diary.WebClient.Views.Teacher;
 using E_School_Diary.Utils.DTOs.Add;
+using System.Web.ModelBinding;
 
 namespace E_School_Diary.WebClient.UserControls.Teacher.Add
 {
@@ -66,19 +67,67 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
             // TODO: Complete this
             var marks = new List<AddMarkDTO>();
 
-            var teacherId = Context.User.Identity.GetUserId();
-            var ev = new AddMarksEventArgs(teacherId, marks);
-
-            this.InsertMarks?.Invoke(sender, ev);
-
-            if (this.Model.IsSuccess)
+            foreach (GridViewRow item in this.Students.Rows)
             {
-                this.Message.ShowSuccess("Marks added.");
+                foreach (TableCell cell in item.Cells)
+                {
+                    var cellValue = cell.Text;
+                }
+                var cells = item.Cells;
             }
-            else
+
+            //var teacherId = Context.User.Identity.GetUserId();
+            //var ev = new AddMarksEventArgs(teacherId, marks);
+
+            //this.InsertMarks?.Invoke(sender, ev);
+
+            //if (this.Model.IsSuccess)
+            //{
+            //    this.Message.ShowSuccess("Marks added.");
+            //}
+            //else
+            //{
+            //    this.Message.ShowError(this.Model.ErrorMessage);
+            //}
+        }
+
+
+        protected void Students_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            GridViewRow row = (GridViewRow)this.Students.Rows[e.RowIndex];
+            TextBox idContainer = (TextBox)row.Cells[0].Controls[0];
+            TextBox markValue = (TextBox)row.Cells[4].Controls[0];
+            double value;
+            if (double.TryParse(markValue.Text, out value))
             {
-                this.Message.ShowError(this.Model.ErrorMessage);
+                
+                var markDTO = new AddMarkDTO() { StudentId = idContainer.Text, Value = value };
+                var teacherId = Context.User.Identity.GetUserId();
+
+                var ev = new AddMarksEventArgs(teacherId, markDTO);
+                this.InsertMarks?.Invoke(sender, ev);
+
+                if (this.Model.IsSuccess)
+                {
+                    this.Message.ShowSuccess("Marks added.");
+                }
+                else
+                {
+                    this.Message.ShowError(this.Model.ErrorMessage);
+                }
             }
+        }
+
+        protected void Students_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            this.Students.EditIndex = e.NewEditIndex;
+            this.Classes_SelectedIndexChanged(sender, e);
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            this.Students.EditIndex = -1;
+            this.Classes_SelectedIndexChanged(sender, e);
         }
     }
 }

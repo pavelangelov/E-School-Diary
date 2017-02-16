@@ -21,11 +21,11 @@ namespace E_School_Diary.WebClient.Presenters.Teacher
         private IMarkService markService;
 
         public AddMarksPresenter(
-                        IAddMarksView view, 
-                        IStudentClassService studentClassService, 
-                        IStudentService studentService, 
+                        IAddMarksView view,
+                        IStudentClassService studentClassService,
+                        IStudentService studentService,
                         ITeacherService teacherService,
-                        IMarkService markService, 
+                        IMarkService markService,
                         IMarkFactory markFactory)
             : base(view)
         {
@@ -74,10 +74,20 @@ namespace E_School_Diary.WebClient.Presenters.Teacher
 
         private void View_PageLoad(object sender, UserIdEventArgs e)
         {
-            var classes = this.studentClassService.GetAll()
-                                                    .Select(cl => new StudentClassDTO { Id = cl.Id, Name = cl.Name });
-            classes.ToList().Sort();
+            var teacher = this.teacherService.FindById(e.UserId);
+            var classes = new List<StudentClassDTO>();
+            foreach (var cl in teacher.StudentClasses.ToList())
+            {
+                classes.Add(new StudentClassDTO() { Id = cl.Id, Name = cl.Name });
+            }
 
+            if (teacher.StudentClass != null)
+            {
+                classes.Add(new StudentClassDTO() { Id = teacher.StudentClass.Id, Name = teacher.StudentClass.Name });
+
+            }
+
+            classes.Sort();
             this.View.Model.Classes = classes;
         }
 
@@ -86,19 +96,16 @@ namespace E_School_Diary.WebClient.Presenters.Teacher
             var teacher = this.teacherService.FindById(e.TeacherId);
             var subject = teacher.Subject;
 
-            foreach (var mark in e.Marks)
+            try
             {
-                try
-                {
-                    var markToAdd = markFactory.GetMark(mark.StudentId, subject, mark.Value);
-                    this.markService.Add(markToAdd);
-                }
-                catch (ArgumentException ex)
-                {
-                    this.View.Model.ErrorMessage = ex.Message;
-                    this.View.Model.IsSuccess = false;
-                    return;
-                }
+                var markToAdd = markFactory.GetMark(e.Mark.StudentId, subject, e.Mark.Value);
+                this.markService.Add(markToAdd);
+            }
+            catch (ArgumentException ex)
+            {
+                this.View.Model.ErrorMessage = ex.Message;
+                this.View.Model.IsSuccess = false;
+                return;
             }
 
             try

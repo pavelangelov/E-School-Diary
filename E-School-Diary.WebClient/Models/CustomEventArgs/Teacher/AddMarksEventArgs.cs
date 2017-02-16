@@ -7,14 +7,14 @@ namespace E_School_Diary.WebClient.Models.CustomEventArgs.Teacher
 {
     public class AddMarksEventArgs : EventArgs
     {
-        public AddMarksEventArgs(string teacherId, IEnumerable<AddMarkDTO> marks)
+        public AddMarksEventArgs(string teacherId, AddMarkDTO mark)
         {
             this.TeacherId = teacherId;
-            this.Marks = marks;
+            this.Mark = mark;
         }
 
         public string TeacherId { get; set; }
 
-        public IEnumerable<AddMarkDTO> Marks { get; set; }
+        public AddMarkDTO Mark { get; set; }
     }
 }

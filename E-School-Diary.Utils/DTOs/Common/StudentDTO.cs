@@ -15,5 +15,7 @@ namespace E_School_Diary.Utils.DTOs.Common
         public string MiddleName { get; set; }
 
         public string LastName { get; set; }
+
+        public string MarkValue { get; set; }
     }
 }
