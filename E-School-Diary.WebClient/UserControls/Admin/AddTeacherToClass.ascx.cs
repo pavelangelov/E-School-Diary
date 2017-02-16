@@ -64,6 +64,12 @@ namespace E_School_Diary.WebClient.UserControls.Admin
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
+            if (Session["isDone"]!=null)
+            {
+                this.ClearLists();
+                return;
+            }
+
             var teacherId = this.Teachers.SelectedValue;
             var classId = this.Classes.SelectedValue;
             var ev = new AddTeacherToClassEventArgs(teacherId, classId);
@@ -72,16 +78,23 @@ namespace E_School_Diary.WebClient.UserControls.Admin
 
             if (this.Model.IsSuccess)
             {
+                Session["isDone"] = true;
                 this.Message.ShowSuccess("This teacher now can teaching in this class. To add new class please reload the page.");
 
-                this.Teachers.Visible = false;
-                this.Classes.Visible = false;
-                this.AddBtn.Enabled = false;
+                this.ClearLists();
             }
             else
             {
                 this.Message.ShowError(this.Model.ErrorMessage);
             }
+        }
+
+        private void ClearLists()
+        {
+
+            this.Teachers.Items.Clear();
+            this.Classes.Items.Clear();
+            this.AddBtn.Enabled = false;
         }
     }
 }
