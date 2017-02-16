@@ -10,9 +10,9 @@ namespace E_School_Diary.Services.Contracts
 
         void Add(StudentClass entity);
 
-        StudentClass GetById(string studentClassId);
+        StudentClass FindById(string studentClassId);
 
-        StudentClass GetByTeacherId(string teacherId);
+        StudentClass FindByTeacherId(string teacherId);
 
         int Save();
     }

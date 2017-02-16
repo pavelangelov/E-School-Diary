@@ -39,7 +39,8 @@
 
         <div class="datepicker-container col s4">
             <label for="calendar">Pick a date</label>
-            <input id="calendar" type="date" class="datepicker" runat="server">
+            <asp:Label runat="server" ID="NoDate" CssClass="red-text" />
+            <input id="calendar" type="date" class="datepicker" runat="server" required="required">
         </div>
     </div>
 

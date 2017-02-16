@@ -59,7 +59,7 @@ namespace E_School_Diary.WebClient.Presenters.Register
         public void View_SubmitClick(object sender, RegisterStudentSubmitEventArgs e)
         {
             var user = e.StudentDTO;
-            var studentClass = this.studentClassService.GetByTeacherId(user.FormMasterId);
+            var studentClass = this.studentClassService.FindByTeacherId(user.FormMasterId);
             user.StudentClassId = studentClass.Id;
             
             try

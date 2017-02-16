@@ -76,6 +76,15 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add {
         protected global::System.Web.UI.WebControls.DropDownList StudentClasses;
         
         /// <summary>
+        /// NoDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoDate;
+        
+        /// <summary>
         /// calendar control.
         /// </summary>
         /// <remarks>

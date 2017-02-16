@@ -1,15 +1,15 @@
-﻿using E_School_Diary.Factories.Contracts;
+﻿using System;
+using System.Linq;
+
+using WebFormsMvp;
+
+using E_School_Diary.Factories.Contracts;
 using E_School_Diary.Services.Contracts;
 using E_School_Diary.Utils.Contracts;
 using E_School_Diary.Utils.DTOs;
 using E_School_Diary.WebClient.Models.CustomEventArgs;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Teacher;
 using E_School_Diary.WebClient.Views.Teacher;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using WebFormsMvp;
 
 namespace E_School_Diary.WebClient.Presenters.Teacher
 {
@@ -61,11 +61,36 @@ namespace E_School_Diary.WebClient.Presenters.Teacher
 
         public void View_AddLectureClick(object sender, AddNewLectureEventArgs e)
         {
-            var teacher = this.teacherService.FindById(e.LectureDTO.TeacherId);
-            var studentClass = this.studentClassService.GetById(e.LectureDTO.StudentClassId);
-
             var startDate = this.dateParser.GetDate(e.LectureDTO.Date, e.LectureDTO.Start);
             var endDate = this.dateParser.GetDate(e.LectureDTO.Date, e.LectureDTO.End);
+
+            if (startDate < DateTime.Now)
+            {
+                this.View.Model.ErrorMessage = "Cannot add lecture in the past!";
+                this.View.Model.IsSuccess = false;
+                return;
+            }
+
+            if (startDate > endDate)
+            {
+                this.View.Model.ErrorMessage = "Lecture start time cannot be after end time!";
+                this.View.Model.IsSuccess = false;
+                return;
+            }
+            
+
+            var teacher = this.teacherService.FindById(e.LectureDTO.TeacherId);
+            var studentClass = this.studentClassService.FindById(e.LectureDTO.StudentClassId);
+
+            var hasLecture = teacher.Lectures.Any(l => l.Status == Data.Enums.LectureStatus.Ahead &&
+                                                        startDate <= l.End  && l.Start <= endDate);
+
+            if (hasLecture)
+            {
+                this.View.Model.ErrorMessage = "This Teacher already has lecture in this time period!";
+                this.View.Model.IsSuccess = false;
+                return;
+            }
 
             var lectureDTO = new CreateLectureDTO()
             {

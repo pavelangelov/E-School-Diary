@@ -27,7 +27,9 @@ namespace E_School_Diary.Services
 
         public User FindById(string teacherId)
         {
-            var teacher = this.dbContext.Users.Find(teacherId);
+            var teacher = this.dbContext.Users.Include(t => t.Lectures)
+                                                .Include(t => t.StudentClasses)
+                                                .FirstOrDefault(t => t.Id == teacherId);
 
             return teacher;
         }

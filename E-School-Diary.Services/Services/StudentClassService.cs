@@ -30,7 +30,7 @@ namespace E_School_Diary.Services
             this.dbContext.StudentClasses.Add(entity);
         }
 
-        public StudentClass GetByTeacherId(string teacherId)
+        public StudentClass FindByTeacherId(string teacherId)
         {
             var studentClass = this.dbContext.StudentClasses.Single(x => x.FormMasterId == teacherId);
 
@@ -42,7 +42,7 @@ namespace E_School_Diary.Services
             return this.dbContext.Save();
         }
 
-        public StudentClass GetById(string studentClassId)
+        public StudentClass FindById(string studentClassId)
         {
             var studentClass = this.dbContext.StudentClasses
                                                 .Include(st => st.Lectures)

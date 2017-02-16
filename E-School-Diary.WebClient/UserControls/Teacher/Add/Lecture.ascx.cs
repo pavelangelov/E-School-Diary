@@ -43,6 +43,17 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
 
         protected void AddClick(object sender, EventArgs e)
         {
+            var date = this.calendar.Value;
+            if (date == null || date.Length == 0)
+            {
+                this.NoDate.Text = "No date selected!";
+                return;
+            }
+            else
+            {
+                this.NoDate.Text = "";
+            }
+
             var lectureDTO = new AddNewLectureDTO()
             {
                 Title = this.LectureTitle.Text,
