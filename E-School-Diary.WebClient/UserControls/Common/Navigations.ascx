@@ -10,12 +10,10 @@
 
         <asp:LoginView runat="server" ID="UsernameView" ViewStateMode="Enabled">
             <AnonymousTemplate>
-                <div class="nav-wrapper">
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="#about" class="teal-text">About</a></li>
                         <li><a href="#contact" class="teal-text">Contact</a></li>
                     </ul>
-                </div>
             </AnonymousTemplate>
             <LoggedInTemplate>
                 <a class="waves-effect waves-light btn-small right" title="Log off" runat="server" onserverclick="Unnamed_LoggingOut" onclick="logout()"><i class="material-icons teal-text">power_settings_new</i></a>
