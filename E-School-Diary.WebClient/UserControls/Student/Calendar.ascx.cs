@@ -22,9 +22,12 @@ namespace E_School_Diary.WebClient.UserControls.Student
 
         protected void LoadLecturesClick(object sender, EventArgs e)
         {
-
             var userId = Context.User.Identity.GetUserId();
             var date = this.calendar.Value;
+            if (date == null || date == string.Empty)
+            {
+                return;
+            }
 
             if (this.Model.LastCheckedDate == date)
             {

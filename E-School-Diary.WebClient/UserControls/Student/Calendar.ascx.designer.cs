@@ -31,6 +31,15 @@ namespace E_School_Diary.WebClient.UserControls.Student {
         protected global::System.Web.UI.WebControls.Button btnHidden;
         
         /// <summary>
+        /// ActiveLecturesList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel ActiveLecturesList;
+        
+        /// <summary>
         /// ActiveTitle control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace E_School_Diary.WebClient.UserControls.Student {
         protected global::System.Web.UI.WebControls.Repeater ActiveLectures;
         
         /// <summary>
+        /// CanceledLecturesList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel CanceledLecturesList;
+        
+        /// <summary>
         /// CanceledTitle control.
         /// </summary>
         /// <remarks>
@@ -65,6 +83,15 @@ namespace E_School_Diary.WebClient.UserControls.Student {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater CanceledLectures;
+        
+        /// <summary>
+        /// PastLecturesList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel PastLecturesList;
         
         /// <summary>
         /// PastTitle control.
