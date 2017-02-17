@@ -21,7 +21,7 @@ namespace E_School_Diary.Factories
                 StudentClassId = studentDTO.StudentClassId,
                 Age = studentDTO.Age,
                 UserType = UserTypes.Student,
-                ImageUrl = Constants.DefaultUserImage
+                ImageUrl = Constants.DefaultStudentImage
             };
 
             return appUser;
@@ -39,7 +39,7 @@ namespace E_School_Diary.Factories
                 UserType = UserTypes.Teacher,
                 IsFreeTeacher = true,
                 Subject = (Subject)Enum.Parse(typeof(Subject), teacherDTO.Subject),
-                ImageUrl = Constants.DefaultUserImage
+                ImageUrl = Constants.DefaultTeacherImage
             };
 
             return teacher;
