@@ -1,14 +1,15 @@
-﻿using E_School_Diary.Factories.Contracts;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+using WebFormsMvp;
+
+using E_School_Diary.Factories.Contracts;
 using E_School_Diary.Services.Contracts;
 using E_School_Diary.Utils.DTOs.Common;
 using E_School_Diary.WebClient.Models.CustomEventArgs;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Teacher;
 using E_School_Diary.WebClient.Views.Teacher;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using WebFormsMvp;
 
 namespace E_School_Diary.WebClient.Presenters.Teacher
 {
