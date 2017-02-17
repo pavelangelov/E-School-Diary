@@ -24,7 +24,6 @@
             ID="Students"
             AutoGenerateColumns="false"
             OnRowUpdating="Students_RowUpdating"
-            OnRowUpdated="Students_RowUpdated"
             OnRowEditing="Students_RowEditing"
             ShowFooter="true"
             ItemType="E_School_Diary.Utils.DTOs.Common.StudentDTO">

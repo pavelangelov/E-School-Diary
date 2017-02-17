@@ -51,6 +51,7 @@ namespace E_School_Diary.WebClient.Presenters.Teacher
         private void View_ClassSelected(object sender, SelectClassEventArgs e)
         {
             var students = this.studentService.FindByStudentClassId(e.ClassId).ToList();
+            students.Sort();
 
             this.View.Model.Students = students;
         }
