@@ -65,7 +65,7 @@ namespace E_School_Diary.WebClient.Presenters.Teacher
             var studentClass = this.studentClassService.FindById(e.LectureDTO.StudentClassId);
 
             var hasLecture = teacher.Lectures.Any(l => l.Status == Data.Enums.LectureStatus.Ahead &&
-                                                        startDate <= l.End  && l.Start <= endDate);
+                                                        startDate < l.End  && l.Start < endDate);
 
             if (hasLecture)
             {

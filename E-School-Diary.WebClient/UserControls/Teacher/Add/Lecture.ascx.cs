@@ -37,8 +37,6 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
 
                 this.LoadLectureTimes();
                 this.LoadClasses();
-
-                // TODO: Add error message if teacher dont`t have classes to teach
             }
         }
 
