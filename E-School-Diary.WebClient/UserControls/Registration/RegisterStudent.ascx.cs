@@ -40,7 +40,6 @@ namespace E_School_Diary.WebClient.UserControls.Registration
                 }
 
                 this.FormMaster.Text = this.Model.TeacherInfo.TeacherNames;
-                this.StudentClass.Text = "Your class.";
             }
         }
 

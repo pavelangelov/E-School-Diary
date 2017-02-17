@@ -7,36 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace E_School_Diary.WebClient.UserControls.Registration {
+namespace E_School_Diary.WebClient {
     
     
-    public partial class RegisterStudent {
+    public partial class TeachersList {
         
         /// <summary>
-        /// CommonFields control.
+        /// TeachersData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::E_School_Diary.WebClient.UserControls.Registration.Common CommonFields;
+        protected global::System.Web.UI.WebControls.SqlDataSource TeachersData;
         
         /// <summary>
-        /// FormMaster control.
+        /// Teachers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FormMaster;
-        
-        /// <summary>
-        /// BtnSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnSubmit;
+        protected global::System.Web.UI.WebControls.Repeater Teachers;
     }
 }

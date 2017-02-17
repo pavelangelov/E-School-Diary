@@ -313,6 +313,7 @@
     <Content Include="Site.Master" />
     <Content Include="Student\Calendar\Default.aspx" />
     <Content Include="Student\Marks\Default.aspx" />
+    <Content Include="TeachersList.aspx" />
     <Content Include="UserControls\Admin\AddNewClass.ascx" />
     <Content Include="UserControls\Admin\AddTeacherToClass.ascx" />
     <Content Include="UserControls\Common\MessageContainer.ascx" />
@@ -588,6 +589,13 @@
     </Compile>
     <Compile Include="Student\Marks\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeachersList.aspx.cs">
+      <DependentUpon>TeachersList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeachersList.aspx.designer.cs">
+      <DependentUpon>TeachersList.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Admin\AddNewClass.ascx.cs">
       <DependentUpon>AddNewClass.ascx</DependentUpon>

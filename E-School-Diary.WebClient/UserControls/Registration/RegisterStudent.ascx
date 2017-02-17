@@ -14,10 +14,6 @@
             <label for="FormMaster">Form master will be: </label>
             <asp:Label runat="server" ID="FormMaster" ClientIDMode="Static" />
         </div>
-        <div class="card-panel hoverable col s4">
-            <label for="StudentClass">The student will be in class: </label>
-            <asp:Label runat="server" ID="StudentClass" ClientIDMode="Static" />
-        </div>
     </div>
 
     <asp:Button runat="server" ID="BtnSubmit" CssClass="btn" Text="Submit" OnClick="RegisterClick" />
