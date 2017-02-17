@@ -6,6 +6,7 @@ using E_School_Diary.Factories.Contracts;
 using E_School_Diary.Services.Contracts;
 using E_School_Diary.WebClient.Views.Admin;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Admin;
+using E_School_Diary.Utils;
 
 namespace E_School_Diary.WebClient.Presenters.Admin
 {
@@ -15,25 +16,14 @@ namespace E_School_Diary.WebClient.Presenters.Admin
         private ITeacherService teacherService;
         private IStudentClassFactory studentClassFactory;
 
-        public AddNewClassPresenter(IAddNewClassView view, IStudentClassService stClassService, ITeacherService teacherService, IStudentClassFactory studentClassFactory)
+        public AddNewClassPresenter(IAddNewClassView view, IStudentClassService studentClassService, ITeacherService teacherService, IStudentClassFactory studentClassFactory)
             : base(view)
         {
-            if (stClassService == null)
-            {
-                throw new NullReferenceException("StudentClassService");
-            }
+            Validator.ValidateForNull(studentClassService, "studentClassService");
+            Validator.ValidateForNull(teacherService, "teacherService");
+            Validator.ValidateForNull(studentClassFactory, "studentClassFactory");
 
-            if (teacherService == null)
-            {
-                throw new NullReferenceException("TeacherService");
-            }
-
-            if (studentClassFactory == null)
-            {
-                throw new NullReferenceException("StudentClassFactory");
-            }
-
-            this.studentClassService = stClassService;
+            this.studentClassService = studentClassService;
             this.teacherService = teacherService;
             this.studentClassFactory = studentClassFactory;
 

@@ -10,6 +10,7 @@ using E_School_Diary.Utils.DTOs.Common;
 using E_School_Diary.WebClient.Models.CustomEventArgs;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Teacher;
 using E_School_Diary.WebClient.Views.Teacher;
+using E_School_Diary.Utils;
 
 namespace E_School_Diary.WebClient.Presenters.Teacher
 {
@@ -30,30 +31,11 @@ namespace E_School_Diary.WebClient.Presenters.Teacher
                         IMarkFactory markFactory)
             : base(view)
         {
-            if (studentClassService == null)
-            {
-                throw new ArgumentNullException("studentClassService");
-            }
-
-            if (studentService == null)
-            {
-                throw new ArgumentNullException("studentService");
-            }
-
-            if (teacherService == null)
-            {
-                throw new ArgumentNullException("teacherService");
-            }
-
-            if (markFactory == null)
-            {
-                throw new ArgumentNullException("markFactory");
-            }
-
-            if (markService == null)
-            {
-                throw new ArgumentNullException("markService");
-            }
+            Validator.ValidateForNull(studentClassService, "studentClassService");
+            Validator.ValidateForNull(studentService, "studentService");
+            Validator.ValidateForNull(teacherService, "teacherService");
+            Validator.ValidateForNull(markService, "markService");
+            Validator.ValidateForNull(markFactory, "markFactory");
 
             this.studentClassService = studentClassService;
             this.studentService = studentService;
@@ -75,18 +57,7 @@ namespace E_School_Diary.WebClient.Presenters.Teacher
 
         private void View_PageLoad(object sender, UserIdEventArgs e)
         {
-            var teacher = this.teacherService.FindById(e.UserId);
-            var classes = new List<StudentClassDTO>();
-            foreach (var cl in teacher.StudentClasses.ToList())
-            {
-                classes.Add(new StudentClassDTO() { Id = cl.Id, Name = cl.Name });
-            }
-
-            if (teacher.StudentClass != null)
-            {
-                classes.Add(new StudentClassDTO() { Id = teacher.StudentClass.Id, Name = teacher.StudentClass.Name });
-
-            }
+            var classes = this.teacherService.GetTeacherClasses(e.UserId).ToList();
 
             classes.Sort();
             this.View.Model.Classes = classes;

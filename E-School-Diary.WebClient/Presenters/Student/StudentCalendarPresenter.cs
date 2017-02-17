@@ -5,8 +5,9 @@ using System.Linq;
 using WebFormsMvp;
 
 using E_School_Diary.Services.Contracts;
-using E_School_Diary.Utils.DTOs.Common;
+using E_School_Diary.Utils;
 using E_School_Diary.Utils.Contracts;
+using E_School_Diary.Utils.DTOs.Common;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Student;
 using E_School_Diary.WebClient.Views.Student;
 
@@ -20,15 +21,8 @@ namespace E_School_Diary.WebClient.Presenters.Student
         public StudentCalendarPresenter(IStudentCalendarView view, IStudentService studentService, IDateParser dateParser) 
             : base(view)
         {
-            if (studentService == null)
-            {
-                throw new NullReferenceException("StudentService");
-            }
-
-            if (dateParser == null)
-            {
-                throw new NullReferenceException("DateParser");
-            }
+            Validator.ValidateForNull(studentService, "studentService");
+            Validator.ValidateForNull(dateParser, "dateParser");
 
             this.studentService = studentService;
             this.dateParser = dateParser;

@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using WebFormsMvp;
 
 using E_School_Diary.Factories.Contracts;
+using E_School_Diary.Utils;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Register;
 using E_School_Diary.WebClient.Views.Register;
 
@@ -17,10 +18,7 @@ namespace E_School_Diary.WebClient.Presenters.Register
         public RegisterTeacherPresenter(IRegisterTeacherView view, IAppicationUserFactory appUserFactory)
             : base(view)
         {
-            if (appUserFactory == null)
-            {
-                throw new NullReferenceException("ApplicationUserFactory");
-            }
+            Validator.ValidateForNull(appUserFactory, "appUserFactory");
 
             this.appUserFactory = appUserFactory;
 

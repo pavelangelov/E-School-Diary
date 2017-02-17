@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 using E_School_Diary.Data;
 using E_School_Diary.Data.Enums;
 using E_School_Diary.Data.Models;
 using E_School_Diary.Services.Contracts;
+using E_School_Diary.Utils;
 using E_School_Diary.Utils.DTOs.Common;
-using System.Data.Entity;
 
 namespace E_School_Diary.Services
 {
@@ -17,6 +17,7 @@ namespace E_School_Diary.Services
 
         public TeacherService(IDatabaseContext dbContext)
         {
+            Validator.ValidateForNull(dbContext, "dbContext");
             this.dbContext = dbContext;
         }
 

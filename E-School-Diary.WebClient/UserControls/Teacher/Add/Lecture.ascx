@@ -53,10 +53,6 @@
             <asp:DropDownList runat="server" ID="EndTime" ClientIDMode="Static" Visible="true"></asp:DropDownList>
                 <label for="EndTime">Select end time</label>
         </div>
-        <div class="input-field col s4">
-            <asp:DropDownList runat="server" ID="Subjects2" ClientIDMode="Static" Visible="true"></asp:DropDownList>
-            <label for="Subjects">Subjects</label>
-        </div>
     </div>
     <asp:Button runat="server" CssClass="btn" ID="AddBtn" Text="Add" OnClick="AddClick" />
 </div>

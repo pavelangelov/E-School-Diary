@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 using WebFormsMvp;
 
+using E_School_Diary.Utils;
 using E_School_Diary.Services.Contracts;
 using E_School_Diary.WebClient.Models.ViewModels.Common;
 using E_School_Diary.WebClient.Views.Student;
@@ -16,10 +16,7 @@ namespace E_School_Diary.WebClient.Presenters.Student
         public StudentMarksPresenter(IStudentMarksView view, IStudentService studentService) 
             : base(view)
         {
-            if (studentService == null)
-            {
-                throw new NullReferenceException("StudentService");
-            }
+            Validator.ValidateForNull(studentService, "studentService");
 
             this.studentService = studentService;
 

@@ -1,4 +1,5 @@
 ﻿using E_School_Diary.Services.Contracts;
+using E_School_Diary.Utils;
 using E_School_Diary.Utils.DTOs.Common;
 using E_School_Diary.WebClient.Models.CustomEventArgs;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Admin;
@@ -19,15 +20,8 @@ namespace E_School_Diary.WebClient.Presenters.Admin
         public AddTeacherToClassPresenter(IAddTeacherToClassView view, ITeacherService teacherService, IStudentClassService studentClassService) 
             : base(view)
         {
-            if (teacherService == null)
-            {
-                throw new ArgumentNullException("teacherService");
-            }
-
-            if (studentClassService == null)
-            {
-                throw new ArgumentNullException("studentClassService");
-            }
+            Validator.ValidateForNull(teacherService, "teacherService");
+            Validator.ValidateForNull(studentClassService, "studentClassService");
 
             this.teacherService = teacherService;
             this.studentClassService = studentClassService;

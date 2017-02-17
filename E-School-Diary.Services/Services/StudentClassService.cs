@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 
 using E_School_Diary.Data;
 using E_School_Diary.Data.Models;
 using E_School_Diary.Services.Contracts;
-using System.Linq;
-using System.Data.Entity;
+using E_School_Diary.Utils;
 
 namespace E_School_Diary.Services
 {
@@ -15,6 +15,8 @@ namespace E_School_Diary.Services
 
         public StudentClassService(IDatabaseContext dbContext)
         {
+            Validator.ValidateForNull(dbContext, "dbContext");
+
             this.dbContext = dbContext;
         }
 

@@ -12,7 +12,6 @@ using E_School_Diary.WebClient.Models.ViewModels.Teacher;
 using E_School_Diary.WebClient.Presenters.Teacher;
 using E_School_Diary.WebClient.Views.Teacher;
 using E_School_Diary.Utils.DTOs.Add;
-using System.Web.ModelBinding;
 
 namespace E_School_Diary.WebClient.UserControls.Teacher.Add
 {
@@ -62,36 +61,6 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
             this.Students.DataBind();
         }
 
-        protected void Unnamed_Click(object sender, EventArgs e)
-        {
-            // TODO: Complete this
-            var marks = new List<AddMarkDTO>();
-
-            foreach (GridViewRow item in this.Students.Rows)
-            {
-                foreach (TableCell cell in item.Cells)
-                {
-                    var cellValue = cell.Text;
-                }
-                var cells = item.Cells;
-            }
-
-            //var teacherId = Context.User.Identity.GetUserId();
-            //var ev = new AddMarksEventArgs(teacherId, marks);
-
-            //this.InsertMarks?.Invoke(sender, ev);
-
-            //if (this.Model.IsSuccess)
-            //{
-            //    this.Message.ShowSuccess("Marks added.");
-            //}
-            //else
-            //{
-            //    this.Message.ShowError(this.Model.ErrorMessage);
-            //}
-        }
-
-
         protected void Students_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             GridViewRow row = (GridViewRow)this.Students.Rows[e.RowIndex];
@@ -109,7 +78,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
 
                 if (this.Model.IsSuccess)
                 {
-                    this.Message.ShowSuccess("Marks added.");
+                    this.Message.ShowSuccess("Mark added.");
                 }
                 else
                 {
