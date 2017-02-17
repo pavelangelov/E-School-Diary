@@ -13,6 +13,15 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add {
     public partial class Marks {
         
         /// <summary>
+        /// UpdateMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdateMessage;
+        
+        /// <summary>
         /// Message control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,15 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add {
         protected global::E_School_Diary.WebClient.UserControls.Common.MessageContainer Message;
         
         /// <summary>
+        /// ClassesList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel ClassesList;
+        
+        /// <summary>
         /// Classes control.
         /// </summary>
         /// <remarks>
@@ -29,6 +47,15 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList Classes;
+        
+        /// <summary>
+        /// StudentsList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel StudentsList;
         
         /// <summary>
         /// Students control.

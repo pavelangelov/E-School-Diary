@@ -48,10 +48,13 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
         {
             var teacherId = Context.User.Identity.GetUserId();
             var classId = this.Classes.SelectedValue;
-            var ev = new SelectClassEventArgs(teacherId, classId);
-            this.ClassSelected?.Invoke(sender, ev);
+            if (classId != null)
+            {
+                var ev = new SelectClassEventArgs(teacherId, classId);
+                this.ClassSelected?.Invoke(sender, ev);
 
-            this.LoadStudents();
+                this.LoadStudents();
+            }
         }
 
         private void LoadStudents()
@@ -69,7 +72,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
             double value;
             if (double.TryParse(markValue.Text, out value))
             {
-                
+
                 var markDTO = new AddMarkDTO() { StudentId = idContainer.Text, Value = value };
                 var teacherId = Context.User.Identity.GetUserId();
 
@@ -79,6 +82,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
                 if (this.Model.IsSuccess)
                 {
                     this.Message.ShowSuccess("Mark added.");
+                    this.Classes_SelectedIndexChanged(sender, e);
                 }
                 else
                 {
@@ -93,7 +97,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
             this.Classes_SelectedIndexChanged(sender, e);
         }
 
-        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        protected void Students_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             this.Students.EditIndex = -1;
             this.Classes_SelectedIndexChanged(sender, e);
