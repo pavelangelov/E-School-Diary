@@ -4,14 +4,9 @@
     CodeBehind="AddNewClass.ascx.cs"
     Inherits="E_School_Diary.WebClient.UserControls.Admin.AddNewClass" %>
 
-<div runat="server" class="card-panel" visible="false" id="errorContainer">
-    <span><i class="tiny red-text material-icons">info_outline</i></span>
-    <asp:Label runat="server" CssClass="red-text" ID="Error" />
-</div>
-<div runat="server" class="card-panel" visible="false" id="successContainer">
-    <span class="teal-text"><i class="tiny teal-text material-icons">info_outline</i></span>
-    <asp:Label runat="server" CssClass="teal-text" ID="Success" />
-</div>
+<%@ Register Src="~/UserControls/Common/MessageContainer.ascx" TagPrefix="uc" TagName="message" %>
+
+<uc:message runat="server" ID="Message" />
 
 <div class="row">
     <div class="input-field col s6">

@@ -27,7 +27,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.ChangeLectureStatus
             }
         }
 
-        protected void LoadLectures()
+        public void LoadLectures()
         {
             var id = Context.User.Identity.GetUserId();
             this.PageLoad?.Invoke(null, new UserIdEventArgs(id));
@@ -36,7 +36,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.ChangeLectureStatus
             this.LecturesGridView.DataBind();
         }
 
-        protected void LecturesGridView_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        public void LecturesGridView_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             GridViewRow row = (GridViewRow)this.LecturesGridView.Rows[e.RowIndex];
             RadioButtonList buttons = (RadioButtonList)row.FindControl("StatusChange");
@@ -50,18 +50,23 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.ChangeLectureStatus
 
                 if (this.Model.IsSuccess)
                 {
+                    this.MessageContainer.ClearAll();
                     this.LecturesGridView_RowCancelingEdit(null, null);
+                }
+                else
+                {
+                    this.MessageContainer.ShowError(this.Model.ErrorMessage);
                 }
             }
         }
 
-        protected void LecturesGridView_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        public void LecturesGridView_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             this.LecturesGridView.EditIndex = -1;
             this.LoadLectures();
         }
 
-        protected void LecturesGridView_RowEditing(object sender, GridViewEditEventArgs e)
+        public void LecturesGridView_RowEditing(object sender, GridViewEditEventArgs e)
         {
             this.LecturesGridView.EditIndex = e.NewEditIndex;
             this.LoadLectures();

@@ -50,15 +50,11 @@ namespace E_School_Diary.WebClient.UserControls.Registration
 
             if (!this.Model.IsSuccess)
             {
-                this.CommonFields.ErrorMessageContainer = this.Model.ErrorMessage;
-                this.CommonFields.SuccessMessageContainer = "";
-                this.CommonFields.ShowErrorContainer();
+                this.CommonFields.ShowError(this.Model.ErrorMessage);
             }
             else
             {
-                this.CommonFields.SuccessMessageContainer = "Teacher registred successfully";
-                this.CommonFields.ErrorMessageContainer = "";
-                this.CommonFields.ShowSuccessContainer();
+                this.CommonFields.ShowSuccess("Teacher registred successfully");
             }
         }
 

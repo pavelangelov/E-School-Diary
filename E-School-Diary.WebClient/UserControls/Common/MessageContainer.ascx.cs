@@ -26,5 +26,14 @@ namespace E_School_Diary.WebClient.UserControls.Common
             this.Success.Text = "";
             this.successContainer.Visible = false;
         }
+
+        public void ClearAll()
+        {
+            this.Success.Text = "";
+            this.Error.Text = "";
+
+            this.successContainer.Visible = false;
+            this.errorContainer.Visible = false;
+        }
     }
 }

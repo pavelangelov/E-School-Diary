@@ -13,6 +13,15 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.ChangeLectureStatus {
     public partial class ChangeStatus {
         
         /// <summary>
+        /// MessageContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::E_School_Diary.WebClient.UserControls.Common.MessageContainer MessageContainer;
+        
+        /// <summary>
         /// LecturesGridView control.
         /// </summary>
         /// <remarks>

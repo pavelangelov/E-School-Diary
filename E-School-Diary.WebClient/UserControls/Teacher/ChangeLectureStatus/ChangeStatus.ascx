@@ -4,6 +4,10 @@
     CodeBehind="ChangeStatus.ascx.cs"
     Inherits="E_School_Diary.WebClient.UserControls.Teacher.ChangeLectureStatus.ChangeStatus" %>
 
+<%@ Register Src="~/UserControls/Common/MessageContainer.ascx" TagPrefix="uc" TagName="message" %>
+
+<uc:message runat="server" ID="MessageContainer" />
+
 <div class="row">
     <h4 class="teal-text">Your lectures</h4>
     <asp:GridView 

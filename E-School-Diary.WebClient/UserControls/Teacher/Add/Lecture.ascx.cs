@@ -29,8 +29,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
                 this.PageLoad?.Invoke(sender, new UserIdEventArgs(userId));
                 if (this.Model.ErrorMessage != null)
                 {
-                    this.Error.Text = this.Model.ErrorMessage;
-                    this.errorContainer.Visible = true;
+                    this.Message.ShowError(this.Model.ErrorMessage);
                     this.AddBtn.Enabled = false;
                     return;
                 }
@@ -67,15 +66,11 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
 
             if (this.Model.IsSuccess)
             {
-                this.Success.Text = "Lecture added successfully.";
-                this.successContainer.Visible = true;
-                this.errorContainer.Visible = false;
+                this.Message.ShowSuccess("Lecture added successfully.");
             }
             else
             {
-                this.Error.Text = this.Model.ErrorMessage;
-                this.errorContainer.Visible = true;
-                this.successContainer.Visible = false;
+                this.Message.ShowError(this.Model.ErrorMessage);
             }
         }
 

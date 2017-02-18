@@ -4,16 +4,9 @@
     CodeBehind="Common.ascx.cs"
     Inherits="E_School_Diary.WebClient.UserControls.Registration.Common" %>
 
-<p class="card-panel" runat="server" id="resultContainer" visible="false">
-        <span class="red-text text-darken-2" runat="server" id="errorContainer">
-            <i class="small red-text material-icons">info_outline</i>
-            <asp:Label runat="server" ID="ErrorMessage" />
-        </span>
-    <span class="blue-text text-darken-2" runat="server" id="successContainer">
-        <i class="small blue-text material-icons">info_outline</i>
-        <asp:Label runat="server"  ID="SuccessMessage" />
-    </span>
-</p>
+<%@ Register Src="~/UserControls/Common/MessageContainer.ascx" TagPrefix="uc" TagName="message" %>
+
+<uc:message runat="server" ID="Message" />
 
 <div class="form-horizontal">
     <h4 runat="server" id="Title" class="center-align blue-text"></h4>

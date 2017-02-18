@@ -13,40 +13,13 @@ namespace E_School_Diary.WebClient.UserControls.Admin {
     public partial class AddNewClass {
         
         /// <summary>
-        /// errorContainer control.
+        /// Message control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorContainer;
-        
-        /// <summary>
-        /// Error control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Error;
-        
-        /// <summary>
-        /// successContainer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl successContainer;
-        
-        /// <summary>
-        /// Success control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Success;
+        protected global::E_School_Diary.WebClient.UserControls.Common.MessageContainer Message;
         
         /// <summary>
         /// ClassName control.

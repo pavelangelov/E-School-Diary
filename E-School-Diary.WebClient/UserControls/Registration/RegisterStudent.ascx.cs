@@ -33,8 +33,7 @@ namespace E_School_Diary.WebClient.UserControls.Registration
 
                 if (this.Model.ErrorMessage != null)
                 {
-                    this.CommonFields.ErrorMessageContainer = this.Model.ErrorMessage;
-                    this.CommonFields.ShowErrorContainer();
+                    this.CommonFields.ShowError(this.Model.ErrorMessage);
                     this.BtnSubmit.Enabled = false;
                     return;
                 }
@@ -60,15 +59,11 @@ namespace E_School_Diary.WebClient.UserControls.Registration
 
             if (!this.Model.IsSuccess)
             {
-                this.CommonFields.ErrorMessageContainer = this.Model.ErrorMessage;
-                this.CommonFields.ShowErrorContainer();
-                this.CommonFields.SuccessMessageContainer = "";
+                this.CommonFields.ShowError(this.Model.ErrorMessage);
             }
             else
             {
-                this.CommonFields.SuccessMessageContainer = "Student registred successfully";
-                this.CommonFields.ErrorMessageContainer = "";
-                this.CommonFields.ShowSuccessContainer();
+                this.CommonFields.ShowSuccess("Student registred successfully");
             }
         }
     }

@@ -4,17 +4,14 @@
     CodeBehind="Lecture.ascx.cs"
     Inherits="E_School_Diary.WebClient.UserControls.Teacher.Add.Lecture" %>
 
+<%@ Register Src="~/UserControls/Common/MessageContainer.ascx" TagPrefix="uc" TagName="message" %>
+
 <div class="container">
     <div class="form-horizontal">
         <h4 runat="server" id="Title" class="center-align blue-text"></h4>
         <hr />
 
-        <div class="row card-panel" visible="false" id="errorContainer" runat="server">
-            <asp:Label runat="server" CssClass="red-text" ID="Error" />
-        </div>
-        <div class="row card-panel" visible="false" id="successContainer" runat="server">
-            <asp:Label runat="server" CssClass="blue-text" ID="Success" />
-        </div>
+        <uc:message runat="server" ID="Message" />
 
         <div class="row">
             <div class="input-field col s6">

@@ -13,49 +13,13 @@ namespace E_School_Diary.WebClient.UserControls.Registration {
     public partial class Common {
         
         /// <summary>
-        /// resultContainer control.
+        /// Message control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl resultContainer;
-        
-        /// <summary>
-        /// errorContainer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorContainer;
-        
-        /// <summary>
-        /// ErrorMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrorMessage;
-        
-        /// <summary>
-        /// successContainer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl successContainer;
-        
-        /// <summary>
-        /// SuccessMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SuccessMessage;
+        protected global::E_School_Diary.WebClient.UserControls.Common.MessageContainer Message;
         
         /// <summary>
         /// Title control.

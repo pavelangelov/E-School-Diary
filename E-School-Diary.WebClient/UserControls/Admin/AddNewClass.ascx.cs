@@ -45,24 +45,18 @@ namespace E_School_Diary.WebClient.UserControls.Admin
 
             if (className.Length < 2 || 15 < className.Length)
             {
-                this.Error.Text = "Class name must be between 2 and 15 symbols.";
-                this.errorContainer.Visible = true;
-                this.successContainer.Visible = false;
+                this.Message.ShowError("Class name must be between 2 and 15 symbols.");
             }
 
             this.CreateClassClick?.Invoke(sender, new AddNewClassEventArgs(className, teacherId));
             if (this.Model.IsSuccess)
             {
-                this.Success.Text = "Class created successfully.";
+                this.Message.ShowSuccess("Class created successfully.");
                 this.Teachers.Items.Remove(this.Teachers.SelectedItem);
-                this.successContainer.Visible = true;
-                this.errorContainer.Visible = false;
             }
             else
             {
-                this.Error.Text = this.Model.ErrorMessage;
-                this.errorContainer.Visible = true;
-                this.successContainer.Visible = false;
+                this.Message.ShowError(this.Model.ErrorMessage);
             }
         }
     }
