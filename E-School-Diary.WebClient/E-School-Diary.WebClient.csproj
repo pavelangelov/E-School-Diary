@@ -253,6 +253,7 @@
     <Content Include="Content\materialize\font\roboto\Roboto-Thin.woff" />
     <Content Include="Content\materialize\font\roboto\Roboto-Thin.woff2" />
     <Content Include="Lectures\Update\Default.aspx" />
+    <Content Include="Messages\Send\Default.aspx" />
     <Content Include="Register\Parent\Default.aspx" />
     <Content Include="Register\Student\Default.aspx" />
     <Content Include="Register\Web.config" />
@@ -263,6 +264,9 @@
     <Content Include="Register\Parent\Web.config" />
     <Content Include="Lectures\Web.config" />
     <Content Include="Child\Web.config" />
+    <Content Include="Messages\Web.config" />
+    <Content Include="Messages\Send\Web.config" />
+    <Content Include="Messages\Inbox\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Register\Teacher\Default.aspx" />
     <Content Include="Scripts\index.js" />
@@ -320,6 +324,7 @@
     <Content Include="UserControls\Student\Marks.ascx" />
     <Content Include="UserControls\Teacher\Add\Lecture.ascx" />
     <Content Include="UserControls\Teacher\Add\Marks.ascx" />
+    <Content Include="UserControls\Teacher\Add\Message.ascx" />
     <Content Include="UserControls\Teacher\ChangeLectureStatus\ChangeStatus.ascx" />
     <Content Include="UserControls\Teacher\UpdateLectures\UpdateLectures.ascx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -431,6 +436,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Lectures\Update\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\Send\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages\Send\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomEventArgs\Admin\AddNewClassEventArgs.cs" />
@@ -659,6 +671,13 @@
     </Compile>
     <Compile Include="UserControls\Teacher\Add\Marks.ascx.designer.cs">
       <DependentUpon>Marks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Teacher\Add\Message.ascx.cs">
+      <DependentUpon>Message.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Teacher\Add\Message.ascx.designer.cs">
+      <DependentUpon>Message.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Teacher\ChangeLectureStatus\ChangeStatus.ascx.cs">
       <DependentUpon>ChangeStatus.ascx</DependentUpon>
