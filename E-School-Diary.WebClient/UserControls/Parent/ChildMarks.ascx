@@ -1,8 +1,8 @@
-﻿<%@ Control
-    Language="C#"
-    AutoEventWireup="true"
-    CodeBehind="Marks.ascx.cs"
-    Inherits="E_School_Diary.WebClient.UserControls.Student.Marks" %>
+﻿<%@ Control 
+    Language="C#" 
+    AutoEventWireup="true" 
+    CodeBehind="ChildMarks.ascx.cs" 
+    Inherits="E_School_Diary.WebClient.UserControls.Parent.ChildMarks" %>
 
 <%@ Import Namespace="E_School_Diary.Utils.DTOs.Common" %>
 <%@ Import Namespace="E_School_Diary.Data.Enums" %>
@@ -27,7 +27,6 @@
                         <td><%# Item.Value %></td>
                     </ItemTemplate>
                 </asp:Repeater>
-
             </tr>
         </ItemTemplate>
         <FooterTemplate>

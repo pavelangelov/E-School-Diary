@@ -183,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Child\Marks\Default.aspx" />
     <Content Include="Login\Default.aspx" />
     <Content Include="AddMarks\Default.aspx" />
     <Content Include="Administration\AddNewClass\Default.aspx" />
@@ -260,6 +261,7 @@
     <Content Include="AddMarks\Web.config" />
     <Content Include="Register\Parent\Web.config" />
     <Content Include="Lectures\Web.config" />
+    <Content Include="Child\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Register\Teacher\Default.aspx" />
     <Content Include="Scripts\index.js" />
@@ -306,6 +308,7 @@
     <Content Include="UserControls\Common\SideNavTemplates\ParentTemplate.ascx" />
     <Content Include="UserControls\Common\SideNavTemplates\StudentTemplate.ascx" />
     <Content Include="UserControls\Common\SideNavTemplates\TeacherTemplate.ascx" />
+    <Content Include="UserControls\Parent\ChildMarks.ascx" />
     <Content Include="UserControls\Registration\Common.ascx" />
     <Content Include="UserControls\Registration\RegisterParent.ascx" />
     <Content Include="UserControls\Registration\RegisterStudent.ascx" />
@@ -333,6 +336,13 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Child\Marks\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Child\Marks\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -444,6 +454,7 @@
     <Compile Include="Modules\StudentsNinjectModule.cs" />
     <Compile Include="Presenters\Admin\AddNewClassPresenter.cs" />
     <Compile Include="Presenters\Admin\AddTeacherToClassPresenter.cs" />
+    <Compile Include="Presenters\Parent\ChildMarksPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterParentPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterStudentPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterTeacherPresenter.cs" />
@@ -561,6 +572,13 @@
     <Compile Include="UserControls\Common\SideNavTemplates\TeacherTemplate.ascx.designer.cs">
       <DependentUpon>TeacherTemplate.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Parent\ChildMarks.ascx.cs">
+      <DependentUpon>ChildMarks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Parent\ChildMarks.ascx.designer.cs">
+      <DependentUpon>ChildMarks.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Registration\Common.ascx.cs">
       <DependentUpon>Common.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -647,6 +665,7 @@
     </Compile>
     <Compile Include="Views\Admin\IAddNewClassView.cs" />
     <Compile Include="Views\Admin\IAddTeacherToClassView.cs" />
+    <Compile Include="Views\Parent\IChildMarksView.cs" />
     <Compile Include="Views\Register\IRegisterParentView.cs" />
     <Compile Include="Views\Register\IRegisterStudentView.cs" />
     <Compile Include="Views\Register\IRegisterTeacherView.cs" />

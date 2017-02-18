@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace E_School_Diary.WebClient.UserControls.Student {
+namespace E_School_Diary.WebClient.UserControls.Parent {
     
     
-    public partial class Marks {
+    public partial class ChildMarks {
         
         /// <summary>
         /// username control.

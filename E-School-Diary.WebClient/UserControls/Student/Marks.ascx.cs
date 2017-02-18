@@ -18,6 +18,7 @@ namespace E_School_Diary.WebClient.UserControls.Student
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.username.InnerText = Context.User.Identity.GetUserName();
             var userId = Context.User.Identity.GetUserId();
             this.PageLoad?.Invoke(sender, new IdEventArgs(userId));
 
