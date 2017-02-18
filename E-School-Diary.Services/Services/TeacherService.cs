@@ -8,6 +8,8 @@ using E_School_Diary.Data.Models;
 using E_School_Diary.Services.Contracts;
 using E_School_Diary.Utils;
 using E_School_Diary.Utils.DTOs.Common;
+using E_School_Diary.Utils.DTOs;
+using System;
 
 namespace E_School_Diary.Services
 {
@@ -75,6 +77,22 @@ namespace E_School_Diary.Services
                                                 SubjectName = t.Subject.ToString()
                                             });
             return freeTeachers;
+        }
+
+        public IEnumerable<ChangeLectureStatusDTO> GetTeacherActualLectures(string teacherId, DateTime startDate)
+        {
+            var teacher = this.dbContext.Users.Include(st => st.Lectures).FirstOrDefault(st => st.Id == teacherId);
+            var lectures = teacher.Lectures.Where(l => l.Start >= startDate)
+                                            .Select(l => new ChangeLectureStatusDTO()
+                                            {
+                                                Id = l.Id,
+                                                Title = l.Title,
+                                                ClassName = l.StudentClass.Name,
+                                                Start = l.Start,
+                                                End = l.End,
+                                                Status = l.Status.ToString()
+                                            });
+            return lectures;
         }
 
         public int Save()

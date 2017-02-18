@@ -72,7 +72,7 @@
                     <li><a class="waves-effect" href="/Register/Student">Create new Student Account</a></li>
                     <li><a class="waves-effect" href="#">Create new Parent Account</a></li>
                     <li><a class="waves-effect" href="/AddNewLecture">Add new lecture</a></li>
-                    <li>Cancel lecture</li>
+                    <li><a class="waves-effect" href="/ChangeLectureStatus">Manage lectures</a></li>
                     <li><a class="waves-effect" href="/AddMarks">Add marks to students</a></li>
                     <li>Send message to student parents</li>
                     <li>Edit profile</li>

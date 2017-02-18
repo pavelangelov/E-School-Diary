@@ -1,14 +1,40 @@
-﻿using E_School_Diary.Services.Contracts;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using E_School_Diary.Data;
+using E_School_Diary.Data.Models;
+using E_School_Diary.Services.Contracts;
 
 namespace E_School_Diary.Services
 {
     public class LectureService : ILectureService
     {
+        private IDatabaseContext dbContext;
+
+        public LectureService(IDatabaseContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
+
+        public Tuple<string, string>[] GetLectureHours()
+        {
+            return this.LectureHours;
+        }
+
+        public Lecture FindById(string lectureId)
+        {
+            var lecture = this.dbContext.Lectures.Include(l => l.StudentClass)
+                                                   .Include(l => l.Teacher)     
+                                                   .FirstOrDefault(l => l.Id == lectureId);
+            return lecture;
+        }
+
+        public int Save()
+        {
+            return this.dbContext.Save();
+        }
+
         public readonly Tuple<string, string>[] LectureHours = new Tuple<string, string>[]
         {
             new Tuple<string, string>("8 00", "8:00"),
@@ -33,10 +59,5 @@ namespace E_School_Diary.Services
             new Tuple<string, string>("17 30", "17:30"),
             new Tuple<string, string>("18 00", "18:00")
         };
-
-        public Tuple<string, string>[] GetLectureHours()
-        {
-            return this.LectureHours;
-        }
     }
 }

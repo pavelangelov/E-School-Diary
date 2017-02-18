@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 using E_School_Diary.Data.Models;
+using E_School_Diary.Utils.DTOs;
 using E_School_Diary.Utils.DTOs.Common;
 
 namespace E_School_Diary.Services.Contracts
@@ -14,6 +16,8 @@ namespace E_School_Diary.Services.Contracts
         IEnumerable<MinTeacherInfoDTO> GetTeachersWithoutClass();
 
         IEnumerable<StudentClassDTO> GetTeacherClasses(string teacherId);
+
+        IEnumerable<ChangeLectureStatusDTO> GetTeacherActualLectures(string teacherId, DateTime startDate);
 
         void Add(User entity);
 

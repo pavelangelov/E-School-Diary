@@ -45,6 +45,7 @@
     <Compile Include="Contracts\IDateParser.cs" />
     <Compile Include="DTOs\Add\AddMarkDTO.cs" />
     <Compile Include="DTOs\Add\AddNewLectureDTO.cs" />
+    <Compile Include="DTOs\ChangeLectureStatusDTO.cs" />
     <Compile Include="DTOs\Common\LectureDTO.cs" />
     <Compile Include="DTOs\Common\MarkDTO.cs" />
     <Compile Include="DTOs\Common\MessageDTO.cs" />
