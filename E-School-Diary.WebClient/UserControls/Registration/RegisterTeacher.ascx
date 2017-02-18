@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <asp:Button runat="server" CssClass="btn" Text="Submit" OnClick="RegisterClick" />
+    <asp:Button runat="server" CssClass="btn" ValidationGroup="Register" Text="Submit" OnClick="RegisterClick" />
 </div>
 
 <script>

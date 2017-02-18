@@ -16,5 +16,5 @@
         </div>
     </div>
 
-    <asp:Button runat="server" ID="BtnSubmit" CssClass="btn" Text="Submit" OnClick="RegisterClick" />
+    <asp:Button runat="server" ID="BtnSubmit" ValidationGroup="Register" CssClass="btn" Text="Submit" OnClick="RegisterClick" />
 </div>

@@ -23,7 +23,8 @@
             <asp:RequiredFieldValidator 
                 runat="server" 
                 ControlToValidate="FirstNameInput" 
-                 Display="Dynamic"
+                ValidationGroup="Register"
+                Display="Dynamic"
                 CssClass="red-text" 
                 ErrorMessage="The first name field is required." />
         </div>
@@ -36,7 +37,8 @@
             <label for="LastNameInput">Last Name</label>
             <asp:RequiredFieldValidator 
                 runat="server" 
-                ControlToValidate="LastNameInput"  
+                ControlToValidate="LastNameInput" 
+                ValidationGroup="Register" 
                 Display="Dynamic"
                 CssClass="red-text" 
                 ErrorMessage="The last name field is required." />
@@ -54,6 +56,7 @@
             <asp:RequiredFieldValidator 
                 runat="server" 
                 ControlToValidate="EmailInput"  
+                ValidationGroup="Register"
                 Display="Dynamic"
                 CssClass="red-text" 
                 ErrorMessage="The email field is required." />
@@ -68,11 +71,13 @@
             <asp:RequiredFieldValidator 
                 runat="server" 
                 ControlToValidate="AgeInput" 
+                ValidationGroup="Register"
                 Display="Dynamic"
                 CssClass="red-text" ErrorMessage="The age field is required." />
             <asp:RangeValidator 
                 runat="server" 
                 ControlToValidate="AgeInput"
+                ValidationGroup="Register"
                 CssClass="red-text" 
                 MinimumValue="6" 
                 MaximumValue="100" 
@@ -91,6 +96,7 @@
                 TextMode="Password" />
             <asp:RequiredFieldValidator 
                 runat="server" 
+                ValidationGroup="Register"
                 ControlToValidate="PasswordInput"
                 CssClass="red-text" 
                 ErrorMessage="The password field is required." />
@@ -105,12 +111,14 @@
             <asp:RequiredFieldValidator 
                 runat="server" 
                 ControlToValidate="ConfirmPasswordInput"
+                 ValidationGroup="Register"
                 CssClass="red-text"
                 Display="Dynamic" 
                 ErrorMessage="The confirm password field is required." />
             <asp:CompareValidator 
                 runat="server" 
                 ControlToCompare="PasswordInput" 
+                 ValidationGroup="Register"
                 ControlToValidate="ConfirmPasswordInput"
                 CssClass="red-text" 
                 Display="Dynamic" 

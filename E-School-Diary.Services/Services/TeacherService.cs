@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
@@ -7,9 +8,8 @@ using E_School_Diary.Data.Enums;
 using E_School_Diary.Data.Models;
 using E_School_Diary.Services.Contracts;
 using E_School_Diary.Utils;
-using E_School_Diary.Utils.DTOs.Common;
 using E_School_Diary.Utils.DTOs;
-using System;
+using E_School_Diary.Utils.DTOs.Common;
 
 namespace E_School_Diary.Services
 {

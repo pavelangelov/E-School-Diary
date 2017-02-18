@@ -17,19 +17,19 @@ namespace E_School_Diary.WebClient.Presenters.Register
     public class RegisterParentPresenter : Presenter<IRegisterParentView>
     {
 
-        private IStudentClassService studentClassService;
+        private ITeacherService teacherService;
         private IStudentService studentService;
         private IAppicationUserFactory userFactory;
 
 
-        public RegisterParentPresenter(IRegisterParentView view, IStudentClassService studentClassService, IStudentService studentService, IAppicationUserFactory userFactory)
+        public RegisterParentPresenter(IRegisterParentView view, ITeacherService teacherService, IStudentService studentService, IAppicationUserFactory userFactory)
             : base(view)
         {
-            Validator.ValidateForNull(studentClassService, "studentClassService");
+            Validator.ValidateForNull(teacherService, "teacherService");
             Validator.ValidateForNull(studentService, "studentService");
             Validator.ValidateForNull(userFactory, "userFactory");
 
-            this.studentClassService = studentClassService;
+            this.teacherService = teacherService;
             this.studentService = studentService;
             this.userFactory = userFactory;
 
@@ -38,14 +38,9 @@ namespace E_School_Diary.WebClient.Presenters.Register
             this.View.RegisterParentClick += View_RegisterParentClick;
         }
 
-        private void View_PageLoad(object sender, EventArgs e)
+        private void View_PageLoad(object sender, IdEventArgs e)
         {
-            var classes = this.studentClassService.GetAll()
-                                                    .Select(cl => new StudentClassDTO()
-                                                    {
-                                                        Id = cl.Id,
-                                                        Name = cl.Name
-                                                    })
+            var classes = this.teacherService.GetTeacherClasses(e.Id)
                                                     .ToList();
             classes.Sort();
             this.View.Model.Classes = classes;

@@ -9,7 +9,7 @@ namespace E_School_Diary.WebClient.Views.Register
 {
     public interface IRegisterParentView : IView<RegisterParentViewModel>
     {
-        event EventHandler PageLoad;
+        event EventHandler<IdEventArgs> PageLoad;
 
         event EventHandler<IdEventArgs> StudentClassSelected;
 

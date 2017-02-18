@@ -6,10 +6,17 @@
 
 <%@ Register Src="~/UserControls/Registration/Common.ascx" TagPrefix="uc" TagName="CommonFields" %>
 
-<asp:UpdatePanel runat="server">
+<asp:UpdatePanel runat="server" UpdateMode="Conditional">
     <ContentTemplate>
         <uc:CommonFields runat="server" ID="CommonFields" />
+    </ContentTemplate>
+    <Triggers>
+        <asp:AsyncPostBackTrigger ControlID="BtnSubmit" />
+    </Triggers>
+</asp:UpdatePanel>
 
+<asp:UpdatePanel runat="server" UpdateMode="Conditional">
+    <ContentTemplate>
         <div class="row">
             <div class="col s4">
                 <label for="Classes">Select class:</label>
@@ -21,10 +28,10 @@
                 <asp:DropDownList runat="server" ID="Students" ClientIDMode="Static"></asp:DropDownList>
             </div>
         </div>
-        <asp:Button runat="server" ID="BtnSubmit" CssClass="btn" Text="Submit" OnClick="RegisterClick" />
     </ContentTemplate>
     <Triggers>
-        <asp:AsyncPostBackTrigger ControlID="BtnSubmit" />
         <asp:AsyncPostBackTrigger ControlID="Classes" />
     </Triggers>
 </asp:UpdatePanel>
+
+<asp:Button runat="server" ID="BtnSubmit" ValidationGroup="Register" CssClass="btn" Text="Submit" OnClick="RegisterClick" />

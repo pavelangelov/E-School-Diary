@@ -15,6 +15,7 @@
         <asp:RequiredFieldValidator
             runat="server"
             ControlToValidate="ClassName"
+            ValidationGroup="AddClass"
             CssClass="red-text"
             ErrorMessage="Class name must be between 2 and 15 symbols." />
     </div>
@@ -25,4 +26,4 @@
     </div>
 </div>
 
-<asp:Button runat="server" Text="Create" CssClass="btn" OnClick="CreateClass" />
+<asp:Button runat="server"  ValidationGroup="AddClass" Text="Create" CssClass="btn" OnClick="CreateClass" />

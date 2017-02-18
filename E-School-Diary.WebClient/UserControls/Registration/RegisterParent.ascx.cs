@@ -2,24 +2,25 @@
 using System.Web;
 using System.Web.UI.WebControls;
 
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
 using E_School_Diary.Auth;
+using E_School_Diary.Utils.DTOs.RegisterDTOs;
 using E_School_Diary.WebClient.Models.CustomEventArgs;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Register;
 using E_School_Diary.WebClient.Models.ViewModels.Register;
 using E_School_Diary.WebClient.Presenters.Register;
 using E_School_Diary.WebClient.Views.Register;
-using E_School_Diary.Utils.DTOs.RegisterDTOs;
 
 namespace E_School_Diary.WebClient.UserControls.Registration
 {
     [PresenterBinding(typeof(RegisterParentPresenter))]
     public partial class RegisterParent : MvpUserControl<RegisterParentViewModel>, IRegisterParentView
     {
-        public event EventHandler PageLoad;
+        public event EventHandler<IdEventArgs> PageLoad;
         public event EventHandler<IdEventArgs> StudentClassSelected;
         public event EventHandler<RegisterParentClickEventArgs> RegisterParentClick;
 
@@ -27,7 +28,10 @@ namespace E_School_Diary.WebClient.UserControls.Registration
         {
             if (!IsPostBack)
             {
-                this.PageLoad?.Invoke(sender, e);
+                this.CommonFields.RegistrationTitle = "Register Parent";
+                var teacherId = Context.User.Identity.GetUserId();
+                var ev = new IdEventArgs(teacherId);
+                this.PageLoad?.Invoke(sender, ev);
 
                 this.LoadClasses();
             }

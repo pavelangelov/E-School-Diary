@@ -24,6 +24,7 @@
                 <asp:RequiredFieldValidator
                     runat="server"
                     ControlToValidate="LectureTitle"
+                    ValidationGroup="AddLecture"
                     Display="Dynamic"
                     CssClass="red-text"
                     ErrorMessage="The lecture title field is required." />
@@ -51,7 +52,7 @@
                 <label for="EndTime">Select end time</label>
         </div>
     </div>
-    <asp:Button runat="server" CssClass="btn" ID="AddBtn" Text="Add" OnClick="AddClick" />
+    <asp:Button runat="server" CssClass="btn" ID="AddBtn" ValidationGroup="AddLecture" Text="Add" OnClick="AddClick" />
 </div>
 
 <script>
