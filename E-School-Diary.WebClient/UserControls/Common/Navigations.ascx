@@ -31,7 +31,7 @@
 <ul id="slide-out" class="side-nav">
     <asp:LoginView runat="server">
         <AnonymousTemplate>
-            <li><a runat="server" class="teal-text" href="~/Account/Login">Login</a></li>
+            <li><a runat="server" class="teal-text" href="~/Login">Login</a></li>
             <li><a runat="server" class="teal-text" href="~/TeachersList">Our Teachers</a></li>
         </AnonymousTemplate>
         <LoggedInTemplate>

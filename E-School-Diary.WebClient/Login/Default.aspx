@@ -1,6 +1,11 @@
-﻿<%@ Page Title="Log in" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="E_School_Diary.WebClient.Account.Login" Async="true" %>
-
-<%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
+﻿<%@ Page 
+    Title="Log in" 
+    Language="C#" 
+    MasterPageFile="~/Site.Master" 
+    AutoEventWireup="true" 
+    CodeBehind="Default.aspx.cs" 
+    Inherits="E_School_Diary.WebClient.Login.Default" 
+    Async="true" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <div class="container">
@@ -46,13 +51,5 @@
                 </div>
             </div>
         </div>
-        <%--<p>
-            <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register as a new user</asp:HyperLink>
-        </p>--%>
     </div>
-    <%--<div class="col-md-4">
-        <section id="socialLoginForm">
-            <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
-        </section>
-    </div>--%>
 </asp:Content>

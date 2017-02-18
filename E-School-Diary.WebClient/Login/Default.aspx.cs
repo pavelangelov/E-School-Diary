@@ -6,9 +6,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using E_School_Diary.Auth;
 
-namespace E_School_Diary.WebClient.Account
+namespace E_School_Diary.WebClient.Login
 {
-    public partial class Login : Page
+    public partial class Default : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

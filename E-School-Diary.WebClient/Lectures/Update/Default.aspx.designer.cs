@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace E_School_Diary.WebClient.Account
+namespace E_School_Diary.WebClient.Lectures.Update
 {
 
 
-    public partial class Lockout
+    public partial class Default
     {
     }
 }
