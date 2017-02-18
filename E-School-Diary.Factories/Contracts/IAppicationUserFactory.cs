@@ -8,5 +8,7 @@ namespace E_School_Diary.Factories.Contracts
         ApplicationUser CreateStudent(RegisterStudentDTO studentDTO);
 
         ApplicationUser CreateTeacher(RegisterTeacherDTO teacherDTO);
+
+        ApplicationUser CreateParent(RegisterParentDTO parentDTO);
     }
 }

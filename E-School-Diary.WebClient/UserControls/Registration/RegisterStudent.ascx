@@ -18,10 +18,3 @@
 
     <asp:Button runat="server" ID="BtnSubmit" CssClass="btn" Text="Submit" OnClick="RegisterClick" />
 </div>
-
-<script>
-
-    $(document).ready(function () {
-        $('select').material_select();
-    });
-</script>

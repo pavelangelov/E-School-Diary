@@ -14,12 +14,12 @@ namespace E_School_Diary.WebClient.UserControls.Student
     [PresenterBinding(typeof(StudentMarksPresenter))]
     public partial class Marks : MvpUserControl<StudentMarksViewModel>, IStudentMarksView
     {
-        public event EventHandler<UserIdEventArgs> PageLoad;
+        public event EventHandler<IdEventArgs> PageLoad;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             var userId = Context.User.Identity.GetUserId();
-            this.PageLoad?.Invoke(sender, new UserIdEventArgs(userId));
+            this.PageLoad?.Invoke(sender, new IdEventArgs(userId));
 
             this.MarksList.DataSource = this.Model.Marks;
             this.MarksList.DataBind();

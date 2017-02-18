@@ -10,7 +10,7 @@ namespace E_School_Diary.WebClient.Views.Teacher
 {
     public interface IAddMarksView : IView<AddMarksViewModel>
     {
-        event EventHandler<UserIdEventArgs> PageLoad;
+        event EventHandler<IdEventArgs> PageLoad;
 
         event EventHandler<SelectClassEventArgs> ClassSelected;
 

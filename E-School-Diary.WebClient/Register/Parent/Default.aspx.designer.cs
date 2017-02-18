@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace E_School_Diary.WebClient.Register.Admin
+namespace E_School_Diary.WebClient.Register.Parent
 {
 
 

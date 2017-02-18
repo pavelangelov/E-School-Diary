@@ -56,9 +56,9 @@ namespace E_School_Diary.WebClient.Presenters.Teacher
             this.View.Model.Students = students;
         }
 
-        private void View_PageLoad(object sender, UserIdEventArgs e)
+        private void View_PageLoad(object sender, IdEventArgs e)
         {
-            var classes = this.teacherService.GetTeacherClasses(e.UserId).ToList();
+            var classes = this.teacherService.GetTeacherClasses(e.Id).ToList();
 
             classes.Sort();
             this.View.Model.Classes = classes;

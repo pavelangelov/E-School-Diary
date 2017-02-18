@@ -265,14 +265,14 @@
     <Content Include="Content\materialize\font\roboto\Roboto-Thin.ttf" />
     <Content Include="Content\materialize\font\roboto\Roboto-Thin.woff" />
     <Content Include="Content\materialize\font\roboto\Roboto-Thin.woff2" />
-    <Content Include="Register\Admin\Default.aspx" />
+    <Content Include="Register\Parent\Default.aspx" />
     <Content Include="Register\Student\Default.aspx" />
     <Content Include="Register\Web.config" />
     <Content Include="Register\Teacher\Web.config" />
     <Content Include="Register\Student\Web.config" />
-    <Content Include="Register\Admin\Web.config" />
     <Content Include="Administration\Web.config" />
     <Content Include="AddMarks\Web.config" />
+    <Content Include="Register\Parent\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Register\Teacher\Default.aspx" />
     <Content Include="Scripts\index.js" />
@@ -320,6 +320,7 @@
     <Content Include="UserControls\Common\SideNavTemplates\StudentTemplate.ascx" />
     <Content Include="UserControls\Common\SideNavTemplates\TeacherTemplate.ascx" />
     <Content Include="UserControls\Registration\Common.ascx" />
+    <Content Include="UserControls\Registration\RegisterParent.ascx" />
     <Content Include="UserControls\Registration\RegisterStudent.ascx" />
     <Content Include="UserControls\Registration\RegisterTeacher.ascx" />
     <Content Include="UserControls\Common\Navigations.ascx" />
@@ -519,6 +520,7 @@
     <Compile Include="Models\CustomEventArgs\Admin\AddNewClassEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Admin\AddTeacherToClassEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\NavigationEventArgs.cs" />
+    <Compile Include="Models\CustomEventArgs\Register\RegisterParentClickEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Register\RegisterStudentPageLoadEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Register\RegisterStudentSubmitEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Register\RegisterTeacherEventArgs.cs" />
@@ -527,12 +529,13 @@
     <Compile Include="Models\CustomEventArgs\Teacher\AddNewLectureEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Teacher\ChangeLectureStatusEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Teacher\SelectClassEventArgs.cs" />
-    <Compile Include="Models\CustomEventArgs\UserIdEventArgs.cs" />
+    <Compile Include="Models\CustomEventArgs\IdEventArgs.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ViewModels\Admin\AddNewClassViewModel.cs" />
     <Compile Include="Models\ViewModels\Admin\AddTeacherToClassViewModel.cs" />
     <Compile Include="Models\ViewModels\BaseViewModel.cs" />
     <Compile Include="Models\ViewModels\Common\NavigationViewModel.cs" />
+    <Compile Include="Models\ViewModels\Register\RegisterParentViewModel.cs" />
     <Compile Include="Models\ViewModels\Register\RegisterStudentViewModel.cs" />
     <Compile Include="Models\ViewModels\Register\RegisterTeacherViewModel.cs" />
     <Compile Include="Models\ViewModels\Student\StudentCalendarViewModel.cs" />
@@ -544,6 +547,7 @@
     <Compile Include="Modules\StudentsNinjectModule.cs" />
     <Compile Include="Presenters\Admin\AddNewClassPresenter.cs" />
     <Compile Include="Presenters\Admin\AddTeacherToClassPresenter.cs" />
+    <Compile Include="Presenters\Register\RegisterParentPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterStudentPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterTeacherPresenter.cs" />
     <Compile Include="Presenters\Common\NavigationPresenter.cs" />
@@ -553,11 +557,11 @@
     <Compile Include="Presenters\Teacher\AddNewLecturePresenter.cs" />
     <Compile Include="Presenters\Teacher\ChangeLectureStatusPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Register\Admin\Default.aspx.cs">
+    <Compile Include="Register\Parent\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Register\Admin\Default.aspx.designer.cs">
+    <Compile Include="Register\Parent\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Register\Student\Default.aspx.cs">
@@ -666,6 +670,13 @@
     <Compile Include="UserControls\Registration\Common.ascx.designer.cs">
       <DependentUpon>Common.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Registration\RegisterParent.ascx.cs">
+      <DependentUpon>RegisterParent.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Registration\RegisterParent.ascx.designer.cs">
+      <DependentUpon>RegisterParent.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Registration\RegisterStudent.ascx.cs">
       <DependentUpon>RegisterStudent.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -731,6 +742,7 @@
     </Compile>
     <Compile Include="Views\Admin\IAddNewClassView.cs" />
     <Compile Include="Views\Admin\IAddTeacherToClassView.cs" />
+    <Compile Include="Views\Register\IRegisterParentView.cs" />
     <Compile Include="Views\Register\IRegisterStudentView.cs" />
     <Compile Include="Views\Register\IRegisterTeacherView.cs" />
     <Compile Include="Views\Common\INavigationView.cs" />

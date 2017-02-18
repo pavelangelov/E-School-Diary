@@ -30,10 +30,10 @@ namespace E_School_Diary.WebClient.Presenters.Teacher
             this.View.UpdateStatus += View_UpdateStatus;
         }
 
-        public void View_PageLoad(object sender, UserIdEventArgs e)
+        public void View_PageLoad(object sender, IdEventArgs e)
         {
             var today = DateTime.Now;
-            var lectures = this.teacherService.GetTeacherActualLectures(e.UserId, today)
+            var lectures = this.teacherService.GetTeacherActualLectures(e.Id, today)
                                                                         .OrderBy(l => l.Start);
 
             this.View.Model.Lectures = lectures;

@@ -15,7 +15,7 @@
 
                     </li>
                     <li>
-                        <a class="waves-effect" href="#">Create new Parent Account</a>
+                        <a class="waves-effect" href="/Register/Parent">Create new Parent Account</a>
 
                     </li>
                 </ul>

@@ -16,7 +16,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.ChangeLectureStatus
     [PresenterBinding(typeof(ChangeLectureStatusPresenter))]
     public partial class ChangeStatus : MvpUserControl<ChangeLectureStatusViewModel>, IChangeLectureStatusView
     {
-        public event EventHandler<UserIdEventArgs> PageLoad;
+        public event EventHandler<IdEventArgs> PageLoad;
         public event EventHandler<ChangeLectureStatusEventArgs> UpdateStatus;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.ChangeLectureStatus
         public void LoadLectures()
         {
             var id = Context.User.Identity.GetUserId();
-            this.PageLoad?.Invoke(null, new UserIdEventArgs(id));
+            this.PageLoad?.Invoke(null, new IdEventArgs(id));
 
             this.LecturesGridView.DataSource = this.Model.Lectures;
             this.LecturesGridView.DataBind();

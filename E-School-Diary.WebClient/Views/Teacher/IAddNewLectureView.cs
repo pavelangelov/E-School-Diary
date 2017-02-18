@@ -12,7 +12,7 @@ namespace E_School_Diary.WebClient.Views.Teacher
 {
     public interface IAddNewLectureView : IView<AddNewLectureViewModel>
     {
-        event EventHandler<UserIdEventArgs> PageLoad;
+        event EventHandler<IdEventArgs> PageLoad;
         event EventHandler<AddNewLectureEventArgs> AddLectureClick;
     }
 }

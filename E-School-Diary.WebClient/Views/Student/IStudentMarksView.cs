@@ -9,6 +9,6 @@ namespace E_School_Diary.WebClient.Views.Student
 {
     public interface IStudentMarksView : IView<StudentMarksViewModel>
     {
-        event EventHandler<UserIdEventArgs> PageLoad;
+        event EventHandler<IdEventArgs> PageLoad;
     }
 }

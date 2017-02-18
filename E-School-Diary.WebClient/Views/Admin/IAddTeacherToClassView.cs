@@ -13,7 +13,7 @@ namespace E_School_Diary.WebClient.Views.Admin
     public interface IAddTeacherToClassView : IView<AddTeacherToClassViewModel>
     {
         event EventHandler PageLoad;
-        event EventHandler<UserIdEventArgs> TeacherSelected;
+        event EventHandler<IdEventArgs> TeacherSelected;
         event EventHandler<AddTeacherToClassEventArgs> AddTeacherClick;
     }
 }

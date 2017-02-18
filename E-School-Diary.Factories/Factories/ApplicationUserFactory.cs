@@ -10,6 +10,23 @@ namespace E_School_Diary.Factories
 {
     public class ApplicationUserFactory : IAppicationUserFactory
     {
+        public ApplicationUser CreateParent(RegisterParentDTO parentDTO)
+        {
+            var appUser = new ApplicationUser()
+            {
+                UserName = parentDTO.Email,
+                Email = parentDTO.Email,
+                FirstName = parentDTO.FirstName,
+                LastName = parentDTO.LastName,
+                Age = parentDTO.Age,
+                UserType = UserTypes.Parent,
+                ChildId = parentDTO.ChildId,
+                ImageUrl = Constants.DefaultParentImage
+            };
+
+            return appUser;
+        }
+
         public ApplicationUser CreateStudent(RegisterStudentDTO studentDTO)
         {
             var appUser = new ApplicationUser()

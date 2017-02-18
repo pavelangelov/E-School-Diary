@@ -18,7 +18,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
     [PresenterBinding(typeof(AddMarksPresenter))]
     public partial class Marks : MvpUserControl<AddMarksViewModel>, IAddMarksView
     {
-        public event EventHandler<UserIdEventArgs> PageLoad;
+        public event EventHandler<IdEventArgs> PageLoad;
         public event EventHandler<SelectClassEventArgs> ClassSelected;
         public event EventHandler<AddMarksEventArgs> InsertMarks;
 
@@ -27,7 +27,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
             if (!IsPostBack)
             {
                 var teacherId = Context.User.Identity.GetUserId();
-                var ev = new UserIdEventArgs(teacherId);
+                var ev = new IdEventArgs(teacherId);
                 this.PageLoad?.Invoke(sender, ev);
 
                 this.LoadClasses();

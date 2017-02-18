@@ -23,9 +23,9 @@ namespace E_School_Diary.WebClient.Presenters.Student
             this.View.PageLoad += View_PageLoad;
         }
 
-        public void View_PageLoad(object sender, UserIdEventArgs e)
+        public void View_PageLoad(object sender, IdEventArgs e)
         {
-            var marks = this.studentService.GetStudentMarks(e.UserId).ToList();
+            var marks = this.studentService.GetStudentMarks(e.Id).ToList();
 
             this.View.Model.Marks = marks;
         }

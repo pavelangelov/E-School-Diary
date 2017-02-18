@@ -16,7 +16,7 @@ namespace E_School_Diary.WebClient.UserControls.Admin
     public partial class AddTeacherToClass : MvpUserControl<AddTeacherToClassViewModel>, IAddTeacherToClassView
     {
         public event EventHandler PageLoad;
-        public event EventHandler<UserIdEventArgs> TeacherSelected;
+        public event EventHandler<IdEventArgs> TeacherSelected;
         public event EventHandler<AddTeacherToClassEventArgs> AddTeacherClick;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace E_School_Diary.WebClient.UserControls.Admin
             var teacherId = this.Teachers.SelectedValue;
             if (teacherId != null && teacherId != "")
             {
-                this.TeacherSelected?.Invoke(sender, new UserIdEventArgs(teacherId));
+                this.TeacherSelected?.Invoke(sender, new IdEventArgs(teacherId));
                 this.LoadClasses();
             }
         }

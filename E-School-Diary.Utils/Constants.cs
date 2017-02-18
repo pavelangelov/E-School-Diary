@@ -7,7 +7,7 @@ namespace E_School_Diary.Utils
         public const int AgeMaxValue = 100;
         public const string DefaultStudentImage = "/Images/default-student-avatar.jpg";
         public const string DefaultTeacherImage = "/Images/default-teacher-avatar.jpg";
-        public const string DefaultParentImage = "";
+        public const string DefaultParentImage = "/Images/default-parent-avatar.jpg";
         public const string DefaultAdminImage = "/Images/default-admin-avatar.png";
 
         #region Name

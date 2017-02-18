@@ -17,7 +17,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
     [PresenterBinding(typeof(AddNewLecturePresenter))]
     public partial class Lecture : MvpUserControl<AddNewLectureViewModel>, IAddNewLectureView
     {
-        public event EventHandler<UserIdEventArgs> PageLoad;
+        public event EventHandler<IdEventArgs> PageLoad;
         public event EventHandler<AddNewLectureEventArgs> AddLectureClick;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
             {
                 this.Title.InnerText = "Add new lecture";
                 var userId = Context.User.Identity.GetUserId();
-                this.PageLoad?.Invoke(sender, new UserIdEventArgs(userId));
+                this.PageLoad?.Invoke(sender, new IdEventArgs(userId));
                 if (this.Model.ErrorMessage != null)
                 {
                     this.Message.ShowError(this.Model.ErrorMessage);

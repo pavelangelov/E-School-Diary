@@ -10,7 +10,7 @@ namespace E_School_Diary.WebClient.Views.Teacher
 {
     public interface IChangeLectureStatusView : IView<ChangeLectureStatusViewModel>
     {
-        event EventHandler<UserIdEventArgs> PageLoad;
+        event EventHandler<IdEventArgs> PageLoad;
 
         event EventHandler<ChangeLectureStatusEventArgs> UpdateStatus;
     }

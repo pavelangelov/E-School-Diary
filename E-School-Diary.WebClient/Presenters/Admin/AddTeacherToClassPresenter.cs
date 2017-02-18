@@ -52,10 +52,10 @@ namespace E_School_Diary.WebClient.Presenters.Admin
             this.View.Model.IsSuccess = true;
         }
 
-        public void View_TeacherSelected(object sender, UserIdEventArgs e)
+        public void View_TeacherSelected(object sender, IdEventArgs e)
         {
             var classes = this.studentClassService.GetAll();
-            var teacherClasses = this.teacherService.GetTeacherClasses(e.UserId);
+            var teacherClasses = this.teacherService.GetTeacherClasses(e.Id);
             var availableClasses = new List<StudentClassDTO>();
 
             foreach (var cl in classes)

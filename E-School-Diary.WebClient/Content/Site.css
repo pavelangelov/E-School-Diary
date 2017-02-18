@@ -93,3 +93,8 @@ select#Teachers {
 select#Classes {
     display: inline-block;
 }
+
+/* Register parent styles*/
+select#Students {
+    display: inline-block;
+}

@@ -113,9 +113,9 @@ namespace E_School_Diary.WebClient.Presenters.Teacher
             this.View.Model.IsSuccess = true;
         }
 
-        public void View_PageLoad(object sender, UserIdEventArgs e)
+        public void View_PageLoad(object sender, IdEventArgs e)
         {
-            var classes = this.teacherService.GetTeacherClasses(e.UserId)
+            var classes = this.teacherService.GetTeacherClasses(e.Id)
                                                 .ToList();
             if (classes.Count() == 0)
             {
