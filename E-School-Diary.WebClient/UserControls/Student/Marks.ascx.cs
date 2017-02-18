@@ -4,10 +4,10 @@ using Microsoft.AspNet.Identity;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
-using E_School_Diary.WebClient.Models.ViewModels.Common;
 using E_School_Diary.WebClient.Models.ViewModels.Student;
 using E_School_Diary.WebClient.Presenters.Student;
 using E_School_Diary.WebClient.Views.Student;
+using E_School_Diary.WebClient.Models.CustomEventArgs;
 
 namespace E_School_Diary.WebClient.UserControls.Student
 {

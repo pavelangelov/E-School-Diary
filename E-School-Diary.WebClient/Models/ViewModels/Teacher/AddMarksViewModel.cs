@@ -4,12 +4,8 @@ using E_School_Diary.Utils.DTOs.Common;
 
 namespace E_School_Diary.WebClient.Models.ViewModels.Teacher
 {
-    public class AddMarksViewModel
+    public class AddMarksViewModel : BaseViewModel
     {
-        public bool IsSuccess { get; set; }
-
-        public string ErrorMessage { get; set; }
-
         public IEnumerable<StudentClassDTO> Classes { get; set; }
 
         public IEnumerable<StudentDTO> Students { get; set; }

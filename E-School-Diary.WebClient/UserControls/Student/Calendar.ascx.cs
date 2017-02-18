@@ -43,7 +43,6 @@ namespace E_School_Diary.WebClient.UserControls.Student
 
         public void AttachLectures(string date)
         {
-
             this.ActiveTitle.InnerText = $"Active lectures for {date}";
             this.ActiveLectures.DataSource = this.Model.AheadLectures;
 
@@ -52,7 +51,7 @@ namespace E_School_Diary.WebClient.UserControls.Student
 
             this.PastTitle.InnerText = $"Past lectures for {date}";
             this.PastLectures.DataSource = this.Model.PastLectures;
-
+            
             this.ActiveLectures.DataBind();
             this.CanceledLectures.DataBind();
             this.PastLectures.DataBind();

@@ -4,8 +4,8 @@ using WebFormsMvp;
 
 using E_School_Diary.Utils;
 using E_School_Diary.Services.Contracts;
-using E_School_Diary.WebClient.Models.ViewModels.Common;
 using E_School_Diary.WebClient.Views.Student;
+using E_School_Diary.WebClient.Models.CustomEventArgs;
 
 namespace E_School_Diary.WebClient.Presenters.Student
 {

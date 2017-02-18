@@ -527,8 +527,8 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ViewModels\Admin\AddNewClassViewModel.cs" />
     <Compile Include="Models\ViewModels\Admin\AddTeacherToClassViewModel.cs" />
+    <Compile Include="Models\ViewModels\BaseViewModel.cs" />
     <Compile Include="Models\ViewModels\Common\NavigationViewModel.cs" />
-    <Compile Include="Models\ViewModels\Common\UserIdEventArgs.cs" />
     <Compile Include="Models\ViewModels\Register\RegisterStudentViewModel.cs" />
     <Compile Include="Models\ViewModels\Register\RegisterTeacherViewModel.cs" />
     <Compile Include="Models\ViewModels\Student\StudentCalendarViewModel.cs" />

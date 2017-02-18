@@ -2,12 +2,8 @@
 
 namespace E_School_Diary.WebClient.Models.ViewModels.Register
 {
-    public class RegisterStudentViewModel
+    public class RegisterStudentViewModel : BaseViewModel
     {
-        public bool IsSuccess { get; set; }
-
-        public string ErrorMessage { get; set; }
-
         public TeacherInforForRegisterStudentDTO TeacherInfo { get; set; }
     }
 }
