@@ -273,6 +273,7 @@
     <Content Include="Administration\Web.config" />
     <Content Include="AddMarks\Web.config" />
     <Content Include="Register\Parent\Web.config" />
+    <Content Include="Lectures\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Register\Teacher\Default.aspx" />
     <Content Include="Scripts\index.js" />
@@ -754,6 +755,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Lectures\Update\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\E-School-Diary.Auth\E-School-Diary.Auth.csproj">
