@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace E_School_Diary.WebClient.AddNewLecture
+namespace E_School_Diary.WebClient.UserControls.Common.SideNavTemplates
 {
 
 
-    public partial class Default
+    public partial class ParentTemplate
     {
     }
 }

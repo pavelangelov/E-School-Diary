@@ -199,10 +199,10 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="AddMarks\Default.aspx" />
-    <Content Include="AddNewLecture\Default.aspx" />
     <Content Include="Administration\AddNewClass\Default.aspx" />
     <Content Include="Administration\AddTeacherToClass\Default.aspx" />
-    <Content Include="ChangeLectureStatus\Default.aspx" />
+    <Content Include="Lectures\Add\Default.aspx" />
+    <Content Include="Lectures\ChangeStatus\Default.aspx" />
     <Content Include="Images\default-teacher-avatar.jpg" />
     <Content Include="Images\default-admin-avatar.png" />
     <Content Include="Images\default-student-avatar.jpg" />
@@ -315,6 +315,10 @@
     <Content Include="UserControls\Admin\AddNewClass.ascx" />
     <Content Include="UserControls\Admin\AddTeacherToClass.ascx" />
     <Content Include="UserControls\Common\MessageContainer.ascx" />
+    <Content Include="UserControls\Common\SideNavTemplates\AdminTemplate.ascx" />
+    <Content Include="UserControls\Common\SideNavTemplates\ParentTemplate.ascx" />
+    <Content Include="UserControls\Common\SideNavTemplates\StudentTemplate.ascx" />
+    <Content Include="UserControls\Common\SideNavTemplates\TeacherTemplate.ascx" />
     <Content Include="UserControls\Registration\Common.ascx" />
     <Content Include="UserControls\Registration\RegisterStudent.ascx" />
     <Content Include="UserControls\Registration\RegisterTeacher.ascx" />
@@ -452,13 +456,6 @@
     <Compile Include="AddMarks\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddNewLecture\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddNewLecture\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Administration\AddNewClass\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -486,11 +483,18 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="ChangeLectureStatus\Default.aspx.cs">
+    <Compile Include="Lectures\Add\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ChangeLectureStatus\Default.aspx.designer.cs">
+    <Compile Include="Lectures\Add\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lectures\ChangeStatus\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lectures\ChangeStatus\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
@@ -626,6 +630,34 @@
     </Compile>
     <Compile Include="UserControls\Common\MessageContainer.ascx.designer.cs">
       <DependentUpon>MessageContainer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\SideNavTemplates\AdminTemplate.ascx.cs">
+      <DependentUpon>AdminTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\SideNavTemplates\AdminTemplate.ascx.designer.cs">
+      <DependentUpon>AdminTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\SideNavTemplates\ParentTemplate.ascx.cs">
+      <DependentUpon>ParentTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\SideNavTemplates\ParentTemplate.ascx.designer.cs">
+      <DependentUpon>ParentTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\SideNavTemplates\StudentTemplate.ascx.cs">
+      <DependentUpon>StudentTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\SideNavTemplates\StudentTemplate.ascx.designer.cs">
+      <DependentUpon>StudentTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\SideNavTemplates\TeacherTemplate.ascx.cs">
+      <DependentUpon>TeacherTemplate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\SideNavTemplates\TeacherTemplate.ascx.designer.cs">
+      <DependentUpon>TeacherTemplate.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Registration\Common.ascx.cs">
       <DependentUpon>Common.ascx</DependentUpon>

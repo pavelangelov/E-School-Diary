@@ -4,7 +4,7 @@
     MasterPageFile="~/Site.Master"
     AutoEventWireup="true"
     CodeBehind="Default.aspx.cs"
-    Inherits="E_School_Diary.WebClient.ChangeLectureStatus.Default" %>
+    Inherits="E_School_Diary.WebClient.Lectures.ChangeStatus.Default" %>
 
 <%@ Register Src="~/UserControls/Teacher/ChangeLectureStatus/ChangeStatus.ascx" TagPrefix="uc" TagName="changeStatus" %>
 

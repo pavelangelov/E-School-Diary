@@ -1,10 +1,10 @@
 ﻿<%@ Page 
-    Title="Add lecture" 
+    Title="Add new lecture" 
     Language="C#" 
-    MasterPageFile="~/Site.Master" 
+    MasterPageFile="~/Site.Master"
     AutoEventWireup="true" 
     CodeBehind="Default.aspx.cs" 
-    Inherits="E_School_Diary.WebClient.AddNewLecture.Default" %>
+    Inherits="E_School_Diary.WebClient.Lectures.Add.Default" %>
 
 <%@ Register Src="~/UserControls/Teacher/Add/Lecture.ascx" TagPrefix="uc" TagName="newLecture" %>
 
