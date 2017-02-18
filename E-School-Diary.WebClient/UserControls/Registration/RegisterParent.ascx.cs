@@ -1,18 +1,18 @@
 ﻿using System;
+using System.Web;
+using System.Web.UI.WebControls;
 
+using Microsoft.AspNet.Identity.Owin;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 
+using E_School_Diary.Auth;
 using E_School_Diary.WebClient.Models.CustomEventArgs;
 using E_School_Diary.WebClient.Models.CustomEventArgs.Register;
 using E_School_Diary.WebClient.Models.ViewModels.Register;
 using E_School_Diary.WebClient.Presenters.Register;
 using E_School_Diary.WebClient.Views.Register;
-using System.Web.UI.WebControls;
 using E_School_Diary.Utils.DTOs.RegisterDTOs;
-using System.Web;
-using Microsoft.AspNet.Identity.Owin;
-using E_School_Diary.Auth;
 
 namespace E_School_Diary.WebClient.UserControls.Registration
 {
