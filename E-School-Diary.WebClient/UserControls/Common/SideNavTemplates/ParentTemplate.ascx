@@ -5,6 +5,5 @@
     Inherits="E_School_Diary.WebClient.UserControls.Common.SideNavTemplates.ParentTemplate" %>
 
 <li><a class="waves-effect" href="/Child/Marks">Check out your child marks</a></li>
-<li>Check out your child lectures</li>
+<li><a class="waves-effect" href="/Child/Lectures">Check out your child lectures</a></li>
 <li>Messages and events</li>
-<li>Edit profile</li>

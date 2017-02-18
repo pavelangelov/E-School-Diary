@@ -11,6 +11,8 @@ namespace E_School_Diary.Services.Contracts
 
         IEnumerable<ParentDTO> FindParents(string studentId);
 
+        string GetChildId(string parentId);
+
         int Save();
     }
 }

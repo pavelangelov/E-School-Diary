@@ -32,6 +32,13 @@ namespace E_School_Diary.Services
             return parents;
         }
 
+        public string GetChildId(string parentId)
+        {
+            var parent = this.dbContext.Users.Find(parentId);
+
+            return parent.ChildId;
+        }
+
         public IEnumerable<IGrouping<string, MarkDTO>> GetChildMarks(string parentId)
         {
             var childId = this.dbContext.Users
