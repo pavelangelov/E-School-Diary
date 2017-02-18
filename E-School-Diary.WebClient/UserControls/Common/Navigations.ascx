@@ -10,10 +10,10 @@
 
         <asp:LoginView runat="server" ID="UsernameView" ViewStateMode="Enabled">
             <AnonymousTemplate>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="#about" class="teal-text">About</a></li>
-                        <li><a href="#contact" class="teal-text">Contact</a></li>
-                    </ul>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#about" class="teal-text">About</a></li>
+                    <li><a href="#contact" class="teal-text">Contact</a></li>
+                </ul>
             </AnonymousTemplate>
             <LoggedInTemplate>
                 <a class="waves-effect waves-light btn-small right" title="Log off" runat="server" onserverclick="Unnamed_LoggingOut" onclick="logout()"><i class="material-icons teal-text">power_settings_new</i></a>
@@ -43,19 +43,22 @@
         <RoleGroups>
             <asp:RoleGroup Roles="Admin">
                 <ContentTemplate>
-                    <li><a class="waves-effect" href="/">Create new Admin Account</a></li>
-                    <li><a class="waves-effect" href="/Register/Teacher">Create new Teacher Account</a></li>
-                    <li><a class="waves-effect" href="/Administration/AddNewClass">Create new Class</a></li>
-                    <li><a class="waves-effect" href="/Administration/AddTeacherToClass">Add teacher to class</a></li>
-                    <li>
-                        <div class="divider"></div>
-                    </li>
                     <li class="no-padding">
                         <ul class="collapsible collapsible-accordion">
                             <li>
-                                <a class="collapsible-header">Edit Accounts<i class="material-icons">arrow_drop_down</i></a>
+                                <a class="collapsible-header">Create Accounts<i class="material-icons">expand_more</i></a>
                                 <div class="collapsible-body">
                                     <ul>
+                                        <li><a class="waves-effect" href="/Register/Teacher">Create new Teacher Account</a></li>
+                                        <li><a class="waves-effect" href="/Administration/AddNewClass">Create new Class</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="collapsible-header">Edit<i class="material-icons">expand_more</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a class="waves-effect" href="/Administration/AddTeacherToClass">Add teacher to class</a></li>
                                         <li><a class="waves-effect" href="/Edit/Students">Edit Students accounts</a></li>
                                         <li><a class="waves-effect" href="/Edit/Teachers">Edit Teachers acounts</a></li>
                                         <li><a class="waves-effect" href="/Edit/Parents">Edit Parents accounts</a></li>
@@ -69,13 +72,44 @@
             </asp:RoleGroup>
             <asp:RoleGroup Roles="Teacher">
                 <ContentTemplate>
-                    <li><a class="waves-effect" href="/Register/Student">Create new Student Account</a></li>
-                    <li><a class="waves-effect" href="#">Create new Parent Account</a></li>
-                    <li><a class="waves-effect" href="/AddNewLecture">Add new lecture</a></li>
-                    <li><a class="waves-effect" href="/ChangeLectureStatus">Manage lectures</a></li>
-                    <li><a class="waves-effect" href="/AddMarks">Add marks to students</a></li>
-                    <li>Send message to student parents</li>
-                    <li>Edit profile</li>
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li>
+                                <a class="collapsible-header">Register<i class="material-icons">expand_more</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a class="waves-effect" href="/Register/Student">Create new Student Account</a>
+
+                                        </li>
+                                        <li>
+                                            <a class="waves-effect" href="#">Create new Parent Account</a>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="collapsible-header">Lectures<i class="material-icons">expand_more</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a class="waves-effect" href="/AddNewLecture">Add new lecture</a></li>
+                                        <li><a class="waves-effect" href="/ChangeLectureStatus">Manage lectures</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="collapsible-header">Other options<i class="material-icons">expand_more</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a class="waves-effect" href="/AddMarks">Add marks to students</a></li>
+                                        <li><a class="waves-effect" href="#">Send message to student parents</a></li>
+                                        <li><a class="waves-effect" href="#">Edit profile</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
                 </ContentTemplate>
             </asp:RoleGroup>
             <asp:RoleGroup Roles="Parent">
