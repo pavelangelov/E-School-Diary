@@ -62,12 +62,6 @@ namespace E_School_Diary.WebClient.UserControls.Admin
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
-            if (Session["isDone"]!=null)
-            {
-                this.ClearLists();
-                return;
-            }
-
             var teacherId = this.Teachers.SelectedValue;
             var classId = this.Classes.SelectedValue;
             var ev = new AddTeacherToClassEventArgs(teacherId, classId);
@@ -76,7 +70,6 @@ namespace E_School_Diary.WebClient.UserControls.Admin
 
             if (this.Model.IsSuccess)
             {
-                Session["isDone"] = true;
                 this.Message.ShowSuccess("This teacher now can teaching in this class. To add new class please reload the page.");
 
                 this.ClearLists();

@@ -54,7 +54,7 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add
             var messageContent = this.content.InnerText;
             if (messageContent.Length > Utils.Constants.ContentMaxLength)
             {
-                // Show error
+                this.MessageContainer.ShowError(Utils.Constants.ContentErrorMessage);
                 return;
             }
 
