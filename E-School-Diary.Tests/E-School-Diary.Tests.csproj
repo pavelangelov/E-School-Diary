@@ -56,15 +56,34 @@
   <ItemGroup>
     <Compile Include="Data\CustomModels\Lectures\_ConstructorShould_.cs" />
     <Compile Include="Data\CustomModels\Marks\_ConstructorShould_.cs" />
+    <Compile Include="Data\CustomModels\Messages\_ConstructorShould_.cs" />
+    <Compile Include="Data\CustomModels\StudentClasses\_ConstructorShould_.cs" />
+    <Compile Include="Data\CustomModels\StudentClasses\_FormMasterIdShoul_.cs" />
+    <Compile Include="Factories\ApplicationUserFactory\CraeteParentShould_.cs" />
+    <Compile Include="Factories\ApplicationUserFactory\CraeteTeacherShould_.cs" />
+    <Compile Include="Factories\ApplicationUserFactory\CreateStudentShould_.cs" />
+    <Compile Include="Factories\LectureFactory\CreateLectureShould_.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\E-School-Diary.Auth\E-School-Diary.Auth.csproj">
+      <Project>{48924A2C-9471-4096-B60F-867155DC651F}</Project>
+      <Name>E-School-Diary.Auth</Name>
+    </ProjectReference>
     <ProjectReference Include="..\E-School-Diary.Data\E-School-Diary.Data.csproj">
       <Project>{7a2d1ec7-70f4-44f9-b116-ba3897dd2f5c}</Project>
       <Name>E-School-Diary.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\E-School-Diary.Factories\E-School-Diary.Factories.csproj">
+      <Project>{25A1ABB5-DEC2-442E-A2B5-C40D9562C6EF}</Project>
+      <Name>E-School-Diary.Factories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\E-School-Diary.Utils\E-School-Diary.Utils.csproj">
+      <Project>{57D375FE-3837-4749-BD5E-583B75F306F3}</Project>
+      <Name>E-School-Diary.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

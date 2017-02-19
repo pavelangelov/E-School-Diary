@@ -1,16 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 using E_School_Diary.Data.Contracts;
 using E_School_Diary.Utils;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace E_School_Diary.Data.Models
 {
     public partial class StudentClass : IStudentClass, IIdentifiable
     {
         private string name;
+        private string formMasterId;
 
         public StudentClass()
         {
@@ -51,7 +52,25 @@ namespace E_School_Diary.Data.Models
             }
         }
 
-        public string FormMasterId { get; set; }
+        public string FormMasterId
+        {
+            get
+            {
+                return this.formMasterId;
+            }
+
+            set
+            {
+                if (value == null)
+                {
+                    return;
+                }
+
+                Utils.Validator.ValidateStringLength(value, Constants.IdMaxLength, Constants.IdMinLength, "FormMasterId");
+
+                this.formMasterId = value;
+            }
+        }
 
         public virtual User FormMaster { get; set; }
 
