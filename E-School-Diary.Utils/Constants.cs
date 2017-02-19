@@ -5,6 +5,7 @@ namespace E_School_Diary.Utils
     public class Constants
     {
         public const int AgeMaxValue = 100;
+        public const int ImageUploadMaxSize = 500 * 1000; // Size is in Kb
         public const string DefaultStudentImage = "/Images/default-student-avatar.jpg";
         public const string DefaultTeacherImage = "/Images/default-teacher-avatar.jpg";
         public const string DefaultParentImage = "/Images/default-parent-avatar.jpg";

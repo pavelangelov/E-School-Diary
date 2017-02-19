@@ -27,7 +27,7 @@
                             <input class="file-path validate" type="text">
                         </div>
                         <a class="waves-effect waves-teal btn-flat teal-text" title="Upload" id="fileUploadBtn" runat="server" onserverclick="UploadImage"><i class="material-icons right">send</i>Upload</a>
-                        <span runat="server" id="FileError"></span>
+                        <span runat="server" class="red-text" id="FileError"></span>
                     </div>
                 </ContentTemplate>
                 <Triggers>

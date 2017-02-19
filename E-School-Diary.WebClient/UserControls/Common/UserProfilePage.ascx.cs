@@ -37,7 +37,7 @@ namespace E_School_Diary.WebClient.UserControls.Common
 
             this.FileError.InnerText = "";
 
-            if (selectedFile != null && selectedFile.ContentLength < 500000)
+            if (selectedFile != null && selectedFile.ContentLength <= Utils.Constants.ImageUploadMaxSize)
             {
                 var filePath = Server.MapPath($"~/Uploaded_Files/{this.file.FileName}");
                 selectedFile.SaveAs(filePath);
