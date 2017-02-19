@@ -98,3 +98,12 @@ select#Classes {
 select#Students {
     display: inline-block;
 }
+
+/* Profile styles */
+img#UserImage {
+    margin-top: 10px;
+    border-radius: 200px;
+    width: 60%;
+    height: 60%;
+    box-shadow: 0 0 45px #4db6ac;
+}

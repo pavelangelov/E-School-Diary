@@ -39,8 +39,8 @@
                 <div class="userView">
                     <a href="#!user">
                         <img class="circle user-image" src="<%: this.Model.ImageUrl %>"></a>
-                    <a href="#!name"><span class="white-text name"><%: this.Model.FirstName + " " + this.Model.LastName %></span></a>
-                    <a href="#!email"><span class="white-text email"><%: this.Model.Email %></span></a>
+                    <a href="/Profile"><span class="white-text name"><%: this.Model.FirstName + " " + this.Model.LastName %></span></a>
+                    <a href="/Profile"><span class="white-text email"><%: this.Model.Email %></span></a>
                 </div>
             </li>
         </LoggedInTemplate>

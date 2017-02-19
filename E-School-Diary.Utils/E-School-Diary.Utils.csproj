@@ -53,6 +53,7 @@
     <Compile Include="DTOs\Common\StudentClassDTO.cs" />
     <Compile Include="DTOs\Common\MinTeacherInfoDTO.cs" />
     <Compile Include="DTOs\Common\StudentDTO.cs" />
+    <Compile Include="DTOs\Common\UserDTO.cs" />
     <Compile Include="DTOs\CreateLectureDTO.cs" />
     <Compile Include="DTOs\RegisterDTOs\RegisterParentDTO.cs" />
     <Compile Include="DTOs\RegisterDTOs\RegisterStudentDTO.cs" />

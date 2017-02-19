@@ -255,6 +255,7 @@
     <Content Include="Lectures\Update\Default.aspx" />
     <Content Include="Messages\Inbox\Default.aspx" />
     <Content Include="Messages\Send\Default.aspx" />
+    <Content Include="Profile\Default.aspx" />
     <Content Include="Register\Parent\Default.aspx" />
     <Content Include="Register\Student\Default.aspx" />
     <Content Include="Register\Web.config" />
@@ -268,6 +269,7 @@
     <Content Include="Messages\Web.config" />
     <Content Include="Messages\Send\Web.config" />
     <Content Include="Messages\Inbox\Web.config" />
+    <Content Include="Profile\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Register\Teacher\Default.aspx" />
     <Content Include="Scripts\index.js" />
@@ -314,6 +316,7 @@
     <Content Include="UserControls\Common\SideNavTemplates\ParentTemplate.ascx" />
     <Content Include="UserControls\Common\SideNavTemplates\StudentTemplate.ascx" />
     <Content Include="UserControls\Common\SideNavTemplates\TeacherTemplate.ascx" />
+    <Content Include="UserControls\Common\UserProfilePage.ascx" />
     <Content Include="UserControls\Parent\ChildLectures.ascx" />
     <Content Include="UserControls\Parent\ChildMarks.ascx" />
     <Content Include="UserControls\Parent\Messages.ascx" />
@@ -456,6 +459,7 @@
     </Compile>
     <Compile Include="Models\CustomEventArgs\Admin\AddNewClassEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Admin\AddTeacherToClassEventArgs.cs" />
+    <Compile Include="Models\CustomEventArgs\FileUploadEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\NavigationEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Register\RegisterParentClickEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\Register\RegisterStudentPageLoadEventArgs.cs" />
@@ -473,6 +477,7 @@
     <Compile Include="Models\ViewModels\Admin\AddTeacherToClassViewModel.cs" />
     <Compile Include="Models\ViewModels\BaseViewModel.cs" />
     <Compile Include="Models\ViewModels\Common\NavigationViewModel.cs" />
+    <Compile Include="Models\ViewModels\Common\ProfileViewModel.cs" />
     <Compile Include="Models\ViewModels\Parent\ChildLecturesViewModel.cs" />
     <Compile Include="Models\ViewModels\Parent\ParentMessagesViewModel.cs" />
     <Compile Include="Models\ViewModels\Register\RegisterParentViewModel.cs" />
@@ -488,6 +493,7 @@
     <Compile Include="Modules\StudentsNinjectModule.cs" />
     <Compile Include="Presenters\Admin\AddNewClassPresenter.cs" />
     <Compile Include="Presenters\Admin\AddTeacherToClassPresenter.cs" />
+    <Compile Include="Presenters\Common\ProfilePresenter.cs" />
     <Compile Include="Presenters\Parent\ChildLecturesPresenter.cs" />
     <Compile Include="Presenters\Parent\ChildMarksPresenter.cs" />
     <Compile Include="Presenters\Parent\ParentMessagesPresenter.cs" />
@@ -502,6 +508,13 @@
     <Compile Include="Presenters\Teacher\ChangeLectureStatusPresenter.cs" />
     <Compile Include="Presenters\Teacher\SendMessagePresenter.cs" />
     <Compile Include="Presenters\Teacher\UpdateLecturesPresenter.cs" />
+    <Compile Include="Profile\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register\Parent\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -608,6 +621,13 @@
     </Compile>
     <Compile Include="UserControls\Common\SideNavTemplates\TeacherTemplate.ascx.designer.cs">
       <DependentUpon>TeacherTemplate.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Common\UserProfilePage.ascx.cs">
+      <DependentUpon>UserProfilePage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Common\UserProfilePage.ascx.designer.cs">
+      <DependentUpon>UserProfilePage.ascx</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Parent\ChildLectures.ascx.cs">
       <DependentUpon>ChildLectures.ascx</DependentUpon>
@@ -723,6 +743,7 @@
     </Compile>
     <Compile Include="Views\Admin\IAddNewClassView.cs" />
     <Compile Include="Views\Admin\IAddTeacherToClassView.cs" />
+    <Compile Include="Views\Common\IProfileView.cs" />
     <Compile Include="Views\Parent\IChildLecturesView.cs" />
     <Compile Include="Views\Parent\IChildMarksView.cs" />
     <Compile Include="Views\Parent\IParentMessagesView.cs" />

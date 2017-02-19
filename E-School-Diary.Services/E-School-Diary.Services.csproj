@@ -63,6 +63,7 @@
     <Compile Include="Contracts\IStudentClassService.cs" />
     <Compile Include="Contracts\IStudentService.cs" />
     <Compile Include="Contracts\ITeacherService.cs" />
+    <Compile Include="Contracts\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LectureService.cs" />
     <Compile Include="Services\MarkService.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Services\StudentClassService.cs" />
     <Compile Include="Services\StudentService.cs" />
     <Compile Include="Services\TeacherService.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\E-School-Diary.Data\E-School-Diary.Data.csproj">
