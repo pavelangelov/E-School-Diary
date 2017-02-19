@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-School-Diary.Auth", "E-Sc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-School-Diary.Factories", "E-School-Diary.Factories\E-School-Diary.Factories.csproj", "{25A1ABB5-DEC2-442E-A2B5-C40D9562C6EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-School-Diary.Tests", "E-School-Diary.Tests\E-School-Diary.Tests.csproj", "{45A6C210-245F-42BF-991D-B0ADF51AE70E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{25A1ABB5-DEC2-442E-A2B5-C40D9562C6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25A1ABB5-DEC2-442E-A2B5-C40D9562C6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25A1ABB5-DEC2-442E-A2B5-C40D9562C6EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45A6C210-245F-42BF-991D-B0ADF51AE70E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45A6C210-245F-42BF-991D-B0ADF51AE70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45A6C210-245F-42BF-991D-B0ADF51AE70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45A6C210-245F-42BF-991D-B0ADF51AE70E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

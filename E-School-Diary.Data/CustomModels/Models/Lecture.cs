@@ -10,6 +10,8 @@ namespace E_School_Diary.Data.Models
     public partial class Lecture : ILecture, IIdentifiable
     {
         private string title;
+        private string teacherId;
+        private string classId;
 
         public Lecture()
         {
@@ -38,14 +40,40 @@ namespace E_School_Diary.Data.Models
         public LectureStatus Status { get; set; }
 
         [StringLength(128)]
-        public string StudentClassId { get; set; }
+        public string StudentClassId
+        {
+            get
+            {
+                return this.classId;
+            }
+
+            set
+            {
+                Utils.Validator.ValidateStringLength(value, Constants.IdMaxLength, Constants.IdMinLength, "ClassId");
+
+                this.classId = value;
+            }
+        }
 
         public virtual StudentClass StudentClass { get; set; }
 
         public Subject Subject { get; set; }
 
         [StringLength(128)]
-        public string TeacherId { get; set; }
+        public string TeacherId
+        {
+            get
+            {
+                return this.teacherId;
+            }
+
+            set
+            {
+                Utils.Validator.ValidateStringLength(value, Constants.IdMaxLength, Constants.IdMinLength, "TeacherId");
+
+                this.teacherId = value;
+            }
+        }
 
         public virtual User Teacher { get; set; }
 

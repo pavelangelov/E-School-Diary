@@ -10,6 +10,7 @@ namespace E_School_Diary.Data.Models
     public partial class Mark : IMark, IIdentifiable
     {
         private double markValue;
+        private string studentId;
 
         public Mark()
         {
@@ -20,7 +21,7 @@ namespace E_School_Diary.Data.Models
             : this()
         {
             this.StudentId = studentId;
-            this.Subject = Subject;
+            this.Subject = subject;
             this.Value = value;
         }
 
@@ -29,7 +30,20 @@ namespace E_School_Diary.Data.Models
 
         [Required]
         [StringLength(128)]
-        public string StudentId { get; set; }
+        public string StudentId
+        {
+            get
+            {
+                return this.studentId;
+            }
+
+            set
+            {
+                Utils.Validator.ValidateStringLength(value, Constants.IdMaxLength, Constants.IdMinLength, "StudentId");
+
+                this.studentId = value;
+            }
+        }
 
         public virtual User Student { get; set; }
 
