@@ -49,6 +49,15 @@ namespace E_School_Diary.WebClient.UserControls.Common {
         protected global::System.Web.UI.WebControls.FileUpload file;
         
         /// <summary>
+        /// fileUploadBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor fileUploadBtn;
+        
+        /// <summary>
         /// FileError control.
         /// </summary>
         /// <remarks>

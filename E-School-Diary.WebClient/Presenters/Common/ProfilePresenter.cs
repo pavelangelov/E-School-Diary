@@ -63,7 +63,7 @@ namespace E_School_Diary.WebClient.Presenters.Common
                     this.View.Model.ErrorMessage = "Cannot apply image for this user.";
                     return;
                 }
-
+                
                 this.View.Model.IsSuccess = true;
             }
             else

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 using Microsoft.AspNet.Identity;
 using WebFormsMvp;
@@ -8,7 +9,6 @@ using E_School_Diary.WebClient.Models.CustomEventArgs;
 using E_School_Diary.WebClient.Models.ViewModels.Common;
 using E_School_Diary.WebClient.Presenters.Common;
 using E_School_Diary.WebClient.Views.Common;
-using System.IO;
 
 namespace E_School_Diary.WebClient.UserControls.Common
 {
@@ -20,18 +20,21 @@ namespace E_School_Diary.WebClient.UserControls.Common
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                var id = Context.User.Identity.GetUserId();
-                var ev = new IdEventArgs(id);
+            var id = Context.User.Identity.GetUserId();
+            var ev = new IdEventArgs(id);
 
-                this.PageLoad?.Invoke(sender, ev);
-            }
+            this.PageLoad?.Invoke(sender, ev);
         }
 
         protected void UploadImage(object sender, EventArgs e)
         {
             var selectedFile = this.file.PostedFile;
+            if (!selectedFile.ContentType.Contains("image"))
+            {
+                this.FileError.InnerText = "Invalid file format";
+                return;
+            }
+
             this.FileError.InnerText = "";
 
             if (selectedFile != null && selectedFile.ContentLength < 500000)
@@ -50,10 +53,12 @@ namespace E_School_Diary.WebClient.UserControls.Common
                 {
                     this.Message.ShowError(this.Model.ErrorMessage);
                 }
+
+                File.Delete(filePath);
             }
             else
             {
-                this.FileError.InnerText = "File must be less tha 5Kb.";
+                this.FileError.InnerText = "File must be less tha 500Kb.";
             }
         }
     }
