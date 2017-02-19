@@ -53,6 +53,20 @@ namespace E_School_Diary.Services
             return marks;
         }
 
+        public IEnumerable<MessageDTO> GetParentMessages(string parentId)
+        {
+            var messages = this.dbContext.Users.Include(u => u.Messages)
+                                                .FirstOrDefault(u => u.Id == parentId)
+                                                .Messages
+                                                .Select(m => new MessageDTO()
+                                                {
+                                                    From = m.SendFrom,
+                                                    Content = m.Content,
+                                                    SendOn = m.SendOn
+                                                });
+            return messages;
+        }
+
         public int Save()
         {
             return this.dbContext.Save();

@@ -253,6 +253,7 @@
     <Content Include="Content\materialize\font\roboto\Roboto-Thin.woff" />
     <Content Include="Content\materialize\font\roboto\Roboto-Thin.woff2" />
     <Content Include="Lectures\Update\Default.aspx" />
+    <Content Include="Messages\Inbox\Default.aspx" />
     <Content Include="Messages\Send\Default.aspx" />
     <Content Include="Register\Parent\Default.aspx" />
     <Content Include="Register\Student\Default.aspx" />
@@ -315,6 +316,7 @@
     <Content Include="UserControls\Common\SideNavTemplates\TeacherTemplate.ascx" />
     <Content Include="UserControls\Parent\ChildLectures.ascx" />
     <Content Include="UserControls\Parent\ChildMarks.ascx" />
+    <Content Include="UserControls\Parent\Messages.ascx" />
     <Content Include="UserControls\Registration\Common.ascx" />
     <Content Include="UserControls\Registration\RegisterParent.ascx" />
     <Content Include="UserControls\Registration\RegisterStudent.ascx" />
@@ -438,6 +440,13 @@
     <Compile Include="Lectures\Update\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Messages\Inbox\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages\Inbox\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Messages\Send\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -465,6 +474,7 @@
     <Compile Include="Models\ViewModels\BaseViewModel.cs" />
     <Compile Include="Models\ViewModels\Common\NavigationViewModel.cs" />
     <Compile Include="Models\ViewModels\Parent\ChildLecturesViewModel.cs" />
+    <Compile Include="Models\ViewModels\Parent\ParentMessagesViewModel.cs" />
     <Compile Include="Models\ViewModels\Register\RegisterParentViewModel.cs" />
     <Compile Include="Models\ViewModels\Register\RegisterStudentViewModel.cs" />
     <Compile Include="Models\ViewModels\Register\RegisterTeacherViewModel.cs" />
@@ -480,6 +490,7 @@
     <Compile Include="Presenters\Admin\AddTeacherToClassPresenter.cs" />
     <Compile Include="Presenters\Parent\ChildLecturesPresenter.cs" />
     <Compile Include="Presenters\Parent\ChildMarksPresenter.cs" />
+    <Compile Include="Presenters\Parent\ParentMessagesPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterParentPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterStudentPresenter.cs" />
     <Compile Include="Presenters\Register\RegisterTeacherPresenter.cs" />
@@ -612,6 +623,13 @@
     <Compile Include="UserControls\Parent\ChildMarks.ascx.designer.cs">
       <DependentUpon>ChildMarks.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Parent\Messages.ascx.cs">
+      <DependentUpon>Messages.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Parent\Messages.ascx.designer.cs">
+      <DependentUpon>Messages.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Registration\Common.ascx.cs">
       <DependentUpon>Common.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -707,6 +725,7 @@
     <Compile Include="Views\Admin\IAddTeacherToClassView.cs" />
     <Compile Include="Views\Parent\IChildLecturesView.cs" />
     <Compile Include="Views\Parent\IChildMarksView.cs" />
+    <Compile Include="Views\Parent\IParentMessagesView.cs" />
     <Compile Include="Views\Register\IRegisterParentView.cs" />
     <Compile Include="Views\Register\IRegisterStudentView.cs" />
     <Compile Include="Views\Register\IRegisterTeacherView.cs" />

@@ -36,7 +36,7 @@
             <div class="collapsible-body">
                 <ul>
                     <li><a class="waves-effect" href="/AddMarks">Add marks to students</a></li>
-                    <li><a class="waves-effect" href="#">Send message to student parents</a></li>
+                    <li><a class="waves-effect" href="/Messages/Send">Send message to student parents</a></li>
                 </ul>
             </div>
         </li>

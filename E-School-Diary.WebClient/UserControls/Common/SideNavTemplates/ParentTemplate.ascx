@@ -6,4 +6,4 @@
 
 <li><a class="waves-effect" href="/Child/Marks">Check out your child marks</a></li>
 <li><a class="waves-effect" href="/Child/Lectures">Check out your child lectures</a></li>
-<li>Messages and events</li>
+<li><a class="waves-effect" href="/Messages/Inbox">Messages and events</a></li>
