@@ -25,6 +25,7 @@ namespace E_School_Diary.WebClient.Modules
             this.Bind<IMarkService>().To<MarkService>();
             this.Bind<IParentService>().To<ParentService>();
             this.Bind<IUserService>().To<UserService>();
+            this.Bind<IImageUploadService>().To<ImageUploadService>();
 
             this.Bind<IAppicationUserFactory>().To<ApplicationUserFactory>();
             this.Bind<IStudentClassFactory>().To<StudentClassFactory>();

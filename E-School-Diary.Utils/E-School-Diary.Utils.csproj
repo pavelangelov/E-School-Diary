@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CloudinaryConfigs.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="DateParser.cs" />
     <Compile Include="Contracts\IDateParser.cs" />

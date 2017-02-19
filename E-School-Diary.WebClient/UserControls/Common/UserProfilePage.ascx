@@ -4,6 +4,8 @@
     CodeBehind="UserProfilePage.ascx.cs"
     Inherits="E_School_Diary.WebClient.UserControls.Common.UserProfilePage" %>
 
+<%@ Register Src="~/UserControls/Common/MessageContainer.ascx" TagPrefix="uc" TagName="message" %>
+
 <div class="row">
     <div class="card col s8 offset-s2">
         <div class="card-header center">
@@ -17,7 +19,7 @@
             <div class="file-field input-field">
                 <div class="btn">
                     <span>File</span>
-                    <input runat="server" id="file" type="file">
+                    <asp:FileUpload runat="server" ID="file" ClientIDMode="Static" />
                 </div>
                 <div class="file-path-wrapper">
                     <input class="file-path validate" type="text">
@@ -28,3 +30,5 @@
         </div>
     </div>
 </div>
+
+<uc:message runat="server" ID="Message" />

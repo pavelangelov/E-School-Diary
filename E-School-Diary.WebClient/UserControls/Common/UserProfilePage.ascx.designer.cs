@@ -46,7 +46,7 @@ namespace E_School_Diary.WebClient.UserControls.Common {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile file;
+        protected global::System.Web.UI.WebControls.FileUpload file;
         
         /// <summary>
         /// FileError control.
@@ -56,5 +56,14 @@ namespace E_School_Diary.WebClient.UserControls.Common {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl FileError;
+        
+        /// <summary>
+        /// Message control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::E_School_Diary.WebClient.UserControls.Common.MessageContainer Message;
     }
 }
