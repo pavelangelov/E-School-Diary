@@ -10,6 +10,6 @@ namespace E_School_Diary.Factories.Contracts
 {
     public interface IMarkFactory
     {
-        Mark GetMark(string studentId, Subject subject, double value);
+        Mark CreateMark(string studentId, Subject subject, double value);
     }
 }

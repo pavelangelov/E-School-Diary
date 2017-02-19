@@ -63,6 +63,9 @@
     <Compile Include="Factories\ApplicationUserFactory\CraeteTeacherShould_.cs" />
     <Compile Include="Factories\ApplicationUserFactory\CreateStudentShould_.cs" />
     <Compile Include="Factories\LectureFactory\CreateLectureShould_.cs" />
+    <Compile Include="Factories\MarkFactory\CreateMarkShould_.cs" />
+    <Compile Include="Factories\MessageFactory\CreateMessageShould_.cs" />
+    <Compile Include="Factories\StudentClassFactory\CreateClassShould_.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +89,7 @@
       <Name>E-School-Diary.Utils</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

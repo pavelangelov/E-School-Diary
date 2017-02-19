@@ -71,7 +71,7 @@ namespace E_School_Diary.WebClient.Presenters.Teacher
 
             try
             {
-                var markToAdd = markFactory.GetMark(e.Mark.StudentId, subject, e.Mark.Value);
+                var markToAdd = markFactory.CreateMark(e.Mark.StudentId, subject, e.Mark.Value);
                 this.markService.Add(markToAdd);
             }
             catch (ArgumentException ex)
