@@ -2,6 +2,7 @@
 using System.Linq;
 
 using E_School_Diary.Utils.DTOs.Common;
+using E_School_Diary.Data.Models;
 
 namespace E_School_Diary.Services.Contracts
 {
@@ -9,7 +10,7 @@ namespace E_School_Diary.Services.Contracts
     {
         IEnumerable<IGrouping<string, MarkDTO>> GetChildMarks(string parentId);
 
-        IEnumerable<ParentDTO> FindParents(string studentId);
+        IEnumerable<User> FindParents(string studentId);
 
         string GetChildId(string parentId);
 

@@ -6,6 +6,7 @@ using System.Linq;
 using E_School_Diary.Data;
 using E_School_Diary.Utils.DTOs.Common;
 using E_School_Diary.Services.Contracts;
+using E_School_Diary.Data.Models;
 
 namespace E_School_Diary.Services
 {
@@ -18,17 +19,12 @@ namespace E_School_Diary.Services
             this.dbContext = dbContext;
         }
 
-        public IEnumerable<ParentDTO> FindParents(string studentId)
+        public IEnumerable<User> FindParents(string studentId)
         {
             var student = this.dbContext.Users.Include(u => u.Parents)
                                                         .FirstOrDefault(u => u.Id == studentId);
-            var parents = student.Parents.Select(p => new ParentDTO()
-                                                {
-                                                    ChildId = studentId,
-                                                    FirstName = p.FirstName,
-                                                    LastName = p.LastName,
-                                                    Id = p.Id
-                                                });
+            var parents = student.Parents;
+
             return parents;
         }
 

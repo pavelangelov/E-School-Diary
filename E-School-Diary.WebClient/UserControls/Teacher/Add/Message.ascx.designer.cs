@@ -13,6 +13,15 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add {
     public partial class Message {
         
         /// <summary>
+        /// MessageContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::E_School_Diary.WebClient.UserControls.Common.MessageContainer MessageContainer;
+        
+        /// <summary>
         /// Classes control.
         /// </summary>
         /// <remarks>
@@ -38,5 +47,14 @@ namespace E_School_Diary.WebClient.UserControls.Teacher.Add {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl messageContent;
+        
+        /// <summary>
+        /// content control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea content;
     }
 }

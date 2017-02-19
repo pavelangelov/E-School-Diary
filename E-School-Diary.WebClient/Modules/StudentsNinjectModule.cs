@@ -29,6 +29,7 @@ namespace E_School_Diary.WebClient.Modules
             this.Bind<IStudentClassFactory>().To<StudentClassFactory>();
             this.Bind<ILectureFactory>().To<LectureFactory>();
             this.Bind<IMarkFactory>().To<MarkFactory>();
+            this.Bind<IMessageFactory>().To<MessageFactory>();
         }
     }
 }
