@@ -2,6 +2,7 @@
 using E_School_Diary.Data.Models;
 using E_School_Diary.Services.Contracts;
 using E_School_Diary.Utils.DTOs.Common;
+using System.Linq;
 
 namespace E_School_Diary.Services
 {
@@ -16,14 +17,19 @@ namespace E_School_Diary.Services
 
         public User FindById(string id)
         {
-            var user = this.dbContext.Users.Find(id);
+            var user = this.dbContext.Users.FirstOrDefault(u => u.Id == id);
 
             return user;
         }
 
         public UserDTO GetMinInfo(string userId)
         {
-            var dbUser = this.dbContext.Users.Find(userId);
+            var dbUser = this.dbContext.Users.FirstOrDefault(u => u.Id == userId);
+            if (dbUser == null)
+            {
+                return null;
+            }
+
             var userDTO = new UserDTO()
             {
                 FirstName = dbUser.FirstName,

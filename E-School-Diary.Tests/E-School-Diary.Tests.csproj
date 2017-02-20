@@ -108,6 +108,9 @@
     <Compile Include="Services\StudentClassService\FindByTeacherIdShould_.cs" />
     <Compile Include="Services\StudentClassService\GetAllShould_.cs" />
     <Compile Include="Services\StudentClassService\SaveShould_.cs" />
+    <Compile Include="Services\UserService\FindByIdShould_.cs" />
+    <Compile Include="Services\UserService\GetMinInfoShould_.cs" />
+    <Compile Include="Services\UserService\SaveShould_.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
