@@ -10,7 +10,7 @@ using E_School_Diary.Data;
 using E_School_Diary.Data.Models;
 using E_School_Diary.Services;
 
-namespace E_School_Diary.Tests.Services
+namespace E_School_Diary.Tests.Services.LectureServiceTests
 {
     [TestFixture]
     public class FindByIdShould_

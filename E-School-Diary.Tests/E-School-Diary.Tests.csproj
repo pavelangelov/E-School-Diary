@@ -47,6 +47,14 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Moq, Version=4.5.30.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.5.30\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
@@ -85,6 +93,16 @@
     <Compile Include="Factories\StudentClassFactory\CreateClassShould_.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LectureService\FindByIdShould_.cs" />
+    <Compile Include="Services\LectureService\SaveShould_.cs" />
+    <Compile Include="Services\MarkService\AddMarkShould_.cs" />
+    <Compile Include="Services\MarkService\ConstructorShould_.cs" />
+    <Compile Include="Services\MarkService\SaveShould_.cs" />
+    <Compile Include="Services\ParentService\ConstructorShould_.cs" />
+    <Compile Include="Services\ParentService\FindParentsShould_.cs" />
+    <Compile Include="Services\ParentService\GetChildIdShould_.cs" />
+    <Compile Include="Services\ParentService\GetChildMarksShould_.cs" />
+    <Compile Include="Services\ParentService\GetParentMessagesShould_.cs" />
+    <Compile Include="Services\ParentService\SaveShould_.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

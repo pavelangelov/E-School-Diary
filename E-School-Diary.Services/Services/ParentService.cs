@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
@@ -38,32 +37,42 @@ namespace E_School_Diary.Services
         public IEnumerable<IGrouping<string, MarkDTO>> GetChildMarks(string parentId)
         {
             var childId = this.dbContext.Users
-                                        .Find(parentId)
+                                        .FirstOrDefault(u => u.Id == parentId)
                                         .ChildId;
 
             var student = this.dbContext.Users.Include(u => u.Lectures)
                                                     .FirstOrDefault(u => u.Id == childId);
-            var marks = student.Marks.Select(m => new MarkDTO()
-                                                {
-                                                    Subject = m.Subject.ToString(),
-                                                    Value = m.Value
-                                                })
-                                              .GroupBy(m => m.Subject);
+
+            IEnumerable<IGrouping<string, MarkDTO>> marks = null;
+            if (student != null)
+            {
+                marks = student.Marks.Select(m => new MarkDTO()
+                                            {
+                                                Subject = m.Subject.ToString(),
+                                                Value = m.Value
+                                            })
+                                            .GroupBy(m => m.Subject);
+            }
 
             return marks;
         }
 
         public IEnumerable<MessageDTO> GetParentMessages(string parentId)
         {
-            var messages = this.dbContext.Users.Include(u => u.Messages)
-                                                .FirstOrDefault(u => u.Id == parentId)
-                                                .Messages
-                                                .Select(m => new MessageDTO()
-                                                {
-                                                    From = m.SendFrom,
-                                                    Content = m.Content,
-                                                    SendOn = m.SendOn
-                                                });
+            var user = this.dbContext.Users.Include(u => u.Messages)
+                                           .FirstOrDefault(u => u.Id == parentId);
+
+            IEnumerable<MessageDTO> messages = null;
+            if (user != null)
+            {
+                messages = user.Messages.Select(m => new MessageDTO()
+                {
+                    From = m.SendFrom,
+                    Content = m.Content,
+                    SendOn = m.SendOn
+                });
+            }
+
             return messages;
         }
 

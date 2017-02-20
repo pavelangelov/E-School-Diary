@@ -20,6 +20,11 @@ namespace E_School_Diary.Data.Models
         public User()
         {
             this.Id = Guid.NewGuid().ToString();
+            this.Parents = new HashSet<User>();
+            this.Marks = new HashSet<Mark>();
+            this.Lectures = new HashSet<Lecture>();
+            this.StudentClasses = new HashSet<StudentClass>();
+            this.Messages = new HashSet<Message>();
         }
 
         public User(string userName)
