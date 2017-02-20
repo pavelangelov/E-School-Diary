@@ -6,7 +6,7 @@ using NUnit.Framework;
 using E_School_Diary.Data;
 using E_School_Diary.Services;
 
-namespace E_School_Diary.Tests.Services.MarkServiceTests
+namespace E_School_Diary.Tests.Services.StudentClassServiceTests
 {
     [TestFixture]
     public class ConstructorShould_
@@ -18,14 +18,14 @@ namespace E_School_Diary.Tests.Services.MarkServiceTests
             var mockDbContext = new Mock<IDatabaseContext>();
 
             // Act & Assert
-            Assert.DoesNotThrow(() => new MarkService(mockDbContext.Object));
+            Assert.DoesNotThrow(() => new StudentClassService(mockDbContext.Object));
         }
 
         [Test]
         public void ToThrowArgumentNullException_IfPassedParameterIsNull()
         {
             // Arrange, Act & Assert
-            var msg = Assert.Throws<ArgumentNullException>(() => new MarkService(null)).Message;
+            var msg = Assert.Throws<ArgumentNullException>(() => new StudentClassService(null)).Message;
             Assert.IsTrue(msg.Contains("dbContext"));
         }
     }

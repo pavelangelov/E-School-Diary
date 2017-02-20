@@ -34,7 +34,7 @@ namespace E_School_Diary.Services
 
         public StudentClass FindByTeacherId(string teacherId)
         {
-            var studentClass = this.dbContext.StudentClasses.Single(x => x.FormMasterId == teacherId);
+            var studentClass = this.dbContext.StudentClasses.FirstOrDefault(x => x.FormMasterId == teacherId);
 
             return studentClass;
         }

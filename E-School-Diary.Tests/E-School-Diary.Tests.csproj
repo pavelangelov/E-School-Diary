@@ -102,6 +102,12 @@
     <Compile Include="Services\ParentService\GetChildMarksShould_.cs" />
     <Compile Include="Services\ParentService\GetParentMessagesShould_.cs" />
     <Compile Include="Services\ParentService\SaveShould_.cs" />
+    <Compile Include="Services\StudentClassService\AddShould_.cs" />
+    <Compile Include="Services\StudentClassService\ConstructorShould_.cs" />
+    <Compile Include="Services\StudentClassService\FindByIdShould_.cs" />
+    <Compile Include="Services\StudentClassService\FindByTeacherIdShould_.cs" />
+    <Compile Include="Services\StudentClassService\GetAllShould_.cs" />
+    <Compile Include="Services\StudentClassService\SaveShould_.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
