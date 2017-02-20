@@ -97,7 +97,6 @@
     <Compile Include="Services\MarkService\AddMarkShould_.cs" />
     <Compile Include="Services\MarkService\ConstructorShould_.cs" />
     <Compile Include="Services\MarkService\SaveShould_.cs" />
-    <Compile Include="Services\ParentService\ConstructorShould_.cs" />
     <Compile Include="Services\ParentService\FindParentsShould_.cs" />
     <Compile Include="Services\ParentService\GetChildIdShould_.cs" />
     <Compile Include="Services\ParentService\GetChildMarksShould_.cs" />

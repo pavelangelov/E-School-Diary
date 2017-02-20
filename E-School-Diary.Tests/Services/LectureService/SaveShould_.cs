@@ -12,13 +12,16 @@ namespace E_School_Diary.Tests.Services.LectureServiceTests
         [Test]
         public void CallDAtabaseContext_SaveMethod()
         {
+            // Arrange
             var mockDbContext = new Mock<IDatabaseContext>();
             mockDbContext.Setup(c => c.Save()).Returns(1).Verifiable();
 
             var lectureService = new LectureService(mockDbContext.Object);
 
+            // Act
             var result = lectureService.Save();
 
+            // Assert
             Assert.AreEqual(1, result);
             mockDbContext.Verify(c => c.Save(), Times.Once);
         }

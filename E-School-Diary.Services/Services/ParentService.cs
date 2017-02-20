@@ -29,7 +29,7 @@ namespace E_School_Diary.Services
 
         public string GetChildId(string parentId)
         {
-            var parent = this.dbContext.Users.Find(parentId);
+            var parent = this.dbContext.Users.FirstOrDefault(u => u.Id == parentId);
 
             return parent.ChildId;
         }

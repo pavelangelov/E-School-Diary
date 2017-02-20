@@ -1,15 +1,15 @@
-﻿using E_School_Diary.Auth;
-using E_School_Diary.Data;
-using E_School_Diary.Data.Models;
-using E_School_Diary.Services;
-using Moq;
-using NUnit.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using Moq;
+using NUnit.Framework;
+
+using E_School_Diary.Auth;
+using E_School_Diary.Data;
+using E_School_Diary.Data.Models;
+using E_School_Diary.Services;
 
 namespace E_School_Diary.Tests.Services.ParentServiceTests
 {
@@ -22,6 +22,7 @@ namespace E_School_Diary.Tests.Services.ParentServiceTests
         [Test]
         public void ReturnEmptyCollection_IfParentIdMatched_AndStudentDoesNotHaveMarks()
         {
+            // Arrange
             var users = this.GetUsers();
             var queryable = users.AsQueryable();
 
@@ -36,14 +37,17 @@ namespace E_School_Diary.Tests.Services.ParentServiceTests
 
             var parentService = new ParentService(mockedDbContext.Object);
 
+            // Act
             var messages = parentService.GetChildMarks(this.searchedIdForNullMarks);
 
+            // Assert
             Assert.IsTrue(messages.Count() == 0);
         }
 
         [Test]
         public void ReturnCollectionWithMarks_IfParentId_MatchedAndStudentHasMarks()
         {
+            // Arrange
             var users = this.GetUsers();
             var queryable = users.AsQueryable();
 
@@ -58,8 +62,10 @@ namespace E_School_Diary.Tests.Services.ParentServiceTests
 
             var parentService = new ParentService(mockedDbContext.Object);
 
+            // Act
             var messages = parentService.GetChildMarks(this.searcherId);
 
+            // Assert
             Assert.IsTrue(messages.Count() == 1);
         }
 

@@ -21,6 +21,7 @@ namespace E_School_Diary.Tests.Services.LectureServiceTests
         [Test]
         public void ReturnRightLecture()
         {
+            // Arrange
             var lectures = this.GetLectures();
             var mockDbContext = new Mock<IDatabaseContext>();
             var mockSet = new Mock<IDbSet<Lecture>>();
@@ -31,10 +32,12 @@ namespace E_School_Diary.Tests.Services.LectureServiceTests
 
             mockDbContext.Setup(c => c.Lectures).Returns(mockSet.Object);
 
-
             var lectureService = new LectureService(mockDbContext.Object);
+
+            // Act
             var lecture = lectureService.FindById(this.searchedLectureId);
 
+            // Assert
             Assert.AreEqual(this.lecturesTitle, lecture.Title);
             Assert.AreEqual(this.searchedLectureId, lecture.Id);
         }
@@ -42,6 +45,7 @@ namespace E_School_Diary.Tests.Services.LectureServiceTests
         [Test]
         public void ReturnNull_IfLectureNotFound()
         {
+            // Arrange
             var lectures = this.GetLectures();
             var mockDbContext = new Mock<IDatabaseContext>();
             var mockSet = new Mock<IDbSet<Lecture>>();
@@ -54,8 +58,11 @@ namespace E_School_Diary.Tests.Services.LectureServiceTests
 
             var lectureId = Guid.NewGuid().ToString();
             var lectureService = new LectureService(mockDbContext.Object);
+
+            // Act
             var lecture = lectureService.FindById(lectureId);
 
+            // Assert
             Assert.IsNull(lecture);
         }
 
