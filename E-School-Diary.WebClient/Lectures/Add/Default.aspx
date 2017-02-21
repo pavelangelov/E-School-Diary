@@ -2,7 +2,8 @@
     Title="Add new lecture" 
     Language="C#" 
     MasterPageFile="~/Site.Master"
-    AutoEventWireup="true" 
+    AutoEventWireup="true"
+    ValidateRequest="false"
     CodeBehind="Default.aspx.cs" 
     Inherits="E_School_Diary.WebClient.Lectures.Add.Default" %>
 

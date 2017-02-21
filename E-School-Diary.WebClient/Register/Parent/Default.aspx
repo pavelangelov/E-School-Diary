@@ -4,6 +4,7 @@
     MasterPageFile="~/Site.Master"
     AutoEventWireup="true"
     CodeBehind="Default.aspx.cs"
+    ValidateRequest="false"
     Inherits="E_School_Diary.WebClient.Register.Parent.Default" %>
 
 <%@ Register Src="~/UserControls/Registration/RegisterParent.ascx" TagPrefix="uc" TagName="parentRegistration" %>

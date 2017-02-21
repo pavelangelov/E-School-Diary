@@ -2,6 +2,7 @@
     Language="C#" 
     MasterPageFile="~/Site.Master" 
     AutoEventWireup="true" 
+    ValidateRequest="false"
     CodeBehind="Default.aspx.cs" 
     Inherits="E_School_Diary.WebClient.Register.Teacher.Default" %>
 

@@ -4,6 +4,7 @@
     MasterPageFile="~/Site.Master" 
     AutoEventWireup="true" 
     CodeBehind="Default.aspx.cs" 
+    ValidateRequest="false"
     Inherits="E_School_Diary.WebClient.Messages.Send.Default" %>
 
 <%@ Register Src="~/UserControls/Teacher/Add/Message.ascx" TagPrefix="uc" TagName="message" %>

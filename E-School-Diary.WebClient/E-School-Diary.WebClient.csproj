@@ -186,9 +186,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="500.html" />
+    <Content Include="404.html" />
     <Content Include="About.aspx" />
     <Content Include="Child\Lectures\Default.aspx" />
     <Content Include="Child\Marks\Default.aspx" />
+    <Content Include="Content\ErrorPages\not-found.css" />
+    <Content Include="Content\ErrorPages\server-error.css" />
+    <Content Include="Images\default-parent-avatar.jpg" />
+    <Content Include="Images\NotFound.jpg" />
     <Content Include="Login\Default.aspx" />
     <Content Include="AddMarks\Default.aspx" />
     <Content Include="Administration\AddNewClass\Default.aspx" />

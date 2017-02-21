@@ -26,12 +26,11 @@
         <ItemTemplate>
             <li class="collection-item avatar">
                 <img src="<%#: Eval("ImageUrl") %>" alt="" class="circle">
-                <span class="title"><%#: Eval("FirstName") %> <%#: Eval("LastName") %></span><p>
+                <span class="title teal-text"><%#: Eval("FirstName") %> <%#: Eval("LastName") %></span><p>
                     Age: <%#: Eval("Age") %>
                     <br />
                     Subject: <%#: Enum.Parse(typeof(Subject), Eval("Subject").ToString()) %>
                 </p>
-                <a href="/Profile/<%# Eval("UserName") %>" class="secondary-content"><i class="material-icons" title="View more info">person_pin</i></a>
             </li>
         </ItemTemplate>
         <FooterTemplate>
