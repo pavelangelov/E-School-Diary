@@ -65,6 +65,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebFormsMvp.1.4.5.0\lib\WebFormsMvp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -91,6 +95,9 @@
     <Compile Include="Factories\MarkFactory\CreateMarkShould_.cs" />
     <Compile Include="Factories\MessageFactory\CreateMessageShould_.cs" />
     <Compile Include="Factories\StudentClassFactory\CreateClassShould_.cs" />
+    <Compile Include="MVP\Admin\AddNewClassPresenterTests\ConstructorShould_.cs" />
+    <Compile Include="MVP\Admin\AddNewClassPresenterTests\View_CreateClassClick_Should.cs" />
+    <Compile Include="MVP\Admin\AddNewClassPresenterTests\View_PageLoad_Should_.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LectureService\FindByIdShould_.cs" />
     <Compile Include="Services\LectureService\SaveShould_.cs" />
@@ -136,6 +143,10 @@
     <ProjectReference Include="..\E-School-Diary.Utils\E-School-Diary.Utils.csproj">
       <Project>{57D375FE-3837-4749-BD5E-583B75F306F3}</Project>
       <Name>E-School-Diary.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\E-School-Diary.WebClient\E-School-Diary.WebClient.csproj">
+      <Project>{127A6A8E-C08A-48B5-9C94-144539332F92}</Project>
+      <Name>E-School-Diary.WebClient</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
