@@ -105,6 +105,9 @@
     <Compile Include="MVP\Common\NavigationPresenterTests\View_NavigationLoadShould_.cs" />
     <Compile Include="MVP\Common\ProfilePresenterTests\ConstructorShould_.cs" />
     <Compile Include="MVP\Common\ProfilePresenterTests\View_PageLoadShould_.cs" />
+    <Compile Include="MVP\Parent\ChildLecturesPresenterTests\ConstructorShould_.cs" />
+    <Compile Include="MVP\Parent\ChildLecturesPresenterTests\View_LoadLecturesShould_.cs" />
+    <Compile Include="MVP\Parent\ChildLecturesPresenterTests\View_PageLoadShould_.cs" />
     <Compile Include="MVP\Student\StudentCalendarPresenterTests\ConstructorShould_.cs" />
     <Compile Include="MVP\Student\StudentCalendarPresenterTests\View_LoadLecturesShould_.cs" />
     <Compile Include="MVP\Student\StudentMarksPresenterTests\ConstructorShould_.cs" />
