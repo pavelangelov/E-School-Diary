@@ -98,6 +98,10 @@
     <Compile Include="MVP\Admin\AddNewClassPresenterTests\ConstructorShould_.cs" />
     <Compile Include="MVP\Admin\AddNewClassPresenterTests\View_CreateClassClick_Should.cs" />
     <Compile Include="MVP\Admin\AddNewClassPresenterTests\View_PageLoad_Should_.cs" />
+    <Compile Include="MVP\Admin\AddTeacherToClassPresenterTests\ConstructorShould_.cs" />
+    <Compile Include="MVP\Admin\AddTeacherToClassPresenterTests\View_AddTeacherClickShould_.cs" />
+    <Compile Include="MVP\Admin\AddTeacherToClassPresenterTests\View_PageLoadShould_.cs" />
+    <Compile Include="MVP\Admin\AddTeacherToClassPresenterTests\View_TeacherSelectedShould_.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LectureService\FindByIdShould_.cs" />
     <Compile Include="Services\LectureService\SaveShould_.cs" />
